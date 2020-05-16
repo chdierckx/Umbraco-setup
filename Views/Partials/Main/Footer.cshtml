@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    Layout = null;
+    // Get basic design settings from the homepage
+    var home = (Home)Model.Root();
+    var font = home.Font;
+    var colorTheme = home.ColorTheme;
+}
+
+
+<footer class="section--themed">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ta-center">
+                @home.FooterAddress
+            </div>
+        </div>
+    </div>
+</footer>
