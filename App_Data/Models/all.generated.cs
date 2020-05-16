@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "fbf39e1c21b0faa5")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "cb3eac64060682eb")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -98,7 +98,7 @@ namespace Umbraco.Web.PublishedModels
 	}
 
 	// Mixin Content Type with alias "navigationBase"
-	/// <summary>Navigation Base</summary>
+	/// <summary>Navigation & SEO</summary>
 	public partial interface INavigationBase : IPublishedContent
 	{
 		/// <summary>Keywords</summary>
@@ -114,7 +114,7 @@ namespace Umbraco.Web.PublishedModels
 		bool UmbracoNavihide { get; }
 	}
 
-	/// <summary>Navigation Base</summary>
+	/// <summary>Navigation & SEO</summary>
 	[PublishedModel("navigationBase")]
 	public partial class NavigationBase : PublishedContentModel, INavigationBase
 	{
@@ -970,6 +970,74 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("umbracoNavihide")]
 		public bool UmbracoNavihide => global::Umbraco.Web.PublishedModels.NavigationBase.GetUmbracoNavihide(this);
+	}
+
+	/// <summary>Infoblock</summary>
+	[PublishedModel("infoblock")]
+	public partial class Infoblock : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "infoblock";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Infoblock, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Infoblock(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Background color: Choose the background colour for the infoblock
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundColor")]
+		public string BackgroundColor => this.Value<string>("backgroundColor");
+
+		///<summary>
+		/// Background image: Choose an image you want to display in the background
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("backgroundImage");
+
+		///<summary>
+		/// Description: Enter a description for the infoblock
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("description")]
+		public string Description => this.Value<string>("description");
+
+		///<summary>
+		/// Infoblock type: Choose how you want to display the infoblock
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("infoblockType")]
+		public string InfoblockType => this.Value<string>("infoblockType");
+
+		///<summary>
+		/// Info image: Choose an image to accompany the copy
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("infoImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent InfoImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("infoImage");
+
+		///<summary>
+		/// Title: Enter the title for the infoblock
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("title")]
+		public string Title => this.Value<string>("title");
 	}
 
 	/// <summary>Folder</summary>
