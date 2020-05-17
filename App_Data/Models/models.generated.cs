@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "cb3eac64060682eb")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "87b987d008a9dc54")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -998,11 +998,32 @@ namespace Umbraco.Web.PublishedModels
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("backgroundImage");
 
 		///<summary>
-		/// Description: Enter a description for the infoblock
+		/// Content color: This will determine the color of the text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("contentColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor ContentColor => this.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("contentColor");
+
+		///<summary>
+		/// Custom class: Enter a custom classname
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("customClass")]
+		public string CustomClass => this.Value<string>("customClass");
+
+		///<summary>
+		/// Description: This is the caption description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("description")]
-		public string Description => this.Value<string>("description");
+		public global::System.Web.IHtmlString Description => this.Value<global::System.Web.IHtmlString>("description");
+
+		///<summary>
+		/// Image: The image accompanying the caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("image")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("image");
 
 		///<summary>
 		/// Infoblock type: Choose how you want to display the infoblock
@@ -1012,18 +1033,90 @@ namespace Umbraco.Web.PublishedModels
 		public string InfoblockType => this.Value<string>("infoblockType");
 
 		///<summary>
-		/// Info image: Choose an image to accompany the copy
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("infoImage")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent InfoImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("infoImage");
-
-		///<summary>
-		/// Title: Enter the title for the infoblock
+		/// Title: this is the title for the caption
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("title")]
 		public string Title => this.Value<string>("title");
+	}
+
+	// Mixin Content Type with alias "contentGridDefault"
+	/// <summary>Content Grid - Default</summary>
+	public partial interface IContentGridDefault : IPublishedContent
+	{
+		/// <summary>Content Grid</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		global::Newtonsoft.Json.Linq.JToken ContentGridDefaultContent { get; }
+	}
+
+	/// <summary>Content Grid - Default</summary>
+	[PublishedModel("contentGridDefault")]
+	public partial class ContentGridDefault : PublishedContentModel, IContentGridDefault
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "contentGridDefault";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentGridDefault, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public ContentGridDefault(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Content Grid: This is the default content grid
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("contentGridDefaultContent")]
+		public global::Newtonsoft.Json.Linq.JToken ContentGridDefaultContent => GetContentGridDefaultContent(this);
+
+		/// <summary>Static getter for Content Grid</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static global::Newtonsoft.Json.Linq.JToken GetContentGridDefaultContent(IContentGridDefault that) => that.Value<global::Newtonsoft.Json.Linq.JToken>("contentGridDefaultContent");
+	}
+
+	/// <summary>Testpage</summary>
+	[PublishedModel("testpage")]
+	public partial class Testpage : PublishedContentModel, IContentGridDefault
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "testpage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Testpage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Testpage(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Content Grid: This is the default content grid
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("contentGridDefaultContent")]
+		public global::Newtonsoft.Json.Linq.JToken ContentGridDefaultContent => global::Umbraco.Web.PublishedModels.ContentGridDefault.GetContentGridDefaultContent(this);
 	}
 
 	/// <summary>Folder</summary>

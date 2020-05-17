@@ -1,0 +1,18 @@
+﻿@inherits UmbracoViewPage<IPublishedElement>
+
+<div class="infoblock">
+    <div class="backgroundImage" style="background-url:'';"></div>
+    <div class="content">
+        <div class="image">
+            <img url="" alt="" />
+        </div>
+        <div class="caption">
+            <h1> 
+                @Model.Value("title") 
+            </h1>
+            <p> 
+                @Model.Value("description") 
+            </p>
+        </div>  
+    </div>
+</div>
