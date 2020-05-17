@@ -1,11 +1,20 @@
 ﻿@inherits UmbracoViewPage<IPublishedElement>
+@{
+   var image = Model.Value<IPublishedContent>("image");
+}
 
-<div class="infoblock">
-    <div class="backgroundImage" style="background-url:'';"></div>
-    <div class="content">
-        <div class="image">
-            <img url="" alt="" />
-        </div>
+<div class="infoblock @Model.Value("customClass") @Model.Value("infoblockType")" style="background-color: #@Model.Value("backgroundColor");">
+    <div class="backgroundImage" style="background-url:'@Model.Value("backgroundImage")';"></div>
+    <div class="content" style="color: #@Model.Value("contentColor");">
+
+        
+        @if (image != null) {
+            <div class="image">
+                <img src="@image.Url"") picture" alt="@Model.Value("imageAltTag")" width="250" height="250">
+            </div>
+        }
+        else {
+        }
         <div class="caption">
             <h1> 
                 @Model.Value("title") 

@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "87b987d008a9dc54")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4b244251ee1654d7")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1038,6 +1038,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("image")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("image");
+
+		///<summary>
+		/// Image Alt tag: Give the image an alt tag conaining the keyword, this improves SEO
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageAltTag")]
+		public string ImageAltTag => this.Value<string>("imageAltTag");
 
 		///<summary>
 		/// Infoblock type: Choose how you want to display the infoblock
