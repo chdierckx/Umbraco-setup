@@ -1,5 +1,35 @@
 //Molecules
 
+
+//Infoblock
+.infoblock {
+  display: flex;
+  position: relative;
+  .backgroundImage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  } 
+  .content {
+    display: flex;
+    flex: 1;
+  }
+  &.infoblock-a {}
+  &.infoblock-b {}
+  &.infoblock-c {}
+}
+
+
+
+
+
+
+
 //Featurelist
 
 //Gutter & flex spacing

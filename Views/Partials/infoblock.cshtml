@@ -1,27 +1,35 @@
 ﻿@inherits UmbracoViewPage<IPublishedElement>
 @{
    var image = Model.Value<IPublishedContent>("image");
+   var bgImage = Model.Value<IPublishedContent>("backgroundImage");   
 }
-
 <div class="infoblock @Model.Value("customClass") @Model.Value("infoblockType")" style="background-color: #@Model.Value("backgroundColor");">
-    <div class="backgroundImage" style="background-url:'@Model.Value("backgroundImage")';"></div>
+    @if (bgImage != null) {
+        <div class="backgroundImage" style="background-image: url('@bgImage.Url')"></div>
+    }
     <div class="content" style="color: #@Model.Value("contentColor");">
-
-        
-        @if (image != null) {
-            <div class="image">
-                <img src="@image.Url"") picture" alt="@Model.Value("imageAltTag")" width="250" height="250">
+        <div class="container @Model.Value("containerSize")">
+            <div class="row">
+                <div class="col-md-6">
+                    @if (image != null) {
+                        <div class="image">
+                            <img src="@image.Url"") picture" alt="@Model.Value("imageAltTag")" width="250" height="250">
+                        </div>
+                    }
+                    else {
+                    }
+                </div>
+                <div class="col-md-6">
+                    <div class="caption">
+                        <h1> 
+                            @Model.Value("title") 
+                        </h1>
+                        <p> 
+                            @Model.Value("description") 
+                        </p>
+                    </div> 
+                </div>
             </div>
-        }
-        else {
-        }
-        <div class="caption">
-            <h1> 
-                @Model.Value("title") 
-            </h1>
-            <p> 
-                @Model.Value("description") 
-            </p>
-        </div>  
+        </div>
     </div>
 </div>

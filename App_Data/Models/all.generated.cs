@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4b244251ee1654d7")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bee9d78dde9fc24c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 
 // FILE: models.generated.cs
@@ -1002,7 +1002,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("backgroundColor")]
-		public string BackgroundColor => this.Value<string>("backgroundColor");
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => this.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("backgroundColor");
 
 		///<summary>
 		/// Background image: Choose an image you want to display in the background
@@ -1010,6 +1010,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("backgroundImage")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("backgroundImage");
+
+		///<summary>
+		/// Container size: This defines the inner container size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("containerSize")]
+		public string ContainerSize => this.Value<string>("containerSize");
 
 		///<summary>
 		/// Content color: This will determine the color of the text
@@ -1052,6 +1059,27 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("infoblockType")]
 		public string InfoblockType => this.Value<string>("infoblockType");
+
+		///<summary>
+		/// Padding - Desktop: This determines the padding of the block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("paddingDesktop")]
+		public decimal PaddingDesktop => this.Value<decimal>("paddingDesktop");
+
+		///<summary>
+		/// Padding - Mobile: This padding will apply on cellphone devices
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("paddingMobile")]
+		public decimal PaddingMobile => this.Value<decimal>("paddingMobile");
+
+		///<summary>
+		/// Padding - Tablet: This padding will apply on tablet devices
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("paddingTablet")]
+		public decimal PaddingTablet => this.Value<decimal>("paddingTablet");
 
 		///<summary>
 		/// Title: this is the title for the caption
