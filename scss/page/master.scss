@@ -11,3 +11,21 @@ body {
         }
     }
 }
+
+
+.grid-flexrow {
+    display: flex;
+    .row {
+        display: flex;
+        flex: 1;
+        [class|="col"] {
+            display: flex;
+            padding: 0px;
+            > div {
+                display: flex; 
+                flex: 1;  
+                flex-direction: column;  
+            }
+        }
+    }
+}

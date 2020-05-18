@@ -157,4 +157,31 @@
       <file name="/umbraco/lib/tinymce/plugins/noneditable/plugin.min.js" />
     </files>
   </item>
+  <item key="L3VtYnJhY28vYXNzZXRzL2Nzcy9jYW52YXNkZXNpZ25lci5jc3M7" file="c:\Users\Kevin\Documents\Work\Github\Boilerplates\Umbraco-Setup\App_Data\TEMP\ClientDependency\381800783_849b331f3224411a8ecbdf5de0830bca.cdC" compression="gzip" version="381800783">
+    <files>
+      <file name="/umbraco/assets/css/canvasdesigner.css" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY28vbGliL2pxdWVyeS9qcXVlcnkubWluLmpzOy91bWJyYWNvL2xpYi9hbmd1bGFyL2FuZ3VsYXIuanM7L3VtYnJhY28vbGliL3VuZGVyc2NvcmUvdW5kZXJzY29yZS1taW4uanM7L3VtYnJhY28vbGliL3VtYnJhY28vRXh0ZW5zaW9ucy5qczsvdW1icmFjby9qcy9hcHAuanM7L3VtYnJhY28vanMvdW1icmFjby5yZXNvdXJjZXMuanM7L3VtYnJhY28vanMvdW1icmFjby5zZXJ2aWNlcy5qczsvdW1icmFjby9qcy91bWJyYWNvLmludGVyY2VwdG9ycy5qczs" file="c:\Users\Kevin\Documents\Work\Github\Boilerplates\Umbraco-Setup\App_Data\TEMP\ClientDependency\381800783_5e6927906c764381b377c4c98bdc72e8.cdJ" compression="gzip" version="381800783">
+    <files>
+      <file name="/umbraco/lib/jquery/jquery.min.js" />
+      <file name="/umbraco/lib/angular/angular.js" />
+      <file name="/umbraco/lib/underscore/underscore-min.js" />
+      <file name="/umbraco/lib/umbraco/Extensions.js" />
+      <file name="/umbraco/js/app.js" />
+      <file name="/umbraco/js/umbraco.resources.js" />
+      <file name="/umbraco/js/umbraco.services.js" />
+      <file name="/umbraco/js/umbraco.interceptors.js" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY28vanMvdW1icmFjby5wcmV2aWV3LmpzOw" file="c:\Users\Kevin\Documents\Work\Github\Boilerplates\Umbraco-Setup\App_Data\TEMP\ClientDependency\381800783_284b9e5e835046738874dbd27196515f.cdJ" compression="gzip" version="381800783">
+    <files>
+      <file name="/umbraco/js/umbraco.preview.js" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY28vbGliL3NpZ25hbHIvanF1ZXJ5LnNpZ25hbFIuanM7" file="c:\Users\Kevin\Documents\Work\Github\Boilerplates\Umbraco-Setup\App_Data\TEMP\ClientDependency\381800783_8c3bacdf404146f5a9ae03416160e49c.cdJ" compression="gzip" version="381800783">
+    <files>
+      <file name="/umbraco/lib/signalr/jquery.signalR.js" />
+    </files>
+  </item>
 </map>

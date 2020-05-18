@@ -3,24 +3,24 @@
    var image = Model.Value<IPublishedContent>("image");
    var bgImage = Model.Value<IPublishedContent>("backgroundImage");   
 }
-<div class="infoblock @Model.Value("customClass") @Model.Value("infoblockType")" style="background-color: #@Model.Value("backgroundColor");">
+<div class="infoblock @Model.Value("customClass") vh-@Model.Value("minimumHeight") @Model.Value("infoblockType")" style="background-color: #@Model.Value("backgroundColor");">
     @if (bgImage != null) {
         <div class="backgroundImage" style="background-image: url('@bgImage.Url')"></div>
     }
-    <div class="content" style="color: #@Model.Value("contentColor");">
+    <div class="content align-items-@Model.Value("verticalAlignment") p-xs-@Model.Value("blockPaddingMobile") p-sm-@Model.Value("blockPaddingTablet") p-lg-@Model.Value("blockPaddingDesktop") " style="color: #@Model.Value("contentColor");">
         <div class="container @Model.Value("containerSize")">
-            <div class="row">
-                <div class="col-md-6">
-                    @if (image != null) {
-                        <div class="image">
-                            <img src="@image.Url"") picture" alt="@Model.Value("imageAltTag")" width="250" height="250">
-                        </div>
+            <div class="row flow-@Model.Value("contentFlow") valign-@Model.Value("verticalAlignment")">
+                @if (image != null) {
+                    <div class="col-md-6">
+                            <div class="image p-xs-@Model.Value("imagePaddingMobile") p-sm-@Model.Value("imagePaddingTablet") p-lg-@Model.Value("imagePaddingDesktop")">
+                                <img class="img-fluid" src="@image.Url"")" alt="@Model.Value("imageAltTag")">
+                            </div>
+                    </div>
                     }
                     else {
                     }
-                </div>
                 <div class="col-md-6">
-                    <div class="caption">
+                    <div class="caption p-xs-@Model.Value("captionPaddingMobile") p-sm-@Model.Value("captionPaddingTablet") p-lg-@Model.Value("CaptionPaddingDesktop")">
                         <h1> 
                             @Model.Value("title") 
                         </h1>

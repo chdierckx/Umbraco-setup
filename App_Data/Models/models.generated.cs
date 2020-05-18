@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bee9d78dde9fc24c")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "79453b498a7f623c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -998,6 +998,48 @@ namespace Umbraco.Web.PublishedModels
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("backgroundImage");
 
 		///<summary>
+		/// Padding - Desktop: This determines the padding of the block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockPaddingDesktop")]
+		public decimal BlockPaddingDesktop => this.Value<decimal>("blockPaddingDesktop");
+
+		///<summary>
+		/// Padding - Mobile: This padding will apply on cellphone devices
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockPaddingMobile")]
+		public decimal BlockPaddingMobile => this.Value<decimal>("blockPaddingMobile");
+
+		///<summary>
+		/// Padding - Tablet: This padding will apply on tablet devices
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockPaddingTablet")]
+		public decimal BlockPaddingTablet => this.Value<decimal>("blockPaddingTablet");
+
+		///<summary>
+		/// Padding - Desktop: Enter the caption padding for desktop
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingDesktop")]
+		public decimal CaptionPaddingDesktop => this.Value<decimal>("captionPaddingDesktop");
+
+		///<summary>
+		/// Padding - Mobile: Enter the caption padding for phone and phablets
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingMobile")]
+		public decimal CaptionPaddingMobile => this.Value<decimal>("captionPaddingMobile");
+
+		///<summary>
+		/// Padding - Tablet: Enter the caption padding for tablet
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingTablet")]
+		public decimal CaptionPaddingTablet => this.Value<decimal>("captionPaddingTablet");
+
+		///<summary>
 		/// Container size: This defines the inner container size
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1010,6 +1052,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("contentColor")]
 		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor ContentColor => this.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("contentColor");
+
+		///<summary>
+		/// Content flow: The position of content elements in releation to each other
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("contentFlow")]
+		public string ContentFlow => this.Value<string>("contentFlow");
 
 		///<summary>
 		/// Custom class: Enter a custom classname
@@ -1040,6 +1089,27 @@ namespace Umbraco.Web.PublishedModels
 		public string ImageAltTag => this.Value<string>("imageAltTag");
 
 		///<summary>
+		/// Image padding desktop: Padding for desktop resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingDesktop")]
+		public decimal ImagePaddingDesktop => this.Value<decimal>("imagePaddingDesktop");
+
+		///<summary>
+		/// Image padding mobile: Padding for cellphone resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingMobile")]
+		public decimal ImagePaddingMobile => this.Value<decimal>("imagePaddingMobile");
+
+		///<summary>
+		/// Image padding tablet: Padding for tablet resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingTablet")]
+		public decimal ImagePaddingTablet => this.Value<decimal>("imagePaddingTablet");
+
+		///<summary>
 		/// Infoblock type: Choose how you want to display the infoblock
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1047,32 +1117,25 @@ namespace Umbraco.Web.PublishedModels
 		public string InfoblockType => this.Value<string>("infoblockType");
 
 		///<summary>
-		/// Padding - Desktop: This determines the padding of the block
+		/// Minimum height: Minimum height in relation to the viwport.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("paddingDesktop")]
-		public decimal PaddingDesktop => this.Value<decimal>("paddingDesktop");
-
-		///<summary>
-		/// Padding - Mobile: This padding will apply on cellphone devices
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("paddingMobile")]
-		public decimal PaddingMobile => this.Value<decimal>("paddingMobile");
-
-		///<summary>
-		/// Padding - Tablet: This padding will apply on tablet devices
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("paddingTablet")]
-		public decimal PaddingTablet => this.Value<decimal>("paddingTablet");
+		[ImplementPropertyType("minimumHeight")]
+		public string MinimumHeight => this.Value<string>("minimumHeight");
 
 		///<summary>
 		/// Title: this is the title for the caption
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("title")]
-		public string Title => this.Value<string>("title");
+		public global::System.Web.IHtmlString Title => this.Value<global::System.Web.IHtmlString>("title");
+
+		///<summary>
+		/// Vertical alignment: The vertical alignment of the total content block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("verticalAlignment")]
+		public string VerticalAlignment => this.Value<string>("verticalAlignment");
 	}
 
 	// Mixin Content Type with alias "contentGridDefault"
