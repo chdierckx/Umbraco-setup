@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoViewPage<IPublishedElement>
 @{
    var image = Model.Value<IPublishedContent>("image");
-   var bgImage = Model.Value<IPublishedContent>("backgroundImage");   
+   var bgImage = Model.Value<IPublishedContent>("backgroundImage"); 
 }
 <div class="infoblock @Model.Value("customClass") vh-@Model.Value("minimumHeight") @Model.Value("infoblockType")" style="background-color: #@Model.Value("backgroundColor");">
     @if (bgImage != null) {

@@ -2,26 +2,19 @@
 
 // Google Fonts
 
-//Karla
-@import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
 
-//Josefin
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
-
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold;
-}
 
 p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display';
 }
 
 // Typography
@@ -29,7 +22,7 @@ p {
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:    'Josefin Sans', sans-serif !default;
+$font-family-sans-serif:    'Playfair Display', sans-serif !default;
 $font-family-monospace:       $font-family-sans-serif !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case

@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Karla&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 .align-baseline {
   vertical-align: baseline !important; }
 
@@ -4902,14 +4901,13 @@ input[type="button"].btn-block {
     margin-bottom: -1px; }
 
 body {
-  font-family: 'Karla', sans-serif; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold; }
+  font-family: 'Lato', sans-serif; }
 
 p {
-  font-family: 'Karla', sans-serif; }
+  font-family: 'Lato', sans-serif; }
+
+h1, h2, h3 {
+  font-family: 'Playfair Display'; }
 
 .vh-Height-100 {
   min-height: 100vh; }
