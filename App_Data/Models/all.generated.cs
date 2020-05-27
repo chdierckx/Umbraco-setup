@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8cbfcf44d175fa5d")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bcdd4e7f6eab668a")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1487,7 +1487,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("callToActionLink")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link> CallToActionLink => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link>>("callToActionLink");
+		public global::Umbraco.Web.Models.Link CallToActionLink => this.Value<global::Umbraco.Web.Models.Link>("callToActionLink");
 
 		///<summary>
 		/// Call to action size: Choose a style for the call to action

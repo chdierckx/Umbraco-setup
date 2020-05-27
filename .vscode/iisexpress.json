@@ -1,6 +1,6 @@
 {
-  "port": 41960,
-  "path": "c:\\Users\\Kevin\\Documents\\Work\\Github\\Boilerplates\\Umbraco-Setup",
+  "port": 33333,
+  "path": "D:\\Repositories\\Github\\Umbraco-setup",
   "clr": "v4.0",
   "protocol": "http"
 }

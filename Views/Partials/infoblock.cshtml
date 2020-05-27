@@ -1,41 +1,44 @@
-﻿@inherits UmbracoViewPage<IPublishedElement>
+﻿@model Umbraco.Web.PublishedModels.Infoblock
+
 @{
    var image = Model.Value<IPublishedContent>("image");
    var bgImage = Model.Value<IPublishedContent>("backgroundImage"); 
 }
-<div class="infoblock @Model.Value("customClass") vh-@Model.Value("minimumHeight") @Model.Value("infoblockType")" style="background-color: #@Model.Value("backgroundColor");">
-    @if (bgImage != null) {
-        <div class="backgroundImage" style="background-image: url('@bgImage.Url')"></div>
+<div class="infoblock @Model.CustomClass vh-@Model.MinimumHeight @Model.InfoblockType" style="background-color: #@Model.BackgroundColor;">
+    @{
+        if (bgImage != null) {
+            <div class="backgroundImage" style="background-image: url('@bgImage.Url')"></div>
+        }       
     }
-    <div class="content align-items-@Model.Value("verticalAlignment") p-xs-@Model.Value("blockPaddingMobile") p-sm-@Model.Value("blockPaddingTablet") p-lg-@Model.Value("blockPaddingDesktop") " style="color: #@Model.Value("contentColor");">
-        <div class="container @Model.Value("containerSize")">
-            <div class="row flow-@Model.Value("contentFlow") valign-@Model.Value("verticalAlignment")">
-                @if (image != null) {
+    <div class="content align-items-@Model.VerticalAlignment p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" style="color: #@Model.ContentColor;">
+        <div class="container @Model.ContainerSize">
+            <div class="row flow-@Model.ContentFlow valign-@Model.VerticalAlignment">
+                @{
+                    if (image != null) {
                     <div class="col-md-6">
-                            <div class="image p-xs-@Model.Value("imagePaddingMobile") p-sm-@Model.Value("imagePaddingTablet") p-lg-@Model.Value("imagePaddingDesktop")">
-                                <img class="img-fluid" src="@image.Url"")" alt="@Model.Value("imageAltTag")">
+                            <div class="image p-xs-@Model.ImagePaddingMobile p-sm-@Model.ImagePaddingTablet p-lg-@Model.ImagePaddingDesktop">
+                                <img class="img-fluid" src="@image.Url" alt="@Model.ImageAltTag">
                             </div>
                     </div>
                     }
+                }
                 <div class="col-md-6">
-                    <div class="caption p-xs-@Model.Value("captionPaddingMobile") p-sm-@Model.Value("captionPaddingTablet") p-lg-@Model.Value("CaptionPaddingDesktop")">
+                    <div class="caption p-xs-@Model.CaptionPaddingMobile p-sm-@Model.CaptionPaddingTablet p-lg-@Model.CaptionPaddingDesktop">
                         <h1> 
-                            @Model.Value("title") 
+                            @Model.Title
                         </h1>
                         <p> 
-                            @Model.Value("description")     
+                            @Model.Description  
                         </p>
-                        @{
-                            var links = Model.Value<IEnumerable<IPublishedElement>>("callToActionComposition");
-                                <a class="@Model.Value("callToActionColor")">Link</a>
-                            @* if (links.Any()) {
-                                <div class="cta-wrapper">
-                                    @foreach (var callToActionLink in callToActionComposition) {
-                                        <a class="btn @Model.Value("callToActionColor") @Model.Value("callToActionSize")" href="@linkUrl"></a>
-                                    }
-                                </div>
-                            } *@
+                    @{
+                        if (Model.CallToAction.Any()) {
+                            <div class="cta-wrapper">
+                                @foreach (var callToActionLinks in Model.CallToAction.OfType<CallToActionComposition>()) {
+                                    <a class="btn btn-@callToActionLinks.CallToActionStyle@callToActionLinks.CallToActionColor @callToActionLinks.CallToActionSize" href="@callToActionLinks.CallToActionLink.Url" target="@callToActionLinks.CallToActionLink.Target">@callToActionLinks.CallToActionLink.Name</a>
+                                }
+                            </div>
                         }
+                    }
                     </div> 
                 </div>
             </div>
