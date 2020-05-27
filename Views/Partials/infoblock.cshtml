@@ -17,16 +17,25 @@
                             </div>
                     </div>
                     }
-                    else {
-                    }
                 <div class="col-md-6">
                     <div class="caption p-xs-@Model.Value("captionPaddingMobile") p-sm-@Model.Value("captionPaddingTablet") p-lg-@Model.Value("CaptionPaddingDesktop")">
                         <h1> 
                             @Model.Value("title") 
                         </h1>
                         <p> 
-                            @Model.Value("description") 
+                            @Model.Value("description")     
                         </p>
+                        @{
+                            var links = Model.Value<IEnumerable<IPublishedElement>>("callToActionComposition");
+                                <a class="@Model.Value("callToActionColor")">Link</a>
+                            @* if (links.Any()) {
+                                <div class="cta-wrapper">
+                                    @foreach (var callToActionLink in callToActionComposition) {
+                                        <a class="btn @Model.Value("callToActionColor") @Model.Value("callToActionSize")" href="@linkUrl"></a>
+                                    }
+                                </div>
+                            } *@
+                        }
                     </div> 
                 </div>
             </div>

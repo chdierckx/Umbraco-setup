@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c57ffdf059dae9cc")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8cbfcf44d175fa5d")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -960,7 +960,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Infoblock</summary>
 	[PublishedModel("infoblock")]
-	public partial class Infoblock : PublishedElementModel
+	public partial class Infoblock : PublishedElementModel, ICaptionComposition, IImageComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -1019,25 +1019,11 @@ namespace Umbraco.Web.PublishedModels
 		public decimal BlockPaddingTablet => this.Value<decimal>("blockPaddingTablet");
 
 		///<summary>
-		/// Padding - Desktop: Enter the caption padding for desktop
+		/// Call to action
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingDesktop")]
-		public decimal CaptionPaddingDesktop => this.Value<decimal>("captionPaddingDesktop");
-
-		///<summary>
-		/// Padding - Mobile: Enter the caption padding for phone and phablets
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingMobile")]
-		public decimal CaptionPaddingMobile => this.Value<decimal>("captionPaddingMobile");
-
-		///<summary>
-		/// Padding - Tablet: Enter the caption padding for tablet
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingTablet")]
-		public decimal CaptionPaddingTablet => this.Value<decimal>("captionPaddingTablet");
+		[ImplementPropertyType("callToAction")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CallToActionComposition> CallToAction => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CallToActionComposition>>("callToAction");
 
 		///<summary>
 		/// Container size: This defines the inner container size
@@ -1068,48 +1054,6 @@ namespace Umbraco.Web.PublishedModels
 		public string CustomClass => this.Value<string>("customClass");
 
 		///<summary>
-		/// Description: This is the caption description
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("description")]
-		public global::System.Web.IHtmlString Description => this.Value<global::System.Web.IHtmlString>("description");
-
-		///<summary>
-		/// Image: The image accompanying the caption
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("image")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("image");
-
-		///<summary>
-		/// Image Alt tag: Give the image an alt tag conaining the keyword, this improves SEO
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imageAltTag")]
-		public string ImageAltTag => this.Value<string>("imageAltTag");
-
-		///<summary>
-		/// Image padding desktop: Padding for desktop resolutions
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingDesktop")]
-		public decimal ImagePaddingDesktop => this.Value<decimal>("imagePaddingDesktop");
-
-		///<summary>
-		/// Image padding mobile: Padding for cellphone resolutions
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingMobile")]
-		public decimal ImagePaddingMobile => this.Value<decimal>("imagePaddingMobile");
-
-		///<summary>
-		/// Image padding tablet: Padding for tablet resolutions
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingTablet")]
-		public decimal ImagePaddingTablet => this.Value<decimal>("imagePaddingTablet");
-
-		///<summary>
 		/// Infoblock type: Choose how you want to display the infoblock
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1124,18 +1068,81 @@ namespace Umbraco.Web.PublishedModels
 		public string MinimumHeight => this.Value<string>("minimumHeight");
 
 		///<summary>
-		/// Title: this is the title for the caption
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("title")]
-		public string Title => this.Value<string>("title");
-
-		///<summary>
 		/// Vertical alignment: The vertical alignment of the total content block
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("verticalAlignment")]
 		public string VerticalAlignment => this.Value<string>("verticalAlignment");
+
+		///<summary>
+		/// Padding - Desktop: Enter the caption padding for desktop
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingDesktop")]
+		public decimal CaptionPaddingDesktop => global::Umbraco.Web.PublishedModels.CaptionComposition.GetCaptionPaddingDesktop(this);
+
+		///<summary>
+		/// Padding - Mobile: Enter the caption padding for phone and phablets
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingMobile")]
+		public decimal CaptionPaddingMobile => global::Umbraco.Web.PublishedModels.CaptionComposition.GetCaptionPaddingMobile(this);
+
+		///<summary>
+		/// Padding - Tablet: Enter the caption padding for tablet
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingTablet")]
+		public decimal CaptionPaddingTablet => global::Umbraco.Web.PublishedModels.CaptionComposition.GetCaptionPaddingTablet(this);
+
+		///<summary>
+		/// Description: This is the caption description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("description")]
+		public string Description => global::Umbraco.Web.PublishedModels.CaptionComposition.GetDescription(this);
+
+		///<summary>
+		/// Title: this is the title for the caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("title")]
+		public string Title => global::Umbraco.Web.PublishedModels.CaptionComposition.GetTitle(this);
+
+		///<summary>
+		/// Image: The image accompanying the caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("image")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => global::Umbraco.Web.PublishedModels.ImageComposition.GetImage(this);
+
+		///<summary>
+		/// Image Alt tag: Give the image an alt tag conaining the keyword, this improves SEO
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageAltTag")]
+		public string ImageAltTag => global::Umbraco.Web.PublishedModels.ImageComposition.GetImageAltTag(this);
+
+		///<summary>
+		/// Image padding desktop: Padding for desktop resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingDesktop")]
+		public decimal ImagePaddingDesktop => global::Umbraco.Web.PublishedModels.ImageComposition.GetImagePaddingDesktop(this);
+
+		///<summary>
+		/// Image padding mobile: Padding for cellphone resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingMobile")]
+		public decimal ImagePaddingMobile => global::Umbraco.Web.PublishedModels.ImageComposition.GetImagePaddingMobile(this);
+
+		///<summary>
+		/// Image padding tablet: Padding for tablet resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingTablet")]
+		public decimal ImagePaddingTablet => global::Umbraco.Web.PublishedModels.ImageComposition.GetImagePaddingTablet(this);
 	}
 
 	// Mixin Content Type with alias "contentGridDefault"
@@ -1215,6 +1222,272 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("contentGridDefaultContent")]
 		public global::Newtonsoft.Json.Linq.JToken ContentGridDefaultContent => global::Umbraco.Web.PublishedModels.ContentGridDefault.GetContentGridDefaultContent(this);
+	}
+
+	// Mixin Content Type with alias "captionComposition"
+	/// <summary>Caption</summary>
+	public partial interface ICaptionComposition : IPublishedElement
+	{
+		/// <summary>Padding - Desktop</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal CaptionPaddingDesktop { get; }
+
+		/// <summary>Padding - Mobile</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal CaptionPaddingMobile { get; }
+
+		/// <summary>Padding - Tablet</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal CaptionPaddingTablet { get; }
+
+		/// <summary>Description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string Description { get; }
+
+		/// <summary>Title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string Title { get; }
+	}
+
+	/// <summary>Caption</summary>
+	[PublishedModel("captionComposition")]
+	public partial class CaptionComposition : PublishedElementModel, ICaptionComposition
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "captionComposition";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CaptionComposition, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public CaptionComposition(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Padding - Desktop: Enter the caption padding for desktop
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingDesktop")]
+		public decimal CaptionPaddingDesktop => GetCaptionPaddingDesktop(this);
+
+		/// <summary>Static getter for Padding - Desktop</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetCaptionPaddingDesktop(ICaptionComposition that) => that.Value<decimal>("captionPaddingDesktop");
+
+		///<summary>
+		/// Padding - Mobile: Enter the caption padding for phone and phablets
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingMobile")]
+		public decimal CaptionPaddingMobile => GetCaptionPaddingMobile(this);
+
+		/// <summary>Static getter for Padding - Mobile</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetCaptionPaddingMobile(ICaptionComposition that) => that.Value<decimal>("captionPaddingMobile");
+
+		///<summary>
+		/// Padding - Tablet: Enter the caption padding for tablet
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("captionPaddingTablet")]
+		public decimal CaptionPaddingTablet => GetCaptionPaddingTablet(this);
+
+		/// <summary>Static getter for Padding - Tablet</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetCaptionPaddingTablet(ICaptionComposition that) => that.Value<decimal>("captionPaddingTablet");
+
+		///<summary>
+		/// Description: This is the caption description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("description")]
+		public string Description => GetDescription(this);
+
+		/// <summary>Static getter for Description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetDescription(ICaptionComposition that) => that.Value<string>("description");
+
+		///<summary>
+		/// Title: this is the title for the caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("title")]
+		public string Title => GetTitle(this);
+
+		/// <summary>Static getter for Title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetTitle(ICaptionComposition that) => that.Value<string>("title");
+	}
+
+	// Mixin Content Type with alias "imageComposition"
+	/// <summary>Image</summary>
+	public partial interface IImageComposition : IPublishedElement
+	{
+		/// <summary>Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image { get; }
+
+		/// <summary>Image Alt tag</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string ImageAltTag { get; }
+
+		/// <summary>Image padding desktop</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal ImagePaddingDesktop { get; }
+
+		/// <summary>Image padding mobile</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal ImagePaddingMobile { get; }
+
+		/// <summary>Image padding tablet</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal ImagePaddingTablet { get; }
+	}
+
+	/// <summary>Image</summary>
+	[PublishedModel("imageComposition")]
+	public partial class ImageComposition : PublishedElementModel, IImageComposition
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "imageComposition";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImageComposition, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public ImageComposition(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Image: The image accompanying the caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("image")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => GetImage(this);
+
+		/// <summary>Static getter for Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetImage(IImageComposition that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("image");
+
+		///<summary>
+		/// Image Alt tag: Give the image an alt tag conaining the keyword, this improves SEO
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageAltTag")]
+		public string ImageAltTag => GetImageAltTag(this);
+
+		/// <summary>Static getter for Image Alt tag</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetImageAltTag(IImageComposition that) => that.Value<string>("imageAltTag");
+
+		///<summary>
+		/// Image padding desktop: Padding for desktop resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingDesktop")]
+		public decimal ImagePaddingDesktop => GetImagePaddingDesktop(this);
+
+		/// <summary>Static getter for Image padding desktop</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetImagePaddingDesktop(IImageComposition that) => that.Value<decimal>("imagePaddingDesktop");
+
+		///<summary>
+		/// Image padding mobile: Padding for cellphone resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingMobile")]
+		public decimal ImagePaddingMobile => GetImagePaddingMobile(this);
+
+		/// <summary>Static getter for Image padding mobile</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetImagePaddingMobile(IImageComposition that) => that.Value<decimal>("imagePaddingMobile");
+
+		///<summary>
+		/// Image padding tablet: Padding for tablet resolutions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imagePaddingTablet")]
+		public decimal ImagePaddingTablet => GetImagePaddingTablet(this);
+
+		/// <summary>Static getter for Image padding tablet</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetImagePaddingTablet(IImageComposition that) => that.Value<decimal>("imagePaddingTablet");
+	}
+
+	/// <summary>Call to action</summary>
+	[PublishedModel("callToActionComposition")]
+	public partial class CallToActionComposition : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "callToActionComposition";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CallToActionComposition, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public CallToActionComposition(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Call to action color: Choose a call to action color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("callToActionColor")]
+		public string CallToActionColor => this.Value<string>("callToActionColor");
+
+		///<summary>
+		/// Call to action link: What link do you want the call to action to direct to
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("callToActionLink")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link> CallToActionLink => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link>>("callToActionLink");
+
+		///<summary>
+		/// Call to action size: Choose a style for the call to action
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("callToActionSize")]
+		public string CallToActionSize => this.Value<string>("callToActionSize");
+
+		///<summary>
+		/// Call to action style: Choose a call to action style
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("callToActionStyle")]
+		public string CallToActionStyle => this.Value<string>("callToActionStyle");
 	}
 
 	/// <summary>Folder</summary>
