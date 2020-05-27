@@ -86,4 +86,31 @@
       <file name="/umbraco/lib/tinymce/plugins/noneditable/plugin.min.js" />
     </files>
   </item>
+  <item key="L3VtYnJhY28vYXNzZXRzL2Nzcy9jYW52YXNkZXNpZ25lci5jc3M7" file="D:\Repositories\Github\Umbraco-setup\App_Data\TEMP\ClientDependency\381800783_30370e4a09f84c5db65d772959df3167.cdC" compression="gzip" version="381800783">
+    <files>
+      <file name="/umbraco/assets/css/canvasdesigner.css" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY28vbGliL2pxdWVyeS9qcXVlcnkubWluLmpzOy91bWJyYWNvL2xpYi9hbmd1bGFyL2FuZ3VsYXIuanM7L3VtYnJhY28vbGliL3VuZGVyc2NvcmUvdW5kZXJzY29yZS1taW4uanM7L3VtYnJhY28vbGliL3VtYnJhY28vRXh0ZW5zaW9ucy5qczsvdW1icmFjby9qcy9hcHAuanM7L3VtYnJhY28vanMvdW1icmFjby5yZXNvdXJjZXMuanM7L3VtYnJhY28vanMvdW1icmFjby5zZXJ2aWNlcy5qczsvdW1icmFjby9qcy91bWJyYWNvLmludGVyY2VwdG9ycy5qczs" file="D:\Repositories\Github\Umbraco-setup\App_Data\TEMP\ClientDependency\381800783_1b7c4d43e2494561864a6ea5446c83e6.cdJ" compression="gzip" version="381800783">
+    <files>
+      <file name="/umbraco/lib/jquery/jquery.min.js" />
+      <file name="/umbraco/lib/angular/angular.js" />
+      <file name="/umbraco/lib/underscore/underscore-min.js" />
+      <file name="/umbraco/lib/umbraco/Extensions.js" />
+      <file name="/umbraco/js/app.js" />
+      <file name="/umbraco/js/umbraco.resources.js" />
+      <file name="/umbraco/js/umbraco.services.js" />
+      <file name="/umbraco/js/umbraco.interceptors.js" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY28vbGliL3NpZ25hbHIvanF1ZXJ5LnNpZ25hbFIuanM7" file="D:\Repositories\Github\Umbraco-setup\App_Data\TEMP\ClientDependency\381800783_73841456080b4bc7a12ed8dc159e1adf.cdJ" compression="gzip" version="381800783">
+    <files>
+      <file name="/umbraco/lib/signalr/jquery.signalR.js" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY28vanMvdW1icmFjby5wcmV2aWV3LmpzOw" file="D:\Repositories\Github\Umbraco-setup\App_Data\TEMP\ClientDependency\381800783_56a7b77a23de4794ab4eec19c0c6cf17.cdJ" compression="gzip" version="381800783">
+    <files>
+      <file name="/umbraco/js/umbraco.preview.js" />
+    </files>
+  </item>
 </map>

@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bcdd4e7f6eab668a")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9a12138e11826cab")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -998,6 +998,41 @@ namespace Umbraco.Web.PublishedModels
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("backgroundImage");
 
 		///<summary>
+		/// Animation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimation")]
+		public string BlockAnimation => this.Value<string>("blockAnimation");
+
+		///<summary>
+		/// Animation delay
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimationDelay")]
+		public decimal BlockAnimationDelay => this.Value<decimal>("blockAnimationDelay");
+
+		///<summary>
+		/// Animation duration
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimationDuration")]
+		public decimal BlockAnimationDuration => this.Value<decimal>("blockAnimationDuration");
+
+		///<summary>
+		/// Animation Easing
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimationEasing")]
+		public string BlockAnimationEasing => this.Value<string>("blockAnimationEasing");
+
+		///<summary>
+		/// Animation Offset
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimationOffset")]
+		public decimal BlockAnimationOffset => this.Value<decimal>("blockAnimationOffset");
+
+		///<summary>
 		/// Padding - Desktop: This determines the padding of the block
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1100,7 +1135,14 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("description")]
-		public string Description => global::Umbraco.Web.PublishedModels.CaptionComposition.GetDescription(this);
+		public global::System.Web.IHtmlString Description => global::Umbraco.Web.PublishedModels.CaptionComposition.GetDescription(this);
+
+		///<summary>
+		/// Padding
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("padding")]
+		public object Padding => global::Umbraco.Web.PublishedModels.CaptionComposition.GetPadding(this);
 
 		///<summary>
 		/// Title: this is the title for the caption
@@ -1242,7 +1284,11 @@ namespace Umbraco.Web.PublishedModels
 
 		/// <summary>Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		string Description { get; }
+		global::System.Web.IHtmlString Description { get; }
+
+		/// <summary>Padding</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		object Padding { get; }
 
 		/// <summary>Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1312,11 +1358,22 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("description")]
-		public string Description => GetDescription(this);
+		public global::System.Web.IHtmlString Description => GetDescription(this);
 
 		/// <summary>Static getter for Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static string GetDescription(ICaptionComposition that) => that.Value<string>("description");
+		public static global::System.Web.IHtmlString GetDescription(ICaptionComposition that) => that.Value<global::System.Web.IHtmlString>("description");
+
+		///<summary>
+		/// Padding
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("padding")]
+		public object Padding => GetPadding(this);
+
+		/// <summary>Static getter for Padding</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static object GetPadding(ICaptionComposition that) => that.Value("padding");
 
 		///<summary>
 		/// Title: this is the title for the caption
@@ -1488,6 +1545,217 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("callToActionStyle")]
 		public string CallToActionStyle => this.Value<string>("callToActionStyle");
+	}
+
+	/// <summary>AOS</summary>
+	[PublishedModel("aOS")]
+	public partial class AOS : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "aOS";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AOS, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public AOS(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Animation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("animation")]
+		public string Animation => this.Value<string>("animation");
+
+		///<summary>
+		/// Delay
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("delay")]
+		public decimal Delay => this.Value<decimal>("delay");
+
+		///<summary>
+		/// Duration
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("duration")]
+		public decimal Duration => this.Value<decimal>("duration");
+
+		///<summary>
+		/// Easing
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("easing")]
+		public string Easing => this.Value<string>("easing");
+
+		///<summary>
+		/// Offset
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("offset")]
+		public decimal Offset => this.Value<decimal>("offset");
+	}
+
+	/// <summary>Slick slider</summary>
+	[PublishedModel("slickSlider")]
+	public partial class SlickSlider : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "slickSlider";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SlickSlider, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public SlickSlider(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundColor")]
+		public string BackgroundColor => this.Value<string>("backgroundColor");
+
+		///<summary>
+		/// Minimum Height
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("minimumHeight")]
+		public string MinimumHeight => this.Value<string>("minimumHeight");
+
+		///<summary>
+		/// Slides
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("slides")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SlickSlide> Slides => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SlickSlide>>("slides");
+	}
+
+	/// <summary>Slick slide</summary>
+	[PublishedModel("slickSlide")]
+	public partial class SlickSlide : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "slickSlide";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SlickSlide, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public SlickSlide(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Background
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("background")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Background => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("background");
+
+		///<summary>
+		/// Call to action
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("callToAction")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CallToActionComposition> CallToAction => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CallToActionComposition>>("callToAction");
+
+		///<summary>
+		/// Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("content")]
+		public object Content => this.Value("content");
+
+		///<summary>
+		/// Content Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("contentColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor ContentColor => this.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("contentColor");
+
+		///<summary>
+		/// Content flow
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("contentFlow")]
+		public string ContentFlow => this.Value<string>("contentFlow");
+
+		///<summary>
+		/// Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("description")]
+		public string Description => this.Value<string>("description");
+
+		///<summary>
+		/// Horizontal Alignment
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("horizontalAlignment")]
+		public string HorizontalAlignment => this.Value<string>("horizontalAlignment");
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("image")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("image");
+
+		///<summary>
+		/// Settings
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("settings")]
+		public object Settings => this.Value("settings");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("title")]
+		public string Title => this.Value<string>("title");
+
+		///<summary>
+		/// Vertical Alignment
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("verticalAlignment")]
+		public string VerticalAlignment => this.Value<string>("verticalAlignment");
 	}
 
 	/// <summary>Folder</summary>

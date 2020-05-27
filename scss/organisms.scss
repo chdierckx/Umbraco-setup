@@ -1,0 +1,83 @@
+.slick-component {
+    .backgroundImage {
+        position: absolute; 
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .caption {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .slick-slide {
+        position: relative;
+    }
+    .content {
+        display: flex;
+        flex: 1;
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .slick-prev, .slick-next {
+        z-index: 5000;
+    }
+    .slick-prev {
+        left: 45px;
+    }
+    .slick-next {
+        right: 45px;
+    }
+    .slick-dotted.slick-slider {
+        margin-bottom: 0px;
+    }
+    &.vh-Height-100 {
+        .slick-initialized .slick-slide {
+            display: flex;
+            flex: 1;
+        }
+        .slick-slider, .slide, .slick-list, .slick-track {
+            min-height: 100vh;
+        }
+      }
+      &.vh-Height-75 {
+        .slick-initialized .slick-slide {
+            display: flex;
+            flex: 1;
+        }
+        .slick-slider, .slide, .slick-list, .slick-track {
+            min-height: 75vh;
+        }
+      }
+      &.vh-Height-50 {
+        .slick-initialized .slick-slide {
+            display: flex;
+            flex: 1;
+        }
+        .slick-slider, .slide, .slick-list, .slick-track {
+            min-height: 50vh;
+        }
+      }
+      &.vh-Height-33 {
+        .slick-initialized .slick-slide {
+            display: flex;
+            flex: 1;
+        }
+        .slick-slider, .slide, .slick-list, .slick-track {
+            min-height: 50vh;
+        }
+      }
+      &.vh-Height-25 {
+        .slick-initialized .slick-slide {
+            display: flex;
+            flex: 1;
+        }
+        .slick-slider, .slide, .slick-list, .slick-track {
+            min-height: 50vh;
+        }
+      }
+}

@@ -37,44 +37,6 @@
   .content {
     display: flex;
     flex: 1;
-    .row {
-      &.flow-left-to-right {
-        flex-direction: row-reverse;
-        &.valign-top {
-          align-items: flex-start;
-        }
-        &.valign-bottom {
-          align-items: flex-end;
-        }
-        &.valign-center {
-          align-items: center;
-        } 
-      }
-      &.flow-right-to-left {
-        &.valign-top {
-          align-items: flex-start;
-        }
-        &.valign-bottom {
-          align-items: flex-end;
-        }
-        &.valign-center {
-          align-items: center;
-        }  
-      }
-      &.flow-top-to-bottom{
-        flex-direction: column;
-        &.valign-top {justify-content: flex-start;}
-        &.valign-bottom {justify-content: flex-end;}
-        &.valign-center {justify-content: center;} 
-      }
-      &.flow-bottom-to-top {
-        flex-direction: column-reverse;
-        &.valign-top {justify-content: flex-start;}
-        &.valign-bottom {justify-content: flex-end;}
-        &.valign-center {justify-content: center;} 
-      }
-    }
-
   }
   &.infoblock-a {}
   &.infoblock-b {}

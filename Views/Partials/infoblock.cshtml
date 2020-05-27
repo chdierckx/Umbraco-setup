@@ -4,13 +4,22 @@
    var image = Model.Value<IPublishedContent>("image");
    var bgImage = Model.Value<IPublishedContent>("backgroundImage"); 
 }
-<div class="infoblock @Model.CustomClass vh-@Model.MinimumHeight @Model.InfoblockType" style="background-color: #@Model.BackgroundColor;">
+<div class="infoblock @Model.CustomClass vh-@Model.MinimumHeight @Model.InfoblockType" 
+style="background-color: #@Model.BackgroundColor;" 
+>
     @{
         if (bgImage != null) {
             <div class="backgroundImage" style="background-image: url('@bgImage.Url')"></div>
         }       
     }
-    <div class="content align-items-@Model.VerticalAlignment p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" style="color: #@Model.ContentColor;">
+    <div class="content align-items-@Model.VerticalAlignment p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" 
+    style="color: #@Model.ContentColor;"
+    data-aos="@Model.BlockAnimation" 
+    data-aos-offset="@Model.BlockAnimationOffset" 
+    data-aos-easing="@Model.BlockAnimationEasing" 
+    data-aos-duration="@Model.BlockAnimationDuration"
+    data-aos-delay="@Model.BlockAnimationDelay"
+    >
         <div class="container @Model.ContainerSize">
             <div class="row flow-@Model.ContentFlow valign-@Model.VerticalAlignment">
                 @{
@@ -27,9 +36,9 @@
                         <h1> 
                             @Model.Title
                         </h1>
-                        <p> 
-                            @Model.Description  
-                        </p>
+                        <span> 
+                            @Html.Raw(Model.Description)
+                        </span>
                     @{
                         if (Model.CallToAction.Any()) {
                             <div class="cta-wrapper">

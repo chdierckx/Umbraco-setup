@@ -1,0 +1,32 @@
+﻿@model Umbraco.Web.PublishedModels.SlickSlider
+
+<div class="slick-component vh-@Model.MinimumHeight" style="background-color: #@Model.BackgroundColor;">
+	<div id="slick-slider"> 
+		@{
+			if (Model.Slides.Any()) {
+				foreach (var slickSlides in Model.Slides.OfType<SlickSlide>()) {
+					<div class="slide">
+						<div class="backgroundImage" style="background-image: url('@slickSlides.Background.Url')"></div>
+						<div class="content" style="color: #@slickSlides.ContentColor;">
+							<div class="container">
+								<div class="row flow-@slickSlides.ContentFlow valign-@slickSlides.VerticalAlignment halign-@slickSlides.HorizontalAlignment">
+									<div class="col-md-6">
+										<div class="image">
+											<img class="img-fluid" src="@slickSlides.Image.Url">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="caption">
+											<h2 class="title">@slickSlides.Title</h2>
+											<div class="description">@Html.Raw(slickSlides.Description)</div>
+										</div>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				}
+			}
+		}
+	</div>
+</div>
