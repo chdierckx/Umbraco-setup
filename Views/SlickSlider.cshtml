@@ -1,7 +1,7 @@
 ﻿@model Umbraco.Web.PublishedModels.SlickSlider
 
 <div class="slick-component vh-@Model.MinimumHeight" style="background-color: #@Model.BackgroundColor;">
-	<div id="slick-slider"> 
+	<div id="@Model.SliderName"> 
 		@{
 			if (Model.Slides.Any()) {
 				foreach (var slickSlides in Model.Slides.OfType<SlickSlide>()) {
@@ -30,3 +30,16 @@
 		}
 	</div>
 </div>
+
+<script>
+	//Slick slider
+	$('#@Model.SliderName').slick({
+		autoplay: @Html.Raw(Model.Autoplay?"true":"false"),
+		autoplaySpeed: @Model.AutoPlaySpeed,
+		fade: true,
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1
+	});
+</script>

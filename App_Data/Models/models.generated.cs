@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9a12138e11826cab")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "48ccc564adec6d10")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -1103,6 +1103,41 @@ namespace Umbraco.Web.PublishedModels
 		public string MinimumHeight => this.Value<string>("minimumHeight");
 
 		///<summary>
+		/// Parallax - Enable
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxEnable")]
+		public bool ParallaxEnable => this.Value<bool>("parallaxEnable");
+
+		///<summary>
+		/// Parallax - Horizontal
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxHorizontal")]
+		public bool ParallaxHorizontal => this.Value<bool>("parallaxHorizontal");
+
+		///<summary>
+		/// Parallax
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxSeperator")]
+		public object ParallaxSeperator => this.Value("parallaxSeperator");
+
+		///<summary>
+		/// Parallax - Speed
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxSpeed")]
+		public decimal ParallaxSpeed => this.Value<decimal>("parallaxSpeed");
+
+		///<summary>
+		/// Parallax - Vertical
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxVertical")]
+		public bool ParallaxVertical => this.Value<bool>("parallaxVertical");
+
+		///<summary>
 		/// Vertical alignment: The vertical alignment of the total content block
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1634,6 +1669,20 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Autoplay
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("autoplay")]
+		public bool Autoplay => this.Value<bool>("autoplay");
+
+		///<summary>
+		/// Autoplay Speed
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("autoPlaySpeed")]
+		public decimal AutoPlaySpeed => this.Value<decimal>("autoPlaySpeed");
+
+		///<summary>
 		/// Background Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1646,6 +1695,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("minimumHeight")]
 		public string MinimumHeight => this.Value<string>("minimumHeight");
+
+		///<summary>
+		/// Slider name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("sliderName")]
+		public string SliderName => this.Value<string>("sliderName");
 
 		///<summary>
 		/// Slides
@@ -1756,6 +1812,67 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("verticalAlignment")]
 		public string VerticalAlignment => this.Value<string>("verticalAlignment");
+	}
+
+	/// <summary>Parallax</summary>
+	[PublishedModel("parallax")]
+	public partial class Parallax : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "parallax";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Parallax, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Parallax(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Parallax enabled
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxEnabled")]
+		public bool ParallaxEnabled => this.Value<bool>("parallaxEnabled");
+
+		///<summary>
+		/// Parallax - Horizontal
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxHorizontal")]
+		public bool ParallaxHorizontal => this.Value<bool>("parallaxHorizontal");
+
+		///<summary>
+		/// Parallax
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxSeperator")]
+		public object ParallaxSeperator => this.Value("parallaxSeperator");
+
+		///<summary>
+		/// Parallax speed
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxSpeed")]
+		public decimal ParallaxSpeed => this.Value<decimal>("parallaxSpeed");
+
+		///<summary>
+		/// Parallax - Vertical
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxVertical")]
+		public bool ParallaxVertical => this.Value<bool>("parallaxVertical");
 	}
 
 	/// <summary>Folder</summary>

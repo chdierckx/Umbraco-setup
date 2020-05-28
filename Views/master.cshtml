@@ -26,6 +26,10 @@
     <link rel="stylesheet" type="text/css" href="~/node_modules/slick-carousel/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="~/node_modules/slick-carousel/slick/slick-theme.css"/>
 
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    @*Slick slider*@
+    <script src="~/node_modules/slick-carousel/slick/slick.min.js"></script>
+    
     @RenderSection("Header", required: false)
 </head>
 
@@ -39,12 +43,11 @@
     
     @Html.Partial("~/views/partials/Main/Footer.cshtml")
 
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
 
     @*Popper*@
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="@Url.Content("~/node_modules/@popperjs/core/dist/umd/popper.min.js")"></script>
 
     @*Bootstrap*@
     <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -52,10 +55,11 @@
     @*AOS - Animate on scroll*@
     <script src="~/node_modules/aos/dist/aos.js"></script>
     
-    @*Slick slider*@
-    <script src="~/node_modules/slick-carousel/slick/slick.min.js"></script>
 
-    
+
+    @*Parallax - Rellax*@
+    @* <script src="~/node_modules/rellax/rellax.js"></script> *@
+
     @*Custom js*@
     <script src="@Url.Content("~/scripts/script.js")"></script>
 
