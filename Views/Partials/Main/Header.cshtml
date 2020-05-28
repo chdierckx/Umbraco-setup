@@ -11,7 +11,7 @@
 
 <header class="header">
 
-    <div class="logo">
+    @* <div class="logo">
         @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
         {
             <div class="nav-link--home">
@@ -22,16 +22,7 @@
         {
             <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@home.Sitename</a>
         }
-    </div>
+    </div> *@
 
-    <nav class="nav-bar top-nav">
-        @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
-    </nav>
-
-    <div class="mobile-nav-handler">
-        <div class="hamburger lines" id="toggle-nav">
-            <span></span>
-        </div>
-    </div>
-
+    @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
 </header>

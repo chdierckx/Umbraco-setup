@@ -8,6 +8,7 @@
     "build": ""
   },
   "dependencies": {
+    "@popperjs/core": "^2.4.0",
     "aos": "^2.3.4",
     "bootstrap": "4.3.1",
     "slick-carousel": "^1.8.1"
