@@ -11,6 +11,7 @@
     "@popperjs/core": "^2.4.0",
     "aos": "^2.3.4",
     "bootstrap": "4.3.1",
+    "rellax": "^1.12.1",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {},
