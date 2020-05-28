@@ -8,15 +8,18 @@ AOS.init({
 
 
 
-$('#slick-slider').slick({
-    autoplay: true,
-    autoplaySpeed: 5000,
-    fade: true,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1
- });
+ //Parallax - Rellax
+// var rellax = new Rellax('.rellax', {
+//   speed: -2,
+//   center: false,
+//   wrapper: null,
+//   round: true,
+//   vertical: true,
+//   horizontal: false
+// });
+
+
+
 
 //Slick slider with animate css
 
