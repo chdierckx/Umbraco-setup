@@ -12147,8 +12147,7 @@ h1, h2, h3 {
   background-size: cover;
 }
 .slick-component .caption {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2.5rem;
 }
 .slick-component .slick-slide {
   position: relative;

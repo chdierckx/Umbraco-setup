@@ -5,8 +5,13 @@
 		@{
 			if (Model.Slides.Any()) {
 				foreach (var slickSlides in Model.Slides.OfType<SlickSlide>()) {
-					<div class="slide">
-						<div class="backgroundImage" style="background-image: url('@slickSlides.Background.Url')"></div>
+					<div class="slide" style="background-color: #@slickSlides.BackgroundColor;">
+						@{
+							var bgImage = Model.Value<IPublishedContent>("backgroundImage"); 
+							if (bgImage != null) {
+								<div class="backgroundImage" style="background-image: url('@slickSlides.Background.Url')"></div>
+							}       
+						}
 						<div class="content" style="color: #@slickSlides.ContentColor;">
 							<div class="container">
 								<div class="row flow-@slickSlides.ContentFlow valign-@slickSlides.VerticalAlignment halign-@slickSlides.HorizontalAlignment">
@@ -17,7 +22,7 @@
 									</div>
 									<div class="col-md-6">
 										<div class="caption">
-											<h2 class="title">@slickSlides.Title</h2>
+											<h1 class="title">@slickSlides.Title</h1>
 											<div class="description">@Html.Raw(slickSlides.Description)</div>
 										</div>
 									</div>
@@ -36,10 +41,21 @@
 	$('#@Model.SliderName').slick({
 		autoplay: @Html.Raw(Model.Autoplay?"true":"false"),
 		autoplaySpeed: @Model.AutoPlaySpeed,
-		fade: true,
-		dots: true,
-		infinite: true,
-		speed: 500,
+		fade: @Html.Raw(Model.Fade?"true":"false"),
+		dots: @Html.Raw(Model.Dots?"true":"false"),
+		arrows:@Html.Raw(Model.Arrows?"true":"false"),
+		infinite: @Html.Raw(Model.Infinite?"true":"false"),
+		speed: @Model.TransitionSpeed,
+		cssEase: 'cubic-bezier(.3,.44,.69,.55)',
+		useTransform: true,
+		centerPadding: "0px",
+		draggable: @Html.Raw(Model.Draggable?"true":"false"),
+		pauseOnHover: @Html.Raw(Model.PauseOnHover?"true":"false"),
+		swipe: @Html.Raw(Model.Swipe?"true":"false"),
+		touchMove: @Html.Raw(Model.Touchmove?"true":"false"),
+		vertical: @Html.Raw(Model.Vertical?"true":"false"),
+		verticalScrolling: @Html.Raw(Model.VerticalScrolling?"true":"false"),
+		slidesToScroll:1,
 		slidesToShow: 1
 	});
 </script>

@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "48ccc564adec6d10")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6b7dd0ea4980e9d3")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 
 // FILE: models.generated.cs
@@ -1683,6 +1683,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Arrows: Show navigation arrows
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("arrows")]
+		public bool Arrows => this.Value<bool>("arrows");
+
+		///<summary>
 		/// Autoplay
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1697,11 +1704,39 @@ namespace Umbraco.Web.PublishedModels
 		public decimal AutoPlaySpeed => this.Value<decimal>("autoPlaySpeed");
 
 		///<summary>
-		/// Background Color
+		/// Slider background color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("backgroundColor")]
 		public string BackgroundColor => this.Value<string>("backgroundColor");
+
+		///<summary>
+		/// Dots: Show the navigation dots or not
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("dots")]
+		public bool Dots => this.Value<bool>("dots");
+
+		///<summary>
+		/// Draggable
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("draggable")]
+		public bool Draggable => this.Value<bool>("draggable");
+
+		///<summary>
+		/// Fade
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("fade")]
+		public bool Fade => this.Value<bool>("fade");
+
+		///<summary>
+		/// Infinite: Loop through all slides
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("infinite")]
+		public bool Infinite => this.Value<bool>("infinite");
 
 		///<summary>
 		/// Minimum Height
@@ -1709,6 +1744,20 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("minimumHeight")]
 		public string MinimumHeight => this.Value<string>("minimumHeight");
+
+		///<summary>
+		/// Pause On Hover
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("pauseOnHover")]
+		public bool PauseOnHover => this.Value<bool>("pauseOnHover");
+
+		///<summary>
+		/// Settings
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("settings")]
+		public object Settings => this.Value("settings");
 
 		///<summary>
 		/// Slider name
@@ -1723,6 +1772,41 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("slides")]
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SlickSlide> Slides => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SlickSlide>>("slides");
+
+		///<summary>
+		/// Swipe
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("swipe")]
+		public bool Swipe => this.Value<bool>("swipe");
+
+		///<summary>
+		/// Touchmove
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("touchmove")]
+		public bool Touchmove => this.Value<bool>("touchmove");
+
+		///<summary>
+		/// Transition speed
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("transitionSpeed")]
+		public decimal TransitionSpeed => this.Value<decimal>("transitionSpeed");
+
+		///<summary>
+		/// Vertical: Transition vertically
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("vertical")]
+		public bool Vertical => this.Value<bool>("vertical");
+
+		///<summary>
+		/// Vertical scrolling
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("verticalScrolling")]
+		public bool VerticalScrolling => this.Value<bool>("verticalScrolling");
 	}
 
 	/// <summary>Slick slide</summary>
@@ -1758,11 +1842,11 @@ namespace Umbraco.Web.PublishedModels
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Background => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("background");
 
 		///<summary>
-		/// Call to action
+		/// Background color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("callToAction")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CallToActionComposition> CallToAction => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CallToActionComposition>>("callToAction");
+		[ImplementPropertyType("backgroundColor")]
+		public string BackgroundColor => this.Value<string>("backgroundColor");
 
 		///<summary>
 		/// Content
@@ -1790,7 +1874,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("description")]
-		public string Description => this.Value<string>("description");
+		public global::System.Web.IHtmlString Description => this.Value<global::System.Web.IHtmlString>("description");
 
 		///<summary>
 		/// Horizontal Alignment
