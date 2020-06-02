@@ -26,10 +26,12 @@
     <link rel="stylesheet" type="text/css" href="~/node_modules/slick-carousel/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="~/node_modules/slick-carousel/slick/slick-theme.css"/>
 
+    @*Jquery*@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
     @*Slick slider*@
     <script src="~/node_modules/slick-carousel/slick/slick.min.js"></script>
-    
+
     @RenderSection("Header", required: false)
 </head>
 
@@ -43,6 +45,7 @@
     
     @Html.Partial("~/views/partials/Main/Footer.cshtml")
 
+    @*Jquery validate*@
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
 
@@ -50,11 +53,11 @@
     <script src="@Url.Content("~/node_modules/@popperjs/core/dist/umd/popper.min.js")"></script>
 
     @*Bootstrap*@
-    <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-     
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+
     @*AOS - Animate on scroll*@
     <script src="~/node_modules/aos/dist/aos.js"></script>
-    
 
 
     @*Parallax - Rellax*@

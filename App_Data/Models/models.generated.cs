@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6b7dd0ea4980e9d3")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "eac5e87785814601")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -506,13 +506,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("bodyText")]
-		public global::Newtonsoft.Json.Linq.JToken BodyText => this.Value<global::Newtonsoft.Json.Linq.JToken>("bodyText");
-
-		///<summary>
 		/// Color Theme
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -562,39 +555,18 @@ namespace Umbraco.Web.PublishedModels
 		public string FooterHeader => this.Value<string>("footerHeader");
 
 		///<summary>
+		/// Grid layout home
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("gridLayoutHome")]
+		public global::Newtonsoft.Json.Linq.JToken GridLayoutHome => this.Value<global::Newtonsoft.Json.Linq.JToken>("gridLayoutHome");
+
+		///<summary>
 		/// Hero Background: Spice up the homepage by adding a beautiful photo that relates to your business
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("HeroBackgroundImage")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent HeroBackgroundImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("HeroBackgroundImage");
-
-		///<summary>
-		/// Call To Action Caption: The caption on the button
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("heroCTACaption")]
-		public string HeroCtacaption => this.Value<string>("heroCTACaption");
-
-		///<summary>
-		/// Call To Action Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("HeroCtalink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent HeroCtalink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("HeroCtalink");
-
-		///<summary>
-		/// Description
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("heroDescription")]
-		public string HeroDescription => this.Value<string>("heroDescription");
-
-		///<summary>
-		/// Header: This is the main headline for the hero area on the Homepage
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("heroHeader")]
-		public string HeroHeader => this.Value<string>("heroHeader");
 
 		///<summary>
 		/// Logo: Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results
