@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9f0c7e4bd75bf0d1")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3c2c76b5dd0bc7a4")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -1024,6 +1024,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("callToAction")]
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CallToActionComposition> CallToAction => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CallToActionComposition>>("callToAction");
+
+		///<summary>
+		/// Call to action
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("callToActionSeperator")]
+		public object CallToActionSeperator => this.Value("callToActionSeperator");
 
 		///<summary>
 		/// Container size: This defines the inner container size
