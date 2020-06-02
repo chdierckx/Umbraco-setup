@@ -11,8 +11,6 @@ AOS.init({
 
 
 
-
-
 //Slick slider with animate css
 
 // $(document).ready(function() {
