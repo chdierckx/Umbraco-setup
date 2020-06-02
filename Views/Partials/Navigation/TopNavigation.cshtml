@@ -4,11 +4,8 @@
     var site = Model.Root();
     var selection = site.Children.Where(x => x.IsVisible());
 }
-<!-- comment out the following line if you want to remove the root node name from the top navigation -->
-@* <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a> *@
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black">
-  <a class="navbar-brand" href="@site.Url">UXUI</a>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -21,4 +18,4 @@
         }
     </ul>
   </div>
-</nav>
+

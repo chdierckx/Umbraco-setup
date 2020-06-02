@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
-    var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url : String.Empty;
+    @* var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url : String.Empty; *@
 }
 
 @Html.GetGridHtml(Model, "gridLayoutHome", "bootstrap3-fluid")
