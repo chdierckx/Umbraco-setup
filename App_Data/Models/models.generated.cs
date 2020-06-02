@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3c2c76b5dd0bc7a4")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "88be34ae690d15f1")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -1075,39 +1075,11 @@ namespace Umbraco.Web.PublishedModels
 		public string MinimumHeight => this.Value<string>("minimumHeight");
 
 		///<summary>
-		/// Parallax - Enable
+		/// Background parallax
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("parallaxEnable")]
-		public bool ParallaxEnable => this.Value<bool>("parallaxEnable");
-
-		///<summary>
-		/// Parallax - Horizontal
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("parallaxHorizontal")]
-		public bool ParallaxHorizontal => this.Value<bool>("parallaxHorizontal");
-
-		///<summary>
-		/// Parallax
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("parallaxSeperator")]
-		public object ParallaxSeperator => this.Value("parallaxSeperator");
-
-		///<summary>
-		/// Parallax - Speed
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("parallaxSpeed")]
-		public decimal ParallaxSpeed => this.Value<decimal>("parallaxSpeed");
-
-		///<summary>
-		/// Parallax - Vertical
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("parallaxVertical")]
-		public bool ParallaxVertical => this.Value<bool>("parallaxVertical");
+		[ImplementPropertyType("parallaxBgEnable")]
+		public bool ParallaxBgEnable => this.Value<bool>("parallaxBgEnable");
 
 		///<summary>
 		/// Vertical alignment: The vertical alignment of the total content block
@@ -1117,27 +1089,6 @@ namespace Umbraco.Web.PublishedModels
 		public string VerticalAlignment => this.Value<string>("verticalAlignment");
 
 		///<summary>
-		/// Padding - Desktop: Enter the caption padding for desktop
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingDesktop")]
-		public decimal CaptionPaddingDesktop => global::Umbraco.Web.PublishedModels.CaptionComposition.GetCaptionPaddingDesktop(this);
-
-		///<summary>
-		/// Padding - Mobile: Enter the caption padding for phone and phablets
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingMobile")]
-		public decimal CaptionPaddingMobile => global::Umbraco.Web.PublishedModels.CaptionComposition.GetCaptionPaddingMobile(this);
-
-		///<summary>
-		/// Padding - Tablet: Enter the caption padding for tablet
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingTablet")]
-		public decimal CaptionPaddingTablet => global::Umbraco.Web.PublishedModels.CaptionComposition.GetCaptionPaddingTablet(this);
-
-		///<summary>
 		/// Description: This is the caption description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1145,11 +1096,11 @@ namespace Umbraco.Web.PublishedModels
 		public global::System.Web.IHtmlString Description => global::Umbraco.Web.PublishedModels.CaptionComposition.GetDescription(this);
 
 		///<summary>
-		/// Padding
+		/// Parllax Caption
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("padding")]
-		public object Padding => global::Umbraco.Web.PublishedModels.CaptionComposition.GetPadding(this);
+		[ImplementPropertyType("parallaxCaptionEnable")]
+		public bool ParallaxCaptionEnable => global::Umbraco.Web.PublishedModels.CaptionComposition.GetParallaxCaptionEnable(this);
 
 		///<summary>
 		/// Title: this is the title for the caption
@@ -1173,25 +1124,11 @@ namespace Umbraco.Web.PublishedModels
 		public string ImageAltTag => global::Umbraco.Web.PublishedModels.ImageComposition.GetImageAltTag(this);
 
 		///<summary>
-		/// Image padding desktop: Padding for desktop resolutions
+		/// Parallax Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingDesktop")]
-		public decimal ImagePaddingDesktop => global::Umbraco.Web.PublishedModels.ImageComposition.GetImagePaddingDesktop(this);
-
-		///<summary>
-		/// Image padding mobile: Padding for cellphone resolutions
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingMobile")]
-		public decimal ImagePaddingMobile => global::Umbraco.Web.PublishedModels.ImageComposition.GetImagePaddingMobile(this);
-
-		///<summary>
-		/// Image padding tablet: Padding for tablet resolutions
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingTablet")]
-		public decimal ImagePaddingTablet => global::Umbraco.Web.PublishedModels.ImageComposition.GetImagePaddingTablet(this);
+		[ImplementPropertyType("parallaxImageEnable")]
+		public bool ParallaxImageEnable => global::Umbraco.Web.PublishedModels.ImageComposition.GetParallaxImageEnable(this);
 	}
 
 	// Mixin Content Type with alias "contentGridDefault"
@@ -1277,25 +1214,13 @@ namespace Umbraco.Web.PublishedModels
 	/// <summary>Caption</summary>
 	public partial interface ICaptionComposition : IPublishedElement
 	{
-		/// <summary>Padding - Desktop</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		decimal CaptionPaddingDesktop { get; }
-
-		/// <summary>Padding - Mobile</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		decimal CaptionPaddingMobile { get; }
-
-		/// <summary>Padding - Tablet</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		decimal CaptionPaddingTablet { get; }
-
 		/// <summary>Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		global::System.Web.IHtmlString Description { get; }
 
-		/// <summary>Padding</summary>
+		/// <summary>Parllax Caption</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		object Padding { get; }
+		bool ParallaxCaptionEnable { get; }
 
 		/// <summary>Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1328,39 +1253,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Padding - Desktop: Enter the caption padding for desktop
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingDesktop")]
-		public decimal CaptionPaddingDesktop => GetCaptionPaddingDesktop(this);
-
-		/// <summary>Static getter for Padding - Desktop</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static decimal GetCaptionPaddingDesktop(ICaptionComposition that) => that.Value<decimal>("captionPaddingDesktop");
-
-		///<summary>
-		/// Padding - Mobile: Enter the caption padding for phone and phablets
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingMobile")]
-		public decimal CaptionPaddingMobile => GetCaptionPaddingMobile(this);
-
-		/// <summary>Static getter for Padding - Mobile</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static decimal GetCaptionPaddingMobile(ICaptionComposition that) => that.Value<decimal>("captionPaddingMobile");
-
-		///<summary>
-		/// Padding - Tablet: Enter the caption padding for tablet
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("captionPaddingTablet")]
-		public decimal CaptionPaddingTablet => GetCaptionPaddingTablet(this);
-
-		/// <summary>Static getter for Padding - Tablet</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static decimal GetCaptionPaddingTablet(ICaptionComposition that) => that.Value<decimal>("captionPaddingTablet");
-
-		///<summary>
 		/// Description: This is the caption description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1372,15 +1264,15 @@ namespace Umbraco.Web.PublishedModels
 		public static global::System.Web.IHtmlString GetDescription(ICaptionComposition that) => that.Value<global::System.Web.IHtmlString>("description");
 
 		///<summary>
-		/// Padding
+		/// Parllax Caption
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("padding")]
-		public object Padding => GetPadding(this);
+		[ImplementPropertyType("parallaxCaptionEnable")]
+		public bool ParallaxCaptionEnable => GetParallaxCaptionEnable(this);
 
-		/// <summary>Static getter for Padding</summary>
+		/// <summary>Static getter for Parllax Caption</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static object GetPadding(ICaptionComposition that) => that.Value("padding");
+		public static bool GetParallaxCaptionEnable(ICaptionComposition that) => that.Value<bool>("parallaxCaptionEnable");
 
 		///<summary>
 		/// Title: this is the title for the caption
@@ -1406,17 +1298,9 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		string ImageAltTag { get; }
 
-		/// <summary>Image padding desktop</summary>
+		/// <summary>Parallax Image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		decimal ImagePaddingDesktop { get; }
-
-		/// <summary>Image padding mobile</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		decimal ImagePaddingMobile { get; }
-
-		/// <summary>Image padding tablet</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		decimal ImagePaddingTablet { get; }
+		bool ParallaxImageEnable { get; }
 	}
 
 	/// <summary>Image</summary>
@@ -1467,37 +1351,15 @@ namespace Umbraco.Web.PublishedModels
 		public static string GetImageAltTag(IImageComposition that) => that.Value<string>("imageAltTag");
 
 		///<summary>
-		/// Image padding desktop: Padding for desktop resolutions
+		/// Parallax Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingDesktop")]
-		public decimal ImagePaddingDesktop => GetImagePaddingDesktop(this);
+		[ImplementPropertyType("parallaxImageEnable")]
+		public bool ParallaxImageEnable => GetParallaxImageEnable(this);
 
-		/// <summary>Static getter for Image padding desktop</summary>
+		/// <summary>Static getter for Parallax Image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static decimal GetImagePaddingDesktop(IImageComposition that) => that.Value<decimal>("imagePaddingDesktop");
-
-		///<summary>
-		/// Image padding mobile: Padding for cellphone resolutions
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingMobile")]
-		public decimal ImagePaddingMobile => GetImagePaddingMobile(this);
-
-		/// <summary>Static getter for Image padding mobile</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static decimal GetImagePaddingMobile(IImageComposition that) => that.Value<decimal>("imagePaddingMobile");
-
-		///<summary>
-		/// Image padding tablet: Padding for tablet resolutions
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imagePaddingTablet")]
-		public decimal ImagePaddingTablet => GetImagePaddingTablet(this);
-
-		/// <summary>Static getter for Image padding tablet</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static decimal GetImagePaddingTablet(IImageComposition that) => that.Value<decimal>("imagePaddingTablet");
+		public static bool GetParallaxImageEnable(IImageComposition that) => that.Value<bool>("parallaxImageEnable");
 	}
 
 	/// <summary>Call to action</summary>

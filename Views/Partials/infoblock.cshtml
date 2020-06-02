@@ -4,11 +4,20 @@
 @{
    var image = Model.Value<IPublishedContent>("image");
    var bgImage = Model.Value<IPublishedContent>("backgroundImage"); 
-   var ParallaxClass = "";    
+   var ParallaxBgClass = ""; 
+   var ParallaxImageClass = "";   
+   var ParallaxCaptionClass = "";  
 }
+
 @{
-    if (@Model.ParallaxEnable.ToString() == "True") {
-     ParallaxClass = "rellax";  
+    if (@Model.ParallaxBgEnable.ToString() == "True") {
+     ParallaxBgClass = "rellaxbg";  
+    }
+    if (@Model.ParallaxImageEnable.ToString() == "True") {
+     ParallaxImageClass = "rellaximage";  
+    }
+    if (@Model.ParallaxCaptionEnable.ToString() == "True") {
+     ParallaxCaptionClass = "rellaxcaption";  
     }
 }
 
@@ -18,7 +27,7 @@ style="background-color: #@Model.BackgroundColor;
 >
     @{
         if (bgImage != null) {
-            <div class="backgroundImage @ParallaxClass" style="background-image: url('@bgImage.Url')"></div>
+            <div class="backgroundImage @ParallaxBgClass" style="background-image: url('@bgImage.Url')"></div>
         }     
     }
     <div class="content align-items-@Model.VerticalAlignment p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" 
@@ -34,14 +43,14 @@ style="background-color: #@Model.BackgroundColor;
                 @{
                     if (image != null) {
                     <div class="col-md-6">
-                            <div class="image p-xs-@Model.ImagePaddingMobile p-sm-@Model.ImagePaddingTablet p-lg-@Model.ImagePaddingDesktop">
-                                <img class="img-fluid" src="@image.Url" alt="@Model.ImageAltTag">
+                            <div class="image p-xs-2 p-sm-3 p-lg-5">
+                                <img class="img-fluid @ParallaxImageClass" src="@image.Url" alt="@Model.ImageAltTag">
                             </div>
                     </div>
                     }
                 }
                 <div class="col-md-6">
-                    <div class="caption p-xs-@Model.CaptionPaddingMobile p-sm-@Model.CaptionPaddingTablet p-lg-@Model.CaptionPaddingDesktop" >
+                    <div class="caption p-xs-2 p-sm-3 p-lg-5 @ParallaxCaptionClass">
                         <h1> 
                             @Model.Title
                         </h1>
@@ -66,8 +75,32 @@ style="background-color: #@Model.BackgroundColor;
 
 <script>
 //Parallax - Rellax
-    var rellax = new Rellax('.rellax', {
+    var rellax = new Rellax('.rellaxbg', {
     speed: -10,
+    center: false,
+    wrapper: null,
+    round: true,
+    vertical: true,
+    horizontal: false
+    });
+</script>
+
+<script>
+//Parallax - Rellax
+    var rellax = new Rellax('.rellaximage', {
+    speed: 5,
+    center: false,
+    wrapper: null,
+    round: true,
+    vertical: true,
+    horizontal: false
+    });
+</script>
+
+<script>
+//Parallax - Rellax
+    var rellax = new Rellax('.rellaxcaption', {
+    speed: 5,
     center: false,
     wrapper: null,
     round: true,
