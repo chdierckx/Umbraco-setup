@@ -1,4 +1,22 @@
 .row {
+    &.valign-top {
+      align-items: flex-start;
+    }
+    &.valign-bottom {
+      align-items: flex-end;
+    }
+    &.valign-center {
+      align-items: center;
+    } 
+    &.halign-center {
+      justify-content: center;
+    }
+    &.halign-left {
+      justify-content: flex-start;
+    }
+    &.halign-left {
+      justify-content: flex-end;
+    }
     &.flow-left-to-right {
       flex-direction: row-reverse;
       &.valign-top {

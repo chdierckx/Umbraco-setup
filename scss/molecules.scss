@@ -1,5 +1,27 @@
 //Molecules
 
+.contentblock {
+  display: flex;
+  position: relative;
+  flex: 1;
+  padding: 1rem;
+  .backgroundImage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  } 
+  .content {
+    display: flex;
+    flex: 1;
+    z-index: 50;
+  }
+}
+
 
 .vh-Height-100 {
   min-height: 100vh;
@@ -21,23 +43,6 @@
 }
 //Infoblock
 .infoblock {
-  display: flex;
-  position: relative;
-  flex: 1;
-  .backgroundImage {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  } 
-  .content {
-    display: flex;
-    flex: 1;
-  }
   &.infoblock-a {}
   &.infoblock-b {}
   &.infoblock-c {}
@@ -64,186 +69,5 @@ $featurelist-short-text-size: 14px;
 $featurelist-long-image-size: 70px;
 $featurelist-long-title-size: 1.75rem;
 $featurelist-long-text-size: 14px;
-
-.component-featurelist {
-  &.featurelist-short { 
-    .card-deck {
-      margin: 36px 0;
-      .card {
-        align-items: flex-start;
-        align-items: center;
-        padding: 24px;
-        margin:$featurelist-gutter-width;
-        @include media-breakpoint-up(sm) {
-          flex: 0 0 calc(50% - #{$featurelist-gutter-spacing});
-        }       
-        @include media-breakpoint-up(sm) {
-          flex: 0 0 calc(33.33333% - #{$featurelist-gutter-spacing});
-        }       
-        @include media-breakpoint-up(md) {
-          flex: 0 0 calc(25% - #{$featurelist-gutter-spacing});
-        } 
-        @include media-breakpoint-up(lg) {
-          flex: 0 0 calc(20% - #{$featurelist-gutter-spacing});
-        }   
-        @include media-breakpoint-up(xl) {
-          flex: 0 0 calc(16.66667% - #{$featurelist-gutter-spacing});
-        }         
-        .card-body {
-          padding: 0px;
-        }
-        .card-img-top {
-          width: $featurelist-short-image-size;
-          height: $featurelist-short-image-size;
-        }
-        .card-title {
-          margin: 12px 0;
-          text-align: center;
-          font-size: $featurelist-short-title-size;
-        }
-        .card-text {
-          display: none;
-        }
-      }               
-    }
-  }
-
-  &.featurelist-long {
-    .card-deck {
-      .card {
-        flex-direction: row;
-        padding: 24px;
-        margin:$featurelist-gutter-width;
-        flex: 0 0 calc(100% - #{$featurelist-gutter-spacing});
-        @include media-breakpoint-down(sm) {
-          flex-direction: column;
-          .card-img-top {
-            margin-bottom: 12px;
-          }
-        }  
-        .card-img-top {
-          align-self: center;
-          margin-left: 24px;
-          margin-right: 24px;
-          border-radius: 0;
-          width: $featurelist-long-image-size;
-          height: $featurelist-long-image-size;
-        }
-        .card-title {
-          margin: 12px 0;
-        }
-        .card-text {
-          font-size: $featurelist-long-text-size;
-        }
-        
-        @include media-breakpoint-up(lg) {
-          flex: 0 0 calc(50% - #{$featurelist-gutter-spacing});
-        }   
-      }
-    }
-  }  
-
-  //Styles
-  &.featurelist-style-a {
-    .card-deck .card {
-      border-radius: 0px;
-      // margin-top: -1px;
-      // margin-left: -1px;
-      border-color: #efefef;
-    }
-  }
-  &.featurelist-style-b {
-    .card-deck .card {
-      box-shadow: none;
-      border: none;
-      background-color: transparent;
-    }
-  }
-  &.featurelist-style-c {
-    .card-deck .card {
-      box-shadow: none;
-      border-radius: 6px;
-      border-width: 0px;
-      background-color: #efefef;
-    }
-  }
-  &.featurelist-style-d {
-    .card-deck .card {
-      flex-direction: column;
-      flex: 0 0 calc(33.3333% - #{$featurelist-gutter-spacing});
-      @include media-breakpoint-down(md) {
-        flex: 0 0 calc(100% - #{$featurelist-gutter-spacing});
-      } 
-      border-radius: 10px;
-      border-width: 0px;
-      background-color: #f9f9f9;
-      // box-shadow: 0 2px 25px rgba(0,0,0,0.10), 0 2px 12px rgba(0,0,0,0.02);
-      box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.10);
-      transition: box-shadow 1.47s ease-in-out;
-      overflow: hidden;
-      .card-text {
-        margin-bottom: 24px;
-      }
-      &:before{
-        width: 0;
-        height: 0;
-        border-left: 80px solid transparent;
-        border-right: 80px solid transparent;
-        border-bottom: 100px solid #efefef;
-        position: absolute;
-        opacity: 0.35; 
-        content: "";
-        bottom: 0;
-        right: -80px;
-        transition : opacity 500ms ease-out;
-      }
-      &:after{
-        width: 0;
-        height: 0;
-        border-left: 120px solid transparent;
-        border-right: 120px solid transparent;
-        border-bottom: 120px solid #efefef;
-        transform: rotate(180deg);
-        position: absolute; 
-        content: "";
-        top: 0;
-        left: -150px;
-        opacity: 0.35;
-        transition: all 1s ease-in-out;
-        transition : left 500ms ease-out;
-        transition : opacity 500ms ease-out;
-      }      
-      &:hover {
-        box-shadow: 0 19px 38px rgba(0,0,0,0.20), 0 15px 12px rgba(0,0,0,0.12); 
-        &:after {
-          left: -170px;
-        }
-
-        &:before{
-          opacity: 0;
-        }
-        // box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.10);
-      }
-      .card-img-top {
-        margin: 24px 0px;
-      }
-    }
-  }
-
-  //Features
-  &.featurelist-grow {
-    .card {
-      flex-grow: 1 !important;
-    }
-  }   
-  &.featurelist-no-gutter {
-    .card-deck {
-      .card {
-        margin: -1px 0;
-      }
-    }
-  }
-}
-
 
 

@@ -4,30 +4,38 @@
 @{
    var image = Model.Value<IPublishedContent>("image");
    var bgImage = Model.Value<IPublishedContent>("backgroundImage"); 
-   var ParallaxBgClass = ""; 
-   var ParallaxImageClass = "";   
-   var ParallaxCaptionClass = "";  
+   var ContainerSize = Model.Value<IPublishedContent>("containerSize"); 
+   var ParallaxBgAttribute = ""; 
+   var ParallaxImageAttribute = "";   
+   var ParallaxCaptionAttribute = "";  
+   var ParallaxBgClass = "";  
+   var ParallaxImageClass = "";
+   var ParallaxCaptionClass = "";
+   string BlockId = Guid.NewGuid().ToString().Split('-')[0];
 }
 
 @{
     if (@Model.ParallaxBgEnable.ToString() == "True") {
-     ParallaxBgClass = "rellaxbg";  
+     ParallaxBgAttribute = @Model.ParallaxBgPreset.ToString(); 
+     ParallaxBgClass = "lax";
     }
     if (@Model.ParallaxImageEnable.ToString() == "True") {
-     ParallaxImageClass = "rellaximage";  
+     ParallaxImageAttribute = @Model.ParallaxImagePreset.ToString(); 
+     ParallaxImageClass = "lax";
     }
     if (@Model.ParallaxCaptionEnable.ToString() == "True") {
-     ParallaxCaptionClass = "rellaxcaption";  
+     ParallaxCaptionAttribute = @Model.ParallaxCaptionPreset.ToString(); 
+     ParallaxCaptionClass = "lax"; 
     }
 }
 
-<div class="infoblock @Model.CustomClass vh-@Model.MinimumHeight @Model.InfoblockType" 
+<div id="@Model.CustomId" class="contentblock infoblock infoblock-@BlockId @Model.CustomClass vh-@Model.MinimumHeight @Model.InfoblockType" 
 style="background-color: #@Model.BackgroundColor;
 " 
 >
     @{
         if (bgImage != null) {
-            <div class="backgroundImage @ParallaxBgClass" style="background-image: url('@bgImage.Url')"></div>
+            <div class="backgroundImage @ParallaxBgClass" data-lax-preset="@ParallaxBgAttribute" data-lax-optimize data-lax-anchor="#@Model.CustomId" style="background-image: url('@bgImage.Url')"></div>
         }     
     }
     <div class="content align-items-@Model.VerticalAlignment p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" 
@@ -38,19 +46,19 @@ style="background-color: #@Model.BackgroundColor;
     data-aos-duration="@Model.BlockAnimationDuration"
     data-aos-delay="@Model.BlockAnimationDelay"
     >
-        <div class="container @Model.ContainerSize">
+        <div class="container @ContainerSize">
             <div class="row flow-@Model.ContentFlow valign-@Model.VerticalAlignment">
                 @{
                     if (image != null) {
-                    <div class="col-md-6">
-                            <div class="image p-xs-2 p-sm-3 p-lg-5">
-                                <img class="img-fluid @ParallaxImageClass" src="@image.Url" alt="@Model.ImageAltTag">
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                            <div class="image p-xs-5 p-sm-3 p-lg-5 @ParallaxImageClass" data-lax-preset="@ParallaxImageAttribute">
+                                <img class="img-fluid" src="@image.Url" alt="@Model.ImageAltTag">
                             </div>
                     </div>
                     }
                 }
-                <div class="col-md-6">
-                    <div class="caption p-xs-2 p-sm-3 p-lg-5 @ParallaxCaptionClass">
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                    <div class="caption p-xs-5 p-sm-3 p-lg-5 @ParallaxCaptionClass" data-lax-preset="@ParallaxCaptionAttribute">
                         <h1> 
                             @Model.Title
                         </h1>
@@ -73,38 +81,51 @@ style="background-color: #@Model.BackgroundColor;
     </div>
 </div>
 
-<script>
-//Parallax - Rellax
-    var rellax = new Rellax('.rellaxbg', {
-    speed: -10,
-    center: false,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-    });
-</script>
 
-<script>
-//Parallax - Rellax
-    var rellax = new Rellax('.rellaximage', {
-    speed: 5,
-    center: false,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-    });
-</script>
 
-<script>
-//Parallax - Rellax
-    var rellax = new Rellax('.rellaxcaption', {
-    speed: 5,
-    center: false,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-    });
-</script>
+
+
+
+
+
+
+@* @if (@Model.ParallaxBgEnable.ToString() == "True") {
+    <script type="text/javascript">
+        var rellax = new Rellax('.rellaxbg', {
+        speed: -10,
+        center: false,
+        wrapper: '.infoblock-@BlockId',
+        relativeToWrapper: true,
+        round: true,
+        vertical: true,
+        horizontal: false
+        });
+    </script>
+}
+
+@if (@Model.ParallaxImageEnable.ToString() == "True") {
+    <script type="text/javascript">
+        var rellax = new Rellax('.rellaximage', {
+        speed: 5,
+        center: false,
+        wrapper: '.infoblock-@BlockId',
+        relativeToWrapper: true,
+        round: true,
+        vertical: true,
+        horizontal: false
+        });
+    </script>
+}
+@if (@Model.ParallaxCaptionEnable.ToString() == "True") {
+    <script type="text/javascript">
+        var rellax = new Rellax('.rellaxcaption', {
+        speed: 5,
+        center: false,
+        wrapper: '.infoblock-@BlockId',
+        relativeToWrapper: true,
+        round: true,
+        vertical: true,
+        horizontal: false
+        });
+    </script>
+} *@

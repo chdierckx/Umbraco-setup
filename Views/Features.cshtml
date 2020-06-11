@@ -1,0 +1,63 @@
+﻿@model Umbraco.Web.PublishedModels.Features
+
+@{
+   var bgImage = Model.Value<IPublishedContent>("backgroundImage"); 
+}
+
+<div class="contentblock features @Model.CustomClass vh-@Model.MinimumHeight" 
+style="background-color: #@Model.BackgroundColor;
+" 
+>
+    @{
+        if (bgImage != null) {
+            <div class="backgroundImage" style="background-image: url('@bgImage.Url')"></div>
+        }     
+    }
+    <div class="content p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" 
+    style="color: #@Model.ContentColor;"
+    data-aos="@Model.BlockAnimation" 
+    data-aos-offset="@Model.BlockAnimationOffset" 
+    data-aos-easing="@Model.BlockAnimationEasing" 
+    data-aos-duration="@Model.BlockAnimationDuration"
+    data-aos-delay="@Model.BlockAnimationDelay"
+    >
+        <div class="container @Model.ContainerSize">
+            <div class="featuregrid flow-@Model.ContentFlow">
+                    @{
+                        if (Model.FeaturePicker.Any()) {
+							foreach (var featurePickerItems in Model.FeaturePicker.OfType<Feature>()) {		
+								var image = featurePickerItems.Value<IPublishedContent>("image");
+								<div class="feature">
+									<div class="feature-content">
+										@{
+											if (image != null) {
+												<div class="image">
+													<img class="img-fluid" src="@image.Url" alt="@featurePickerItems.ImageAltTag">
+												</div>
+											}
+										}
+										<div class="caption">
+											<div class="title">
+												<h3> 
+													@featurePickerItems.Title
+												</h3>
+											</div>
+											<div class="description">
+												<p>
+													@featurePickerItems.Description
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>    
+							}
+                        }
+                    }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ @* <a class="btn btn-@featurePickerItems.CallToActionStyle@featurePickerItems.CallToActionColor @featurePickerItems.CallToActionSize" href="@featurePickerItems.CallToActionLink.Url" target="@featurePickerItems.CallToActionLink.Target">@featurePickerItems.CallToActionLink.Name</a> *@

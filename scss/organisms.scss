@@ -80,3 +80,39 @@
         }
       }
 }
+
+.features {
+    .content {
+        display: block;
+    }
+    .featuregrid {
+        display: flex;
+        flex-direction: row;
+        .feature {
+            flex: 0 0 25%;
+            display: flex;
+            .feature-content {
+                display: flex; 
+                flex-direction: column;
+                padding: 1.5rem;
+                align-items: flex-start;
+                .image {
+                    display: flex;
+                    flex: 0 0 50%;
+                    max-width: 150px;
+                    height: auto;
+                    flex-direction: column;
+                    // display: flex;
+                    // align-items: flex-end;
+                }
+                .caption {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 0 0 50%;
+                    padding-top: 1.5rem; 
+                    padding-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}

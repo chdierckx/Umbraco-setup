@@ -6,10 +6,80 @@ AOS.init({
     delay: 100,
   });
 
+//AOS - Laxx parallax
+  window.onload = function() {
+    lax.setup() // init
+  
+    const updateLax = () => {
+      lax.update(window.scrollY)
+      window.requestAnimationFrame(updateLax)
+    }
+  
+    window.requestAnimationFrame(updateLax)
+  }
 
+  window.addEventListener("resize", function() {
+    lax.updateElements()
+  });
 
+  lax.addPreset("bgFall", function() {
+    return { 
+      "data-lax-bg-pos-y": "0 0, (document.body.scrollHeight*1.25) (vh/2)"
+    }
+  });
 
+  lax.addPreset("fall", function() {
+    return { 
+      "data-lax-translate-y": "0 0, -vh (vh/2)",
+      "data-lax-opacity": "0 1, (-vh/2) 0 | offset=0",
+    }
+  });
 
+  lax.addPreset("fadeInSlow", function() {
+    return { 
+      "data-lax-opacity": "0 0, (vh*2) 1"
+    }
+  });
+
+  //Jquery smooth scrolling anchor links
+  // Select all links with hashes
+$('a[href*="#"]')
+// Remove links that don't actually link to anything
+.not('[href="#"]')
+.not('[href="#0"]')
+.click(function(event) {
+  // On-page links
+  if (
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+    && 
+    location.hostname == this.hostname
+  ) {
+    // Figure out element to scroll to
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    // Does a scroll target exist?
+    if (target.length) {
+      // Only prevent default if animation is actually gonna happen
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000, function() {
+        // Callback after animation
+        // Must change focus!
+        var $target = $(target);
+        $target.focus();
+        if ($target.is(":focus")) { // Checking if the target was focused
+          return false;
+        } else {
+          $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+          $target.focus(); // Set focus again
+        };
+      });
+    }
+  }
+});
+
+  
 
 //Slick slider with animate css
 
