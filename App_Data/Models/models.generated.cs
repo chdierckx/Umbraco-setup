@@ -17,7 +17,7 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c90074822afa7992")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "165e0ff234915947")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
@@ -1061,6 +1061,20 @@ namespace Umbraco.Web.PublishedModels
 		public string ImageAltTag => global::Umbraco.Web.PublishedModels.ImageComposition.GetImageAltTag(this);
 
 		///<summary>
+		/// Horizontal alignment
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageHorizontalAlignment")]
+		public string ImageHorizontalAlignment => global::Umbraco.Web.PublishedModels.ImageComposition.GetImageHorizontalAlignment(this);
+
+		///<summary>
+		/// Max width
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageMaxWidth")]
+		public decimal ImageMaxWidth => global::Umbraco.Web.PublishedModels.ImageComposition.GetImageMaxWidth(this);
+
+		///<summary>
 		/// Parallax Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1094,6 +1108,27 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("backgroundImage")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage => global::Umbraco.Web.PublishedModels.Styling.GetBackgroundImage(this);
+
+		///<summary>
+		/// Background opacity
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundOpacity")]
+		public decimal BackgroundOpacity => global::Umbraco.Web.PublishedModels.Styling.GetBackgroundOpacity(this);
+
+		///<summary>
+		/// Background repeat
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundRepeat")]
+		public string BackgroundRepeat => global::Umbraco.Web.PublishedModels.Styling.GetBackgroundRepeat(this);
+
+		///<summary>
+		/// Background Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundSize")]
+		public string BackgroundSize => global::Umbraco.Web.PublishedModels.Styling.GetBackgroundSize(this);
 
 		///<summary>
 		/// Padding - Desktop: This determines the padding of the block
@@ -1369,6 +1404,14 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		string ImageAltTag { get; }
 
+		/// <summary>Horizontal alignment</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string ImageHorizontalAlignment { get; }
+
+		/// <summary>Max width</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal ImageMaxWidth { get; }
+
 		/// <summary>Parallax Image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		bool ParallaxImageEnable { get; }
@@ -1424,6 +1467,28 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Image Alt tag</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		public static string GetImageAltTag(IImageComposition that) => that.Value<string>("imageAltTag");
+
+		///<summary>
+		/// Horizontal alignment
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageHorizontalAlignment")]
+		public string ImageHorizontalAlignment => GetImageHorizontalAlignment(this);
+
+		/// <summary>Static getter for Horizontal alignment</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetImageHorizontalAlignment(IImageComposition that) => that.Value<string>("imageHorizontalAlignment");
+
+		///<summary>
+		/// Max width
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageMaxWidth")]
+		public decimal ImageMaxWidth => GetImageMaxWidth(this);
+
+		/// <summary>Static getter for Max width</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetImageMaxWidth(IImageComposition that) => that.Value<decimal>("imageMaxWidth");
 
 		///<summary>
 		/// Parallax Image
@@ -1881,7 +1946,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Features</summary>
 	[PublishedModel("features")]
-	public partial class Features : PublishedElementModel, IStyling
+	public partial class Features : PublishedElementModel, IAnimation, IStyling
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -1905,11 +1970,53 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Custom class
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("customClass")]
+		public string CustomClass => this.Value<string>("customClass");
+
+		///<summary>
 		/// Feature picker
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("featurePicker")]
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Feature> FeaturePicker => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Feature>>("featurePicker");
+
+		///<summary>
+		/// Animation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimation")]
+		public string BlockAnimation => global::Umbraco.Web.PublishedModels.Animation.GetBlockAnimation(this);
+
+		///<summary>
+		/// Animation delay
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimationDelay")]
+		public decimal BlockAnimationDelay => global::Umbraco.Web.PublishedModels.Animation.GetBlockAnimationDelay(this);
+
+		///<summary>
+		/// Animation duration
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimationDuration")]
+		public decimal BlockAnimationDuration => global::Umbraco.Web.PublishedModels.Animation.GetBlockAnimationDuration(this);
+
+		///<summary>
+		/// Animation Easing
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimationEasing")]
+		public string BlockAnimationEasing => global::Umbraco.Web.PublishedModels.Animation.GetBlockAnimationEasing(this);
+
+		///<summary>
+		/// Animation Offset
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockAnimationOffset")]
+		public decimal BlockAnimationOffset => global::Umbraco.Web.PublishedModels.Animation.GetBlockAnimationOffset(this);
 
 		///<summary>
 		/// Background
@@ -1931,6 +2038,27 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("backgroundImage")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage => global::Umbraco.Web.PublishedModels.Styling.GetBackgroundImage(this);
+
+		///<summary>
+		/// Background opacity
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundOpacity")]
+		public decimal BackgroundOpacity => global::Umbraco.Web.PublishedModels.Styling.GetBackgroundOpacity(this);
+
+		///<summary>
+		/// Background repeat
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundRepeat")]
+		public string BackgroundRepeat => global::Umbraco.Web.PublishedModels.Styling.GetBackgroundRepeat(this);
+
+		///<summary>
+		/// Background Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundSize")]
+		public string BackgroundSize => global::Umbraco.Web.PublishedModels.Styling.GetBackgroundSize(this);
 
 		///<summary>
 		/// Padding - Desktop: This determines the padding of the block
@@ -2039,6 +2167,18 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Background image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage { get; }
+
+		/// <summary>Background opacity</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal BackgroundOpacity { get; }
+
+		/// <summary>Background repeat</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string BackgroundRepeat { get; }
+
+		/// <summary>Background Size</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string BackgroundSize { get; }
 
 		/// <summary>Padding - Desktop</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -2150,6 +2290,39 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Background image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetBackgroundImage(IStyling that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("backgroundImage");
+
+		///<summary>
+		/// Background opacity
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundOpacity")]
+		public decimal BackgroundOpacity => GetBackgroundOpacity(this);
+
+		/// <summary>Static getter for Background opacity</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetBackgroundOpacity(IStyling that) => that.Value<decimal>("backgroundOpacity");
+
+		///<summary>
+		/// Background repeat
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundRepeat")]
+		public string BackgroundRepeat => GetBackgroundRepeat(this);
+
+		/// <summary>Static getter for Background repeat</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetBackgroundRepeat(IStyling that) => that.Value<string>("backgroundRepeat");
+
+		///<summary>
+		/// Background Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundSize")]
+		public string BackgroundSize => GetBackgroundSize(this);
+
+		/// <summary>Static getter for Background Size</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetBackgroundSize(IStyling that) => that.Value<string>("backgroundSize");
 
 		///<summary>
 		/// Padding - Desktop: This determines the padding of the block

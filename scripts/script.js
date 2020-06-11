@@ -22,22 +22,37 @@ AOS.init({
     lax.updateElements()
   });
 
+  lax.addPreset("heroBgFall", function() {
+    return { 
+      "data-lax-translate-y": "0 0, (elh) 500 "
+      //| loop=200 offset=100 speed=2
+    }
+  });
+
   lax.addPreset("bgFall", function() {
     return { 
-      "data-lax-bg-pos-y": "0 0, (document.body.scrollHeight*1.25) (vh/2)"
+      "data-lax-translate-y": "0 0, (elh) -500 "
+      //| loop=200 offset=100 speed=2
     }
   });
 
   lax.addPreset("fall", function() {
     return { 
-      "data-lax-translate-y": "0 0, -vh (vh/2)",
-      "data-lax-opacity": "0 1, (-vh/2) 0 | offset=0",
+      "data-lax-translate-y": "0 0, -elh 200"
+      // "data-lax-opacity": "0 1, (-vh/2) 0 | offset=0",
+    }
+  });
+
+  lax.addPreset("rise", function() {
+    return { 
+      "data-lax-translate-y": "0 0, -elh -200"
+      // "data-lax-opacity": "0 1, (-vh/2) 0 | offset=0",
     }
   });
 
   lax.addPreset("fadeInSlow", function() {
     return { 
-      "data-lax-opacity": "0 0, (vh*2) 1"
+      "data-lax-opacity": "100 1, 500 0"
     }
   });
 

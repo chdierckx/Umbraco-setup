@@ -35,7 +35,7 @@ style="background-color: #@Model.BackgroundColor;
 >
     @{
         if (bgImage != null) {
-            <div class="backgroundImage @ParallaxBgClass" data-lax-preset="@ParallaxBgAttribute" data-lax-optimize data-lax-anchor="#@Model.CustomId" style="background-image: url('@bgImage.Url')"></div>
+            <div class="backgroundImage @ParallaxBgClass" data-lax-preset="@ParallaxBgAttribute" data-lax-optimize data-lax-anchor="#@Model.CustomId" style="background-image: url('@bgImage.Url'); background-size:@Model.BackgroundSize; background-repeat:@Model.BackgroundRepeat; opacity:@Model.BackgroundOpacity;"></div>
         }     
     }
     <div class="content align-items-@Model.VerticalAlignment p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" 
@@ -51,20 +51,20 @@ style="background-color: #@Model.BackgroundColor;
                 @{
                     if (image != null) {
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
-                            <div class="image p-xs-5 p-sm-3 p-lg-5 @ParallaxImageClass" data-lax-preset="@ParallaxImageAttribute">
-                                <img class="img-fluid" src="@image.Url" alt="@Model.ImageAltTag">
+                            <div class="image p-xs-5 p-sm-3 p-lg-5 @ParallaxImageClass" data-lax-preset="@ParallaxImageAttribute" style="text-align: @Model.ImageHorizontalAlignment;">
+                                <img class="img-fluid" src="@image.Url" alt="@Model.ImageAltTag" style="max-width: @Model.ImageMaxWidth%;">
                             </div>
                     </div>
                     }
                 }
                 <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
                     <div class="caption p-xs-5 p-sm-3 p-lg-5 @ParallaxCaptionClass" data-lax-preset="@ParallaxCaptionAttribute">
-                        <h1> 
+                        <h1 class="title"> 
                             @Model.Title
                         </h1>
-                        <span> 
+                        <div class="description"> 
                             @Html.Raw(Model.Description)
-                        </span>
+                        </div>
                     @{
                         if (Model.CallToAction.Any()) {
                             <div class="cta-wrapper">

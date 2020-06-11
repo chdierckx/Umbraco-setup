@@ -89,30 +89,44 @@
         display: flex;
         flex-direction: row;
         .feature {
-            flex: 0 0 25%;
+            flex: 1;
             display: flex;
             .feature-content {
                 display: flex; 
                 flex-direction: column;
                 padding: 1.5rem;
-                align-items: flex-start;
                 .image {
+                    min-height: 300px;
                     display: flex;
-                    flex: 0 0 50%;
-                    max-width: 150px;
-                    height: auto;
-                    flex-direction: column;
-                    // display: flex;
-                    // align-items: flex-end;
+                    margin-bottom: 24px;
+                    justify-content: center;
+                    img {
+                        align-self: flex-end;
+                        max-height: 300px;
+                    }
                 }
                 .caption {
                     display: flex;
                     flex-direction: column;
-                    flex: 0 0 50%;
-                    padding-top: 1.5rem; 
-                    padding-bottom: 1.5rem;
+                    padding-top: 1.8rem; 
+                    padding-bottom: 1rem;
+                    .title {
+                        min-height: 74px;
+                        max-height: 74px;
+                        align-content: bottom; 
+                        display: flex;
+                        align-items: flex-end;
+                    }
                 }
             }
         }
     }
+}
+
+
+.navbar {
+    .navbar-nav > .nav-item{
+        margin-left:12px;
+        margin-right:12px;
+      }
 }

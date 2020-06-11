@@ -5,6 +5,7 @@
   position: relative;
   flex: 1;
   padding: 1rem;
+  overflow: hidden;
   .backgroundImage {
     position: absolute;
     left: 0;
@@ -14,6 +15,9 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    &.lax {
+      transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+    }
   } 
   .content {
     display: flex;
@@ -43,6 +47,24 @@
 }
 //Infoblock
 .infoblock {
+  .caption {
+    .title {
+      margin-bottom: 24px;
+    }
+    .description {
+      margin-bottom: 36px;
+    }
+    .cta-wrapper {
+      & > .btn {
+        margin-right: 12px;
+        margin-bottom: 12px;
+      } 
+      &:last-child {
+        margin-right: 0px;
+        margin-bottom: 0px;
+      }
+    }
+  }
   &.infoblock-a {}
   &.infoblock-b {}
   &.infoblock-c {}

@@ -2,6 +2,15 @@
 
 @{
    var bgImage = Model.Value<IPublishedContent>("backgroundImage"); 
+   var ParallaxBgAttribute = ""; 
+   var ParallaxCaptionAttribute = "";  
+   var ParallaxBgClass = "";  
+}
+@{
+    if (@Model.ParallaxBgEnable.ToString() == "True") {
+     ParallaxBgAttribute = @Model.ParallaxBgPreset.ToString(); 
+     ParallaxBgClass = "lax";
+    }
 }
 
 <div class="contentblock features @Model.CustomClass vh-@Model.MinimumHeight" 
@@ -10,10 +19,10 @@ style="background-color: #@Model.BackgroundColor;
 >
     @{
         if (bgImage != null) {
-            <div class="backgroundImage" style="background-image: url('@bgImage.Url')"></div>
+            <div class="backgroundImage @ParallaxBgClass" data-lax-preset="@ParallaxBgAttribute" data-lax-optimize style="background-image: url('@bgImage.Url'); background-size:@Model.BackgroundSize; background-repeat:@Model.BackgroundRepeat; opacity:@Model.BackgroundOpacity;"></div>
         }     
     }
-    <div class="content p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" 
+    <div class="content align-items-@Model.VerticalAlignment p-xs-@Model.BlockPaddingMobile p-sm-@Model.BlockPaddingTablet p-lg-@Model.BlockPaddingDesktop" 
     style="color: #@Model.ContentColor;"
     data-aos="@Model.BlockAnimation" 
     data-aos-offset="@Model.BlockAnimationOffset" 
