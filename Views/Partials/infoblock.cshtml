@@ -11,6 +11,7 @@
    var ParallaxBgClass = "";  
    var ParallaxImageClass = "";
    var ParallaxCaptionClass = "";
+   var CardLayoutToggle="";
    string BlockId = Guid.NewGuid().ToString().Split('-')[0];
 }
 
@@ -26,6 +27,9 @@
     if (@Model.ParallaxCaptionEnable.ToString() == "True") {
      ParallaxCaptionAttribute = @Model.ParallaxCaptionPreset.ToString(); 
      ParallaxCaptionClass = "lax"; 
+    }
+    if (@Model.CardLayout.ToString() == "True") {
+     CardLayoutToggle = "card";
     }
 }
 
@@ -58,7 +62,7 @@ style="background-color: #@Model.BackgroundColor;
                     }
                 }
                 <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
-                    <div class="caption p-xs-5 p-sm-3 p-lg-5 @ParallaxCaptionClass" data-lax-preset="@ParallaxCaptionAttribute">
+                    <div class="caption @CardLayoutToggle p-xs-5 p-sm-3 p-lg-5 @ParallaxCaptionClass" data-lax-preset="@ParallaxCaptionAttribute">
                         <h1 class="title"> 
                             @Model.Title
                         </h1>
@@ -128,4 +132,4 @@ style="background-color: #@Model.BackgroundColor;
         horizontal: false
         });
     </script>
-} *@
+}  *@

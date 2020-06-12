@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "165e0ff234915947")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "67d527249d93e57a")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 
 // FILE: models.generated.cs
@@ -1033,6 +1033,13 @@ namespace Umbraco.Web.PublishedModels
 		public decimal BlockAnimationOffset => global::Umbraco.Web.PublishedModels.Animation.GetBlockAnimationOffset(this);
 
 		///<summary>
+		/// Card layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("cardLayout")]
+		public bool CardLayout => global::Umbraco.Web.PublishedModels.CaptionComposition.GetCardLayout(this);
+
+		///<summary>
 		/// Description: This is the caption description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1319,6 +1326,10 @@ namespace Umbraco.Web.PublishedModels
 	/// <summary>Caption</summary>
 	public partial interface ICaptionComposition : IPublishedElement
 	{
+		/// <summary>Card layout</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		bool CardLayout { get; }
+
 		/// <summary>Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		global::System.Web.IHtmlString Description { get; }
@@ -1360,6 +1371,17 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Card layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("cardLayout")]
+		public bool CardLayout => GetCardLayout(this);
+
+		/// <summary>Static getter for Card layout</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static bool GetCardLayout(ICaptionComposition that) => that.Value<bool>("cardLayout");
 
 		///<summary>
 		/// Description: This is the caption description
