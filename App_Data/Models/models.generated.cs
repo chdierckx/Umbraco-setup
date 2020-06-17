@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "267e9034f41f0d0c")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "48a496f6414bd341")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -1899,6 +1899,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Card layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("cardLayout")]
+		public bool CardLayout => this.Value<bool>("cardLayout");
+
+		///<summary>
 		/// Custom class
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1911,6 +1918,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("featurePicker")]
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Feature> FeaturePicker => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Feature>>("featurePicker");
+
+		///<summary>
+		/// Features - Layout Style
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("layoutStyle")]
+		public string LayoutStyle => this.Value<string>("layoutStyle");
 
 		///<summary>
 		/// Animation
@@ -2399,7 +2413,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Feature</summary>
 	[PublishedModel("feature")]
-	public partial class Feature : PublishedElementModel
+	public partial class Feature : PublishedElementModel, IContentImage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -2430,25 +2444,53 @@ namespace Umbraco.Web.PublishedModels
 		public string Description => this.Value<string>("description");
 
 		///<summary>
-		/// Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("image")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("image");
-
-		///<summary>
-		/// Image alt tag
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("imageAltTag")]
-		public string ImageAltTag => this.Value<string>("imageAltTag");
-
-		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("title")]
 		public string Title => this.Value<string>("title");
+
+		///<summary>
+		/// Image: The image accompanying the caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("image")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => global::Umbraco.Web.PublishedModels.ContentImage.GetImage(this);
+
+		///<summary>
+		/// Image Alt tag: Give the image an alt tag conaining the keyword, this improves SEO
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageAltTag")]
+		public string ImageAltTag => global::Umbraco.Web.PublishedModels.ContentImage.GetImageAltTag(this);
+
+		///<summary>
+		/// Horizontal alignment
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageHorizontalAlignment")]
+		public string ImageHorizontalAlignment => global::Umbraco.Web.PublishedModels.ContentImage.GetImageHorizontalAlignment(this);
+
+		///<summary>
+		/// Max width
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageMaxWidth")]
+		public decimal ImageMaxWidth => global::Umbraco.Web.PublishedModels.ContentImage.GetImageMaxWidth(this);
+
+		///<summary>
+		/// Parallax Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxImageEnable")]
+		public bool ParallaxImageEnable => global::Umbraco.Web.PublishedModels.ContentImage.GetParallaxImageEnable(this);
+
+		///<summary>
+		/// Parallax Preset
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxImagePreset")]
+		public string ParallaxImagePreset => global::Umbraco.Web.PublishedModels.ContentImage.GetParallaxImagePreset(this);
 	}
 
 	// Mixin Content Type with alias "animation"
@@ -2555,6 +2597,331 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Animation Offset</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		public static decimal GetBlockAnimationOffset(IAnimation that) => that.Value<decimal>("blockAnimationOffset");
+	}
+
+	/// <summary>Styling-Content</summary>
+	[PublishedModel("stylingContent")]
+	public partial class StylingContent : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "stylingContent";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<StylingContent, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public StylingContent(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Container size: This defines the inner container size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("containerSize")]
+		public string ContainerSize => this.Value<string>("containerSize");
+
+		///<summary>
+		/// Content color: This will determine the color of the text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("contentColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor ContentColor => this.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("contentColor");
+
+		///<summary>
+		/// Content flow: The position of content elements in releation to each other
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("contentFlow")]
+		public string ContentFlow => this.Value<string>("contentFlow");
+
+		///<summary>
+		/// Minimum height: Minimum height in relation to the viwport.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("minimumHeight")]
+		public string MinimumHeight => this.Value<string>("minimumHeight");
+
+		///<summary>
+		/// Vertical alignment: The vertical alignment of the total content block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("verticalAlignment")]
+		public string VerticalAlignment => this.Value<string>("verticalAlignment");
+	}
+
+	/// <summary>Styling-Padding</summary>
+	[PublishedModel("styingPadding")]
+	public partial class StyingPadding : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "styingPadding";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<StyingPadding, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public StyingPadding(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Padding - Desktop: This determines the padding of the block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockPaddingDesktop")]
+		public decimal BlockPaddingDesktop => this.Value<decimal>("blockPaddingDesktop");
+
+		///<summary>
+		/// Padding - Mobile: This padding will apply on cellphone devices
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockPaddingMobile")]
+		public decimal BlockPaddingMobile => this.Value<decimal>("blockPaddingMobile");
+
+		///<summary>
+		/// Padding - Tablet: This padding will apply on tablet devices
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("blockPaddingTablet")]
+		public decimal BlockPaddingTablet => this.Value<decimal>("blockPaddingTablet");
+
+		///<summary>
+		/// Padding
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("padding")]
+		public object Padding => this.Value("padding");
+	}
+
+	/// <summary>Styling-Background</summary>
+	[PublishedModel("stylingBackground")]
+	public partial class StylingBackground : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "stylingBackground";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<StylingBackground, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public StylingBackground(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Background
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("background")]
+		public object Background => this.Value("background");
+
+		///<summary>
+		/// Background color: Choose the background colour for the infoblock
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => this.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("backgroundColor");
+
+		///<summary>
+		/// Background image: Choose an image you want to display in the background
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BackgroundImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("backgroundImage");
+
+		///<summary>
+		/// Background opacity
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundOpacity")]
+		public decimal BackgroundOpacity => this.Value<decimal>("backgroundOpacity");
+
+		///<summary>
+		/// Background repeat
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundRepeat")]
+		public string BackgroundRepeat => this.Value<string>("backgroundRepeat");
+
+		///<summary>
+		/// Background Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("backgroundSize")]
+		public string BackgroundSize => this.Value<string>("backgroundSize");
+
+		///<summary>
+		/// Background parallax
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxBgEnable")]
+		public bool ParallaxBgEnable => this.Value<bool>("parallaxBgEnable");
+
+		///<summary>
+		/// Parallax Preset
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxBgPreset")]
+		public string ParallaxBgPreset => this.Value<string>("parallaxBgPreset");
+
+		///<summary>
+		/// Parallax speed
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxBgSpeed")]
+		public decimal ParallaxBgSpeed => this.Value<decimal>("parallaxBgSpeed");
+	}
+
+	// Mixin Content Type with alias "contentImage"
+	/// <summary>Content-Image</summary>
+	public partial interface IContentImage : IPublishedElement
+	{
+		/// <summary>Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image { get; }
+
+		/// <summary>Image Alt tag</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string ImageAltTag { get; }
+
+		/// <summary>Horizontal alignment</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string ImageHorizontalAlignment { get; }
+
+		/// <summary>Max width</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		decimal ImageMaxWidth { get; }
+
+		/// <summary>Parallax Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		bool ParallaxImageEnable { get; }
+
+		/// <summary>Parallax Preset</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		string ParallaxImagePreset { get; }
+	}
+
+	/// <summary>Content-Image</summary>
+	[PublishedModel("contentImage")]
+	public partial class ContentImage : PublishedElementModel, IContentImage
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const string ModelTypeAlias = "contentImage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentImage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public ContentImage(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Image: The image accompanying the caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("image")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => GetImage(this);
+
+		/// <summary>Static getter for Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetImage(IContentImage that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("image");
+
+		///<summary>
+		/// Image Alt tag: Give the image an alt tag conaining the keyword, this improves SEO
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageAltTag")]
+		public string ImageAltTag => GetImageAltTag(this);
+
+		/// <summary>Static getter for Image Alt tag</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetImageAltTag(IContentImage that) => that.Value<string>("imageAltTag");
+
+		///<summary>
+		/// Horizontal alignment
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageHorizontalAlignment")]
+		public string ImageHorizontalAlignment => GetImageHorizontalAlignment(this);
+
+		/// <summary>Static getter for Horizontal alignment</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetImageHorizontalAlignment(IContentImage that) => that.Value<string>("imageHorizontalAlignment");
+
+		///<summary>
+		/// Max width
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("imageMaxWidth")]
+		public decimal ImageMaxWidth => GetImageMaxWidth(this);
+
+		/// <summary>Static getter for Max width</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static decimal GetImageMaxWidth(IContentImage that) => that.Value<decimal>("imageMaxWidth");
+
+		///<summary>
+		/// Parallax Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxImageEnable")]
+		public bool ParallaxImageEnable => GetParallaxImageEnable(this);
+
+		/// <summary>Static getter for Parallax Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static bool GetParallaxImageEnable(IContentImage that) => that.Value<bool>("parallaxImageEnable");
+
+		///<summary>
+		/// Parallax Preset
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("parallaxImagePreset")]
+		public string ParallaxImagePreset => GetParallaxImagePreset(this);
+
+		/// <summary>Static getter for Parallax Preset</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		public static string GetParallaxImagePreset(IContentImage that) => that.Value<string>("parallaxImagePreset");
 	}
 
 	/// <summary>Folder</summary>

@@ -5,11 +5,15 @@
    var ParallaxBgAttribute = ""; 
    var ParallaxCaptionAttribute = "";  
    var ParallaxBgClass = "";  
+   var CardLayoutToggle="";
 }
 @{
     if (@Model.ParallaxBgEnable.ToString() == "True") {
      ParallaxBgAttribute = @Model.ParallaxBgPreset.ToString(); 
      ParallaxBgClass = "lax";
+    }
+    if (@Model.CardLayout.ToString() == "True") {
+     CardLayoutToggle = "card";
     }
 }
 
@@ -31,13 +35,13 @@ style="background-color: #@Model.BackgroundColor;
     data-aos-delay="@Model.BlockAnimationDelay"
     >
         <div class="container @Model.ContainerSize">
-            <div class="featuregrid flow-@Model.ContentFlow">
+            <div class="featuregrid flow-@Model.ContentFlow featuregrid-@Model.LayoutStyle">
                     @{
                         if (Model.FeaturePicker.Any()) {
 							foreach (var featurePickerItems in Model.FeaturePicker.OfType<Feature>()) {		
 								var image = featurePickerItems.Value<IPublishedContent>("image");
 								<div class="feature">
-									<div class="feature-content">
+									<div class="feature-content @CardLayoutToggle">
 										@{
 											if (image != null) {
 												<div class="image">

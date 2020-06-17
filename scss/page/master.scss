@@ -10,6 +10,8 @@ header {
 .container {
     &.container-edge-to-edge {
         padding: 0px;
+        width: 100%;
+        max-width: unset;
         &.row {
             margin: 0px;
         }
