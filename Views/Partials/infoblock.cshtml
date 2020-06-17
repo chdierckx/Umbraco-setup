@@ -12,6 +12,8 @@
    var ParallaxImageClass = "";
    var ParallaxCaptionClass = "";
    var CardLayoutToggle="";
+   var CardBodyClassToggle="";
+   var CardFooterClassToggle="";  
    string BlockId = Guid.NewGuid().ToString().Split('-')[0];
 }
 
@@ -30,6 +32,8 @@
     }
     if (@Model.CardLayout.ToString() == "True") {
      CardLayoutToggle = "card";
+     CardBodyClassToggle = "card-body";
+     CardFooterClassToggle = "card-footer";
     }
 }
 
@@ -62,22 +66,24 @@ style="background-color: #@Model.BackgroundColor;
                     }
                 }
                 <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
-                    <div class="caption @CardLayoutToggle p-xs-5 p-sm-3 p-lg-5 @ParallaxCaptionClass" data-lax-preset="@ParallaxCaptionAttribute">
-                        <h1 class="title"> 
-                            @Model.Title
-                        </h1>
-                        <div class="description"> 
-                            @Html.Raw(Model.Description)
-                        </div>
-                    @{
-                        if (Model.CallToAction.Any()) {
-                            <div class="cta-wrapper">
-                                @foreach (var callToActionLinks in Model.CallToAction.OfType<CallToActionComposition>()) {
-                                    <a class="btn btn-@callToActionLinks.CallToActionStyle@callToActionLinks.CallToActionColor @callToActionLinks.CallToActionSize" href="@callToActionLinks.CallToActionLink.Url" target="@callToActionLinks.CallToActionLink.Target">@callToActionLinks.CallToActionLink.Name</a>
-                                }
+                    <div class="caption @CardLayoutToggle @ParallaxCaptionClass" data-lax-preset="@ParallaxCaptionAttribute">
+                        <div class="caption-content p-xs-5 p-sm-3 p-lg-5 @{if(@Model.CardLayout.ToString() == "True") {@CardBodyClassToggle}}">
+                            <h1 class="title"> 
+                                @Model.Title
+                            </h1>
+                            <div class="description"> 
+                                @Html.Raw(Model.Description)
                             </div>
-                        }
-                    }
+                            @{
+                                if (Model.CallToAction.Any()) {
+                                    <div class="cta-wrapper @CardFooterClassToggle">
+                                        @foreach (var callToActionLinks in Model.CallToAction.OfType<CallToActionComposition>()) {
+                                            <a class="btn btn-@callToActionLinks.CallToActionStyle@callToActionLinks.CallToActionColor @callToActionLinks.CallToActionSize" href="@callToActionLinks.CallToActionLink.Url" target="@callToActionLinks.CallToActionLink.Target">@callToActionLinks.CallToActionLink.Name</a>
+                                        }
+                                    </div>
+                                }
+                            }
+                        </div>
                     </div> 
                 </div>
             </div>

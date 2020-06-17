@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "67d527249d93e57a")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "267e9034f41f0d0c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -588,53 +588,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("sitename")]
 		public string Sitename => this.Value<string>("sitename");
-	}
-
-	/// <summary>Feature-old</summary>
-	[PublishedModel("featureold")]
-	public partial class Featureold : PublishedElementModel
-	{
-		// helpers
-#pragma warning disable 0109 // new is redundant
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public new const string ModelTypeAlias = "featureold";
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public new static IPublishedContentType GetModelContentType()
-			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Featureold, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-#pragma warning restore 0109
-
-		// ctor
-		public Featureold(IPublishedElement content)
-			: base(content)
-		{ }
-
-		// properties
-
-		///<summary>
-		/// Details
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("featureDetails")]
-		public string FeatureDetails => this.Value<string>("featureDetails");
-
-		///<summary>
-		/// Name
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("featureName")]
-		public string FeatureName => this.Value<string>("featureName");
-
-		///<summary>
-		/// Icon: This is the feature icon
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("icon")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Icon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("icon");
 	}
 
 	/// <summary>Content Page</summary>
@@ -1243,18 +1196,9 @@ namespace Umbraco.Web.PublishedModels
 		public string VerticalAlignment => global::Umbraco.Web.PublishedModels.Styling.GetVerticalAlignment(this);
 	}
 
-	// Mixin Content Type with alias "contentGridDefault"
-	/// <summary>Content Grid - Default</summary>
-	public partial interface IContentGridDefault : IPublishedContent
-	{
-		/// <summary>Content Grid</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		global::Newtonsoft.Json.Linq.JToken ContentGridDefaultContent { get; }
-	}
-
 	/// <summary>Content Grid - Default</summary>
 	[PublishedModel("contentGridDefault")]
-	public partial class ContentGridDefault : PublishedContentModel, IContentGridDefault
+	public partial class ContentGridDefault : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -1282,44 +1226,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("contentGridDefaultContent")]
-		public global::Newtonsoft.Json.Linq.JToken ContentGridDefaultContent => GetContentGridDefaultContent(this);
-
-		/// <summary>Static getter for Content Grid</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static global::Newtonsoft.Json.Linq.JToken GetContentGridDefaultContent(IContentGridDefault that) => that.Value<global::Newtonsoft.Json.Linq.JToken>("contentGridDefaultContent");
-	}
-
-	/// <summary>Testpage</summary>
-	[PublishedModel("testpage")]
-	public partial class Testpage : PublishedContentModel, IContentGridDefault
-	{
-		// helpers
-#pragma warning disable 0109 // new is redundant
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public new const string ModelTypeAlias = "testpage";
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public new static IPublishedContentType GetModelContentType()
-			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Testpage, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-#pragma warning restore 0109
-
-		// ctor
-		public Testpage(IPublishedContent content)
-			: base(content)
-		{ }
-
-		// properties
-
-		///<summary>
-		/// Content Grid: This is the default content grid
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("contentGridDefaultContent")]
-		public global::Newtonsoft.Json.Linq.JToken ContentGridDefaultContent => global::Umbraco.Web.PublishedModels.ContentGridDefault.GetContentGridDefaultContent(this);
+		public global::Newtonsoft.Json.Linq.JToken ContentGridDefaultContent => this.Value<global::Newtonsoft.Json.Linq.JToken>("contentGridDefaultContent");
 	}
 
 	// Mixin Content Type with alias "captionComposition"
