@@ -11215,6 +11215,34 @@ h4, h5 {
   font-size: 1.15rem;
 }
 
+.slick-component.type-fullscreen .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.slick-component.type-fullscreen .content .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.slick-component.type-fullscreen .slick-initialized .slick-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.slick-component.type-fullscreen .slick-slider, .slick-component.type-fullscreen .slide, .slick-component.type-fullscreen .slick-list, .slick-component.type-fullscreen .slick-track {
+  min-height: 100vh;
+}
 .slick-component .backgroundImage {
   position: absolute;
   left: 0;
@@ -11256,65 +11284,9 @@ h4, h5 {
 .slick-component .slick-next {
   right: 45px;
 }
-.slick-component .slick-dotted.slick-slider {
-  margin-bottom: 0px;
+.slick-component .slick-dots {
+  bottom: 25px;
 }
-.slick-component.vh-Height-100 .slick-initialized .slick-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-.slick-component.vh-Height-100 .slick-slider, .slick-component.vh-Height-100 .slide, .slick-component.vh-Height-100 .slick-list, .slick-component.vh-Height-100 .slick-track {
-  min-height: 100vh;
-}
-.slick-component.vh-Height-75 .slick-initialized .slick-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-.slick-component.vh-Height-75 .slick-slider, .slick-component.vh-Height-75 .slide, .slick-component.vh-Height-75 .slick-list, .slick-component.vh-Height-75 .slick-track {
-  min-height: 75vh;
-}
-.slick-component.vh-Height-50 .slick-initialized .slick-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-.slick-component.vh-Height-50 .slick-slider, .slick-component.vh-Height-50 .slide, .slick-component.vh-Height-50 .slick-list, .slick-component.vh-Height-50 .slick-track {
-  min-height: 50vh;
-}
-.slick-component.vh-Height-33 .slick-initialized .slick-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-.slick-component.vh-Height-33 .slick-slider, .slick-component.vh-Height-33 .slide, .slick-component.vh-Height-33 .slick-list, .slick-component.vh-Height-33 .slick-track {
-  min-height: 50vh;
-}
-.slick-component.vh-Height-25 .slick-initialized .slick-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-.slick-component.vh-Height-25 .slick-slider, .slick-component.vh-Height-25 .slide, .slick-component.vh-Height-25 .slick-list, .slick-component.vh-Height-25 .slick-track {
-  min-height: 50vh;
-}
-
 .features .content {
   display: block;
 }
@@ -11623,174 +11595,174 @@ h4, h5 {
   margin-right: 0px;
   margin-bottom: 0px;
 }
-.row.valign-top {
+.row.valign-top, .container.valign-top {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.row.valign-bottom {
+.row.valign-bottom, .container.valign-bottom {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
-.row.valign-center {
+.row.valign-center, .container.valign-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.row.halign-center {
+.row.halign-center, .container.halign-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.row.halign-left {
+.row.halign-left, .container.halign-left {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.row.halign-left {
+.row.halign-left, .container.halign-left {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.row.flow-left-to-right {
+.row.flow-left-to-right, .container.flow-left-to-right {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
-.row.flow-left-to-right.valign-top {
+.row.flow-left-to-right.valign-top, .container.flow-left-to-right.valign-top {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.row.flow-left-to-right.valign-bottom {
+.row.flow-left-to-right.valign-bottom, .container.flow-left-to-right.valign-bottom {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
-.row.flow-left-to-right.valign-center {
+.row.flow-left-to-right.valign-center, .container.flow-left-to-right.valign-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.row.flow-left-to-right.halign-center {
+.row.flow-left-to-right.halign-center, .container.flow-left-to-right.halign-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.row.flow-left-to-right.halign-left {
+.row.flow-left-to-right.halign-left, .container.flow-left-to-right.halign-left {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.row.flow-left-to-right.halign-left {
+.row.flow-left-to-right.halign-left, .container.flow-left-to-right.halign-left {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.row.flow-right-to-left.valign-top {
+.row.flow-right-to-left.valign-top, .container.flow-right-to-left.valign-top {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.row.flow-right-to-left.valign-bottom {
+.row.flow-right-to-left.valign-bottom, .container.flow-right-to-left.valign-bottom {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
-.row.flow-right-to-left.valign-center {
+.row.flow-right-to-left.valign-center, .container.flow-right-to-left.valign-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.row.flow-right-to-left.halign-center {
+.row.flow-right-to-left.halign-center, .container.flow-right-to-left.halign-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.row.flow-right-to-left.halign-left {
+.row.flow-right-to-left.halign-left, .container.flow-right-to-left.halign-left {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.row.flow-right-to-left.halign-left {
+.row.flow-right-to-left.halign-left, .container.flow-right-to-left.halign-left {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.row.flow-top-to-bottom {
+.row.flow-top-to-bottom, .container.flow-top-to-bottom {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.row.flow-top-to-bottom.valign-top {
+.row.flow-top-to-bottom.valign-top, .container.flow-top-to-bottom.valign-top {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.row.flow-top-to-bottom.valign-bottom {
+.row.flow-top-to-bottom.valign-bottom, .container.flow-top-to-bottom.valign-bottom {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.row.flow-top-to-bottom.valign-center {
+.row.flow-top-to-bottom.valign-center, .container.flow-top-to-bottom.valign-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.row.flow-top-to-bottom.halign-center {
+.row.flow-top-to-bottom.halign-center, .container.flow-top-to-bottom.halign-center {
   -ms-flex-line-pack: center;
       align-content: center;
 }
-.row.flow-top-to-bottom.halign-left {
+.row.flow-top-to-bottom.halign-left, .container.flow-top-to-bottom.halign-left {
   -ms-flex-line-pack: start;
       align-content: flex-start;
 }
-.row.flow-top-to-bottom.halign-left {
+.row.flow-top-to-bottom.halign-left, .container.flow-top-to-bottom.halign-left {
   -ms-flex-line-pack: end;
       align-content: flex-end;
 }
-.row.flow-top-to-bottom [class|=col] {
+.row.flow-top-to-bottom [class|=col], .container.flow-top-to-bottom [class|=col] {
   -webkit-box-flex: 0 !important;
       -ms-flex: 0 !important;
           flex: 0 !important;
 }
-.row.flow-bottom-to-top {
+.row.flow-bottom-to-top, .container.flow-bottom-to-top {
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
 }
-.row.flow-bottom-to-top.valign-top {
+.row.flow-bottom-to-top.valign-top, .container.flow-bottom-to-top.valign-top {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.row.flow-bottom-to-top.valign-bottom {
+.row.flow-bottom-to-top.valign-bottom, .container.flow-bottom-to-top.valign-bottom {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.row.flow-bottom-to-top.valign-center {
+.row.flow-bottom-to-top.valign-center, .container.flow-bottom-to-top.valign-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.row.flow-bottom-to-top.halign-center {
+.row.flow-bottom-to-top.halign-center, .container.flow-bottom-to-top.halign-center {
   -ms-flex-line-pack: center;
       align-content: center;
 }
-.row.flow-bottom-to-top.halign-left {
+.row.flow-bottom-to-top.halign-left, .container.flow-bottom-to-top.halign-left {
   -ms-flex-line-pack: start;
       align-content: flex-start;
 }
-.row.flow-bottom-to-top.halign-left {
+.row.flow-bottom-to-top.halign-left, .container.flow-bottom-to-top.halign-left {
   -ms-flex-line-pack: end;
       align-content: flex-end;
 }
-.row.flow-bottom-to-top [class|=col] {
+.row.flow-bottom-to-top [class|=col], .container.flow-bottom-to-top [class|=col] {
   -webkit-box-flex: 0 !important;
       -ms-flex: 0 !important;
           flex: 0 !important;

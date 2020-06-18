@@ -1,6 +1,6 @@
 ﻿@model Umbraco.Web.PublishedModels.SlickSlider
 
-<div class="slick-component vh-@Model.MinimumHeight" style="background-color: #@Model.BackgroundColor;">
+<div class="slick-component vh-@Model.MinimumHeight type-@Model.SliderType" style="background-color: #@Model.BackgroundColor;">
 	<div id="@Model.SliderName"> 
 		@{
 			if (Model.Slides.Any()) {
@@ -13,8 +13,8 @@
 							}       
 						}
 						<div class="content" style="color: #@slickSlides.ContentColor;">
-							<div class="container">
-								<div class="row flow-@slickSlides.ContentFlow valign-@slickSlides.VerticalAlignment halign-@slickSlides.HorizontalAlignment">
+							<div class="container halign-@slickSlides.VerticalAlignment">
+								<div class="row flow-@slickSlides.ContentFlow halign-@slickSlides.HorizontalAlignment">
 									<div class="col-md-6">
 										<div class="image">
 											<img class="img-fluid" src="@slickSlides.Image.Url">
@@ -35,27 +35,26 @@
 		}
 	</div>
 </div>
-
-<script>
-	//Slick slider
-	$('#@Model.SliderName').slick({
-		autoplay: @Html.Raw(Model.Autoplay?"true":"false"),
-		autoplaySpeed: @Model.AutoPlaySpeed,
-		fade: @Html.Raw(Model.Fade?"true":"false"),
-		dots: @Html.Raw(Model.Dots?"true":"false"),
-		arrows:@Html.Raw(Model.Arrows?"true":"false"),
-		infinite: @Html.Raw(Model.Infinite?"true":"false"),
-		speed: @Model.TransitionSpeed,
-		cssEase: 'cubic-bezier(.3,.44,.69,.55)',
-		useTransform: true,
-		centerPadding: "0px",
-		draggable: @Html.Raw(Model.Draggable?"true":"false"),
-		pauseOnHover: @Html.Raw(Model.PauseOnHover?"true":"false"),
-		swipe: @Html.Raw(Model.Swipe?"true":"false"),
-		touchMove: @Html.Raw(Model.Touchmove?"true":"false"),
-		vertical: @Html.Raw(Model.Vertical?"true":"false"),
-		verticalScrolling: @Html.Raw(Model.VerticalScrolling?"true":"false"),
-		slidesToScroll:1,
-		slidesToShow: 1
-	});
-</script>
+		<script>
+			//Slick slider
+			$('#@Model.SliderName').slick({
+				autoplay: @Html.Raw(Model.Autoplay?"true":"false"),
+				autoplaySpeed: @Model.AutoPlaySpeed,
+				fade: @Html.Raw(Model.Fade?"true":"false"),
+				dots: @Html.Raw(Model.Dots?"true":"false"),
+				arrows:@Html.Raw(Model.Arrows?"true":"false"),
+				infinite: @Html.Raw(Model.Infinite?"true":"false"),
+				speed: @Model.TransitionSpeed,
+				cssEase: 'cubic-bezier(.3,.44,.69,.55)',
+				useTransform: true,
+				centerPadding: "0px",
+				draggable: @Html.Raw(Model.Draggable?"true":"false"),
+				pauseOnHover: @Html.Raw(Model.PauseOnHover?"true":"false"),
+				swipe: @Html.Raw(Model.Swipe?"true":"false"),
+				touchMove: @Html.Raw(Model.Touchmove?"true":"false"),
+				vertical: @Html.Raw(Model.Vertical?"true":"false"),
+				verticalScrolling: @Html.Raw(Model.VerticalScrolling?"true":"false"),
+				slidesToScroll:1,
+				slidesToShow: 1
+			});
+		</script>

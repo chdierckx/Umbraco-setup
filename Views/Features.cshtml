@@ -41,7 +41,7 @@ style="background-color: #@Model.BackgroundColor;
 							foreach (var featurePickerItems in Model.FeaturePicker.OfType<Feature>()) {		
 								var image = featurePickerItems.Value<IPublishedContent>("image");
 								<div class="feature">
-									<div class="feature-content @CardLayoutToggle">
+									<div class="feature-content @CardLayoutToggle @Model.CardShadow">
 										@{
 											if (image != null) {
 												<div class="image">

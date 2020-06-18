@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "48a496f6414bd341")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1cfa0f85b548e587")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -1681,6 +1681,13 @@ namespace Umbraco.Web.PublishedModels
 		public string SliderName => this.Value<string>("sliderName");
 
 		///<summary>
+		/// Slider type
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("sliderType")]
+		public string SliderType => this.Value<string>("sliderType");
+
+		///<summary>
 		/// Slides
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
@@ -1918,6 +1925,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		[ImplementPropertyType("cardLayout")]
 		public bool CardLayout => this.Value<bool>("cardLayout");
+
+		///<summary>
+		/// Card shadow
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("cardShadow")]
+		public string CardShadow => this.Value<string>("cardShadow");
 
 		///<summary>
 		/// Custom class
