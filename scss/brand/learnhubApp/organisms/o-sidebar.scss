@@ -1,0 +1,776 @@
+﻿@import 'molecules/sidebar-followers';
+@import 'molecules/sidebar-id';
+@import 'molecules/sidebar-toolkit';
+@import 'molecules/sidebar-tiles';
+@import 'molecules/sidebar-carousel-pager';
+
+.sidebar {
+    background-color: $quinary;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 460px;
+    position: relative;
+    z-index: 25;
+    -webkit-transition: max-width 400ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+    -moz-transition: max-width 400ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+      -o-transition: max-width 400ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+         transition: max-width 400ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+    .panel {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-box {
+        background: $secondary url(../images/profilebackground.svg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding-top: 16px;
+        text-align: center;
+        padding-bottom: 0px;
+        -webkit-transition: padding 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        -moz-transition: padding 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+          -o-transition: padding 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+             transition: padding 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */   
+
+        .avatar-wrapper {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            svg {
+                width: 190px;
+                height: 190px;
+                -webkit-transition: width 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                -moz-transition: width 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                  -o-transition: width 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                     transition: width 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+                     -webkit-transition: height 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                     -moz-transition: height 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                       -o-transition: height 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                          transition: height 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */                     
+                &:hover {
+                    animation: swing 0.65s ease-in-out;
+                }
+            }
+        }
+        .toolkit-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            display: relative;
+            z-index: 10;
+            &.bottom {
+                .tool {
+                    opacity: 0.40;
+                    &:hover {
+                        opacity: 0.7;
+                        transform: scale(1.1); 
+                        -webkit-transition: opacity 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                        -moz-transition: opacity 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                          -o-transition: opacity 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                             transition: opacity 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */  
+                             -webkit-transition: transform 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                        -moz-transition: transform 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                          -o-transition: transform 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                             transition: transform 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */  
+                    }
+                }
+            }
+            &.top {
+                .tool {
+                    &:hover {
+                        transform: scale(1.1); 
+                             -webkit-transition: transform 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                        -moz-transition: transform 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                          -o-transition: transform 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                             transition: transform 150ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */  
+                    }                    
+                }
+            }
+        }
+        .userinfo {
+            transform: scale(1);
+            max-height: 125px;
+            opacity: 1;
+            -webkit-transition: opacity 200ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+            -moz-transition: opacity 200ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+              -o-transition: opacity 200ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                 transition: opacity 200ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */               
+            -webkit-transition: max-height 200ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+            -moz-transition: max-height 200ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+              -o-transition: max-height 200ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                 transition: max-height 200ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */              
+            -webkit-transition: transform 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+            -moz-transition: transform 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+              -o-transition: transform 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                 transition: transform 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */  
+        }
+
+        .logo {
+            width: 50px;
+        }
+    }
+    .content-box {
+        flex: 1;
+        // padding-top: 0px; phase one commented out, followers will take care of spacing
+        padding-bottom: 0px;
+        .followers {
+            max-height: 75px;
+            margin-top: -50px;
+            opacity: 1;
+            -webkit-transition: opacity 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+            -moz-transition: opacity 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+              -o-transition: opacity 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                 transition: opacity 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */  
+                 transition-delay: 0.1s;               
+        }
+    }
+}
+
+.sidebar-sm {
+    max-width: 150px;
+
+    .panel {
+        padding: 6px;
+    }
+
+    .header-box {
+        background-size: 230% !important;
+        padding-left: 10px;
+        padding-right: 10px;
+        .toolkit-container {
+            margin-top: 0px;
+            font-size: 22px;
+            &.bottom {
+                margin-top: -15px;
+            }
+            .logo {
+                width: 35px;
+            }
+        }
+        .molecule-id {
+            margin-top: 0px !important;
+        }
+        .userinfo {
+            transform: scale(0);
+            max-height: 0px;
+            padding: 0px;
+            opacity: 0;
+        }
+        .avatar-wrapper {
+            margin-top: -10px;
+            svg {
+                width: 87px !important;
+                height: 87px !important;
+                -webkit-transition: width 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                -moz-transition: width 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                  -o-transition: width 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                     transition: width 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */      
+                     -webkit-transition: height 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                     -moz-transition: height 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                       -o-transition: height 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                          transition: height 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */                                   
+            }
+        }
+    }
+    .content-box {
+        padding-bottom: 0px;
+        .followers {
+            opacity: 0;
+            max-height: 0px;
+            margin-top: 0px;
+            -webkit-transition: opacity 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+            -moz-transition: opacity 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+              -o-transition: opacity 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                 transition: opacity 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */  
+                 -webkit-transition: max-height 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                 -moz-transition: max-height 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                   -o-transition: max-height 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                      transition: max-height 250ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */              
+        }
+        .tile-grid-carousel {
+            padding: 10px 0;
+            border: 0;
+            background-color: transparent;
+        }
+        .carousel-pager {
+            margin-top: 5px;
+            .item {
+                width: 7px;
+                height: 7px;
+            }
+        }        
+    }
+
+    .toolkit {
+        font-size: 24px;
+    }
+}
+
+
+/*Responsive behaviour*/
+
+/*Ipad vertical + desktop 1024 height*/
+@media (max-height: 1025px) {
+    .sidebar {
+        .header-box {
+            .molecule-id {
+                margin-top: -40px;
+            }
+        }
+    }
+    .sidebar-sm {
+        .content-box {
+            .followers {margin-top: 0px;}
+        }
+    }
+}
+
+/*Full hd browser without bookmarks*/
+@media (max-height: 1008px) {
+    .sidebar {
+        .header-box {
+            .molecule-id {
+                margin-top: -40px;
+            }
+        }
+    }
+    .sidebar-sm {
+        .content-box {
+            .followers {margin-top: 0px;}
+        }
+    }
+}
+
+/*Full had browser with bookmarks*/
+@media (max-height: 976px) {
+    .sidebar {
+        .header-box {
+            .molecule-id {
+                margin-top: -40px;
+            }
+        }
+    }
+    .sidebar-sm {
+        .content-box {
+            .followers {margin-top: 0px;}
+        }
+    }
+}
+
+
+/*Desktop 1200x800*/
+@media (max-height: 901px) {
+    .sidebar {
+        width: 375px;
+        .toolkit {
+            font-size: 30px;
+        }
+        .panel {
+            padding: 15px;
+        }
+        .header-box {
+            .molecule-id {
+                .avatar-wrapper {
+                    svg {
+                        width: 125px;
+                        height: 125px;
+                    }
+                }
+                .userinfo {
+                    .content {
+                        .name {
+                            font-size: 1.3rem;
+                        }
+                        .teamname {
+                            font-size: 1rem;
+                            margin-top: 0px;
+                        }
+                        .location {
+                            font-size: 0.8rem;
+                            span {
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content-box {
+            .carousel-pager {
+                .item {
+                    width: 7px;
+                    height: 7px;
+                }
+            }
+            .followers {
+                p {
+                    font-size: 12px;
+                }
+                margin-top: -50px;
+                .follower-image {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: -8px;
+                }
+                .followers-count {
+                    font-size: 0.6rem;
+                    width: 35px;
+                    height: 35px;
+                    line-height: 34px;
+                    margin-top: -3px;
+                }
+            }
+        }
+    }
+    .sidebar-sm {
+        .toolkit {
+            font-size: 25px;
+        }
+        .panel {
+            padding: 5px;
+        }
+        .content-box {
+            margin-top: 15px;
+            .followers {margin-top: 0px;}
+        }
+    }          
+}
+
+/*Desktop 1366x768*/
+@media (max-height: 769px) {
+    .sidebar {
+        width: 350px;
+        .content-box {
+            padding-bottom: 0px;
+            .carousel-pager {
+                margin-top: 5px;
+            }
+        }
+    }  
+    .sidebar-sm {
+        .toolkit {
+            font-size: 25px;
+        }
+        .panel {
+            padding: 5px;
+        }
+        .content-box {
+            .followers {margin-top: 0px;}
+            margin-top: 0px;
+        }
+    }          
+}
+
+@media (max-width: 1441px) {
+    .sidebar {
+        width: 350px;
+        .content-box {
+            padding-bottom: 0px;
+            .carousel-pager {
+                margin-top: 5px;
+            }
+        }
+    }  
+    .sidebar-sm {
+        width: 130px;
+        .toolkit {
+            font-size: 25px;
+        }
+        .panel {
+            padding: 5px;
+        }
+        .content-box {
+            .followers {margin-top: 0px;}
+            margin-top: 0px;
+        }
+    }  
+}
+
+/*IPAD PRO*/
+@media (max-width: 1366px) and (max-height: 1024px) {
+    .sidebar {
+        width: 375px;
+        .toolkit {
+            font-size: 30px;
+        }
+        .panel {
+            padding: 15px;
+        }
+        .header-box {
+            .molecule-id {
+                .avatar-wrapper {
+                    svg {
+                        width: 125px;
+                        height: 125px;
+                    }
+                }
+                .userinfo {
+                    .content {
+                        .name {
+                            font-size: 1.3rem;
+                        }
+                        .teamname {
+                            font-size: 1rem;
+                            margin-top: 0px;
+                        }
+                        .location {
+                            font-size: 0.8rem;
+                            span {
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content-box {
+            .carousel-pager {
+                .item {
+                    width: 7px;
+                    height: 7px;
+                }
+            }
+            .followers {
+                p {
+                    font-size: 12px;
+                }
+                margin-top: -50px;
+                .follower-image {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: -8px;
+                }
+                .followers-count {
+                    font-size: 0.6rem;
+                    width: 35px;
+                    height: 35px;
+                    line-height: 34px;
+                    margin-top: -3px;
+                }
+            }
+        }
+    }
+    .sidebar-sm {
+        .toolkit {
+            font-size: 25px;
+        }
+        .panel {
+            padding: 5px;
+        }
+        .content-box {
+            margin-top: 15px;
+            .followers {margin-top: 0px;}
+        }
+    }          
+}
+
+@media (max-width: 1024px) and (max-height: 1366px) {
+    .sidebar {
+        width: 345px;
+        .toolkit {
+            font-size: 30px;
+        }
+        .panel {
+            padding: 15px;
+        }
+        .header-box {
+            .molecule-id {
+                .avatar-wrapper {
+                    svg {
+                        width: 125px;
+                        height: 125px;
+                    }
+                }
+                .userinfo {
+                    .content {
+                        .name {
+                            font-size: 1.3rem;
+                        }
+                        .teamname {
+                            font-size: 1rem;
+                            margin-top: 0px;
+                        }
+                        .location {
+                            font-size: 0.8rem;
+                            span {
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content-box {
+            .carousel-pager {
+                .item {
+                    width: 7px;
+                    height: 7px;
+                }
+            }
+            .followers {
+                p {
+                    font-size: 12px;
+                }
+                margin-top: -50px;
+                .follower-image {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: -8px;
+                }
+                .followers-count {
+                    font-size: 0.6rem;
+                    width: 35px;
+                    height: 35px;
+                    line-height: 34px;
+                    margin-top: -3px;
+                }
+            }
+        }
+    }
+    .sidebar-sm {
+        .toolkit {
+            font-size: 25px;
+        }
+        .panel {
+            padding: 5px;
+        }
+        .content-box {
+            margin-top: 15px;
+            .followers {margin-top: 0px;}
+        }
+    }          
+}
+
+@media (max-width: 1441px) {
+    .sidebar {
+        width: 345px;
+        .toolkit {
+            font-size: 30px;
+        }
+        .panel {
+            padding: 15px;
+        }
+        .header-box {
+            .molecule-id {
+                .avatar-wrapper {
+                    svg {
+                        width: 125px;
+                        height: 125px;
+                    }
+                }
+                .userinfo {
+                    .content {
+                        .name {
+                            font-size: 1.3rem;
+                        }
+                        .teamname {
+                            font-size: 1rem;
+                            margin-top: 0px;
+                        }
+                        .location {
+                            font-size: 0.8rem;
+                            span {
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content-box {
+            .carousel-pager {
+                .item {
+                    width: 7px;
+                    height: 7px;
+                }
+            }
+            .followers {
+                p {
+                    font-size: 12px;
+                }
+                margin-top: -50px;
+                .follower-image {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: -8px;
+                }
+                .followers-count {
+                    font-size: 0.6rem;
+                    width: 35px;
+                    height: 35px;
+                    line-height: 34px;
+                    margin-top: -3px;
+                }
+            }
+        }
+    }
+    .sidebar-sm {
+        .toolkit {
+            font-size: 25px;
+        }
+        .panel {
+            padding: 5px;
+        }
+        .content-box {
+            margin-top: 15px;
+            .followers {margin-top: 0px;}
+        }
+    }          
+}
+
+/*IPAD*/
+@media (max-width: 1024px) and (max-height: 768px) { 
+    .sidebar {
+        width: 310px;
+    }
+}
+
+@media (max-width: 768px) and (max-height: 1024px) {
+    .sidebar {
+        width: 310px;
+    }
+    .sidebar-sm {
+        width: 130px;
+    }
+}
+/*Ipad pro 1366x1024*/
+// @media (max-height: 1024px) and (max-width: 1366px) {
+//     .sidebar {
+//         width: 350px;
+//         .content-box {
+//             padding-bottom: 0px;
+//             .tile-tray {
+//                 padding-bottom: 15px;
+//                 .tile {
+//                     width: 90px;
+//                     height: 80px;
+//                     .title {
+//                     }
+//                     .icon-wrapper {
+//                         height: 30px;
+//                         .tile-icon {
+//                             font-size: 28px;
+//                         }
+//                     }
+//                 }
+//             }
+//             .carousel-pager {
+//                 margin-top: 5px;
+//                 .item {
+//                 }
+//             }
+//         }
+//     }  
+//     .sidebar-sm {
+//         .toolkit {
+//             font-size: 25px;
+//         }
+//         .panel {
+//             padding: 5px;
+//         }
+//         .content-box {
+//             .followers {margin-top: 0px;}
+//             margin-top: 15px;
+//             .tile-tray {
+//                 .tile {
+//                     display: flex;
+//                     .tile-content {
+//                         flex-direction: row;
+//                         justify-content: left;
+//                         align-items: center;
+//                         text-align: left;
+//                     }
+//                     height: 48px;
+//                     // width: 110px;
+//                     width: 100%;
+//                     margin-left: 0px;
+//                     margin-right: 0px;
+//                     margin-bottom: 1px;
+//                     .title {
+//                         margin-top: 0px;
+//                     }
+//                     .icon-wrapper {
+//                         height: 30px;
+//                         margin-right: 10px;
+//                         opacity: 0.75;
+//                         .tile-icon {
+//                             font-size: 24px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }          
+// }
+
+/*Custom animation grow for tile-tray*/
+@keyframes grow {
+    0%   { 
+        transform: scaleY(0); 
+        opacity: 0; 
+        -webkit-transform-origin : 50% 100%;
+        -moz-transform-origin : 50% 100%;
+        -o-transform-origin : 50% 100%;
+        -ms-transform-origin : 50% 100%;
+        transform-origin : 50% 100%;
+    }
+    100% { 
+        transform: scaleY(1); 
+        opacity: 1;
+        -webkit-transform-origin : 50% 100%;
+        -moz-transform-origin : 50% 100%;
+        -o-transform-origin : 50% 100%;
+        -ms-transform-origin : 50% 100%;
+        transform-origin : 50% 100%;       
+    }
+}
+
+@-webkit-keyframes grow {
+    0%   { 
+        transform: scaleY(0); 
+        opacity: 0; 
+        -webkit-transform-origin : 50% 100%;
+        -moz-transform-origin : 50% 100%;
+        -o-transform-origin : 50% 100%;
+        -ms-transform-origin : 50% 100%;
+        transform-origin : 50% 100%;
+    }
+    100% { 
+        transform: scaleY(1); 
+        opacity: 1;
+        -webkit-transform-origin : 50% 100%;
+        -moz-transform-origin : 50% 100%;
+        -o-transform-origin : 50% 100%;
+        -ms-transform-origin : 50% 100%;
+        transform-origin : 50% 100%;        
+    }
+}
+  
+.grow {
+    animation-name: grow;
+    animation-duration: 0.50s; 
+    animation-iteration-count: 1;
+    animation-direction: normal; 
+    animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.150); 
+    animation-fill-mode: forwards;
+    animation-delay: 0s; 
+}
+
+/*Phase 1 disabled*/
+.sidebar {
+    .followers {
+        display: none !important;
+    }
+    .carousel-pager {
+        display: none !important;
+    }
+}
+
+.tab-content-fileShare .preview {
+    box-shadow: 0 7px 12px -2px rgba(0, 0, 0, 0.15)
+}

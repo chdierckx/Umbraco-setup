@@ -1,0 +1,46 @@
+﻿@import "../atoms/avatar";
+
+.userinfo {
+    padding-top: 15px;
+    text-align: center;
+
+    .content {
+        p {
+            margin-bottom: 0;
+        }
+        &:only-child {
+            margin-bottom: 10px;
+        }
+        .name {
+            font-family: JosefinSans-SemiBold;
+            font-size: 1.75rem;
+            color: $primary;
+            margin-bottom: 0;
+            line-height: 1.75rem;
+        }
+
+        .teamname {
+            font-family: JosefinSans-Light;
+            font-size: 1.5rem;
+            color: $primary;
+            margin-top: 5px;
+            margin-bottom: 0;
+            line-height: 1.5rem;
+        }
+
+        .location {
+            display: flex;
+            justify-content: center;
+            font-size: 0.875rem;
+            color: $secondary;
+            margin: 0 5px;
+            align-items: center;
+            align-content: center;
+            display: flex;
+
+            span {
+                font-size: 36px;
+            }
+        }
+    }
+}

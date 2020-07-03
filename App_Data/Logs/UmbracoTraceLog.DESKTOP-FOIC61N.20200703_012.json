@@ -1,0 +1,1 @@
+{"@t":"2020-07-03T13:55:30.6914360Z","@mt":"{LogPrefix} Tasks {TaskStatus}, terminated","LogPrefix":"[RebuildIndexesOnStartup] ","TaskStatus":"cancelled","SourceContext":"Umbraco.Web.Scheduling.BackgroundTaskRunner","ProcessId":4880,"ProcessName":"iisexpress","ThreadId":55,"AppDomainId":3,"AppDomainAppId":"LMW3SVC5ROOT","MachineName":"DESKTOP-FOIC61N","Log4NetLevel":"INFO "}

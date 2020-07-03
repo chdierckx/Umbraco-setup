@@ -1,0 +1,120 @@
+﻿
+/*BOOTSTRAP AND LEARNHUB CUSTOM VARIABLES/FONTS/ICON/CUSTOM BOOTSTRAP MODULES*/
+@import "bootstrap.scss";
+
+/*SASS VERSION OF LH ICON*/
+@import "icons/variables.scss";
+@import "icons/style.scss";
+
+/*MAIN MENU SIDEBAR
+-------------------
+FOLLOWING IS INCLUDED IN THIS FILE: 
+molecules/sidebar-followers
+molecules/sidebar-id
+molecules/sidebar-toolkit
+molecules/sidebar-tiles
+molecules/sidebar-carousel-pager
+*/
+@import "organisms/o-sidebar";
+
+
+/*RIGHT SIDEBAR
+---------------
+FOLLOWING IS INCLUDED IN THIS FILE: 
+molecules/r-sidebar-header
+molecules/r-sidebar-body
+molecules/r-sidebar-footer
+atoms/video-placeholder
+atoms/link-list
+molecules/sidebar-tabs
+molecules/sidebar-userlist
+*/
+@import "organisms/o-right-sidebar";
+
+/*TOOL SIDEBAR
+---------------
+FOLLOWING IS INCLUDED IN THIS FILE:
+molecules/tool-sidebar
+molecules/tool-options
+molecules/slide-list
+molecules/page-nav
+*/
+@import "organisms/o-tool-sidebar";
+
+
+/*FILE EXPLORER
+---------------
+FOLLOWING IS INCLUDED IN THIS FILE: 
+molecules/fe-filterbar
+molecules/fe-contentpane
+molecules/box-list
+molecules/folder-list
+molecules/custom-cards
+*/
+@import "organisms/o-file-explorer";
+
+
+
+/*LOGIN/FORGOT PW/SIGNUP 
+
+FOLLOWING IS INCLUDED IN THIS FILE
+page-header
+oauth
+package-selector
+feature-list
+payment
+auth
+*/
+@import "organisms/o-common";
+
+
+/*SHELL NAVIGATION - HAMBURGER/SUPPORT*/
+@import "organisms/atoms/shellnav";
+
+/*PROFILE MENU*/
+@import "organisms/o-menu-profile";
+
+/*TOOLBARS HUD */
+@import "organisms/o-toolbar-hud";
+
+/*HUD CONTROLS */
+@import "organisms/o-hud-controls";
+
+/*TOOLBAR BOTTOM */
+@import "organisms/o-toolbar-bottom";
+
+/*TOOLBAR BRANDLOADER */
+@import "organisms/o-brandloader";
+
+/*ANIMATE.CSS LIBRARY*/
+@import "animate/animate.min.css";
+
+
+
+body, html {
+    -webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+    height: 100%;
+    width: 100%;
+    display: flex; 
+    flex: 1;
+    flex-direction: column;
+}
+
+body.sidebar-collapsing {
+    overflow: hidden;
+}
+
+body.opening-menu {
+    overflow-y: hidden;
+}
+
+.whiteboard-dummy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+

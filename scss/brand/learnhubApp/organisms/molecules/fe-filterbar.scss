@@ -1,0 +1,250 @@
+﻿.fe-filterbar {
+    background-color: $white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 320px;
+    position: relative;
+    box-shadow: 2px 2px 12px #ddd;
+    z-index: 10;
+    animation: slideInLeft 250ms cubic-bezier(0.595, -0.005, 0.035, 0.950);
+    overflow: auto;
+    .fe-fb-header {
+        color: $primary;
+        display: flex;
+        justify-content: space-between;
+        height: 90px;
+        padding: 1rem;
+        @media (max-height: 769px) {
+            height: 78px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px
+        }  
+        .section-title {
+            font-size: 18px;
+            font-family: JosefinSans-Bold;
+            display: flex;
+            align-items: center;
+
+            [class^="lh-icon-"] {
+                font-size: 32px;
+                margin-right: 10px;
+            }
+        }
+
+        .tool-fileexplorer {
+            background-color: $white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0px 4px 7px 1px #ddd;
+            font-size: 32px;
+            color: $tertiary;
+            text-decoration: none !important;
+        }
+    }
+
+    .fe-fb-body {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        left: 0;
+        top: 0;
+        padding: 1rem 1rem 1rem 1rem;
+        .section-title {
+            font-size: 18px;
+            font-family: JosefinSans-SemiBold;
+            color: $secondary;
+            margin: 15px 0 0 0;
+            @media (max-height: 769px) {
+                margin-top: 5px;
+            }  
+        }
+        .custom-control {
+            &:first-child {
+                margin-top: 1rem;
+            }
+            margin-bottom: 1rem;
+            cursor: pointer;
+            &.custom-radio {
+                cursor: pointer;
+                input {
+                    cursor: pointer;
+                }
+                label {
+                    cursor: pointer;
+                    padding-left: 10px;
+                    font-size: 16px;
+                    @media (max-width: 1537px) {font-size: 14px;}  
+                }
+                input[type="radio"]:checked+label {
+                    font-weight: bold; 
+                    color: $accenta;
+                }
+                &:hover {
+                    label {
+                        color: $tertiary;
+                    }
+                }
+            }
+        }
+    }
+    .specifications {
+        margin-top: 35px;
+        .card {
+            background-color: transparent; 
+            border: none;
+            .card-header {
+                .card-link:hover {
+                    color: $tertiary;
+                }
+            }
+            .card-header {
+                padding-left: 0px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-right: 14px;
+                background-color: transparent; 
+                border: none;                
+            }
+            .card-link{
+                display: flex; 
+                @media (max-width: 1537px) {font-size: 14px;}  
+                [class^="lh-icon-"] {
+                    margin-left: auto;
+                    font-size: 27px;
+                    opacity: 0.5;
+                    color: $tertiary;
+                }
+                &[aria-expanded="true"]  {
+                    font-weight: bolder;
+                    color: $accenta !important;
+                    > [class^="lh-icon-"] {
+                        transform: rotate(90deg);
+                        opacity: 1;
+                    }
+                }
+            }
+            .card-body {
+                padding: 0px;
+                padding-left: 5px;
+                .custom-control:first-child {
+                    margin-top: 5px;
+                }
+            }
+            .card {
+                .card-body {
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+    .fe-fb-footer {
+        display: flex;
+        padding: 1rem;
+        justify-items: flex-start;
+        a {
+            font-size: 48px;
+            text-decoration: none;
+            display: flex;
+            margin-right: 10px;
+            &:only-child {
+                margin-left:auto;
+                margin-right: 0px;
+            }
+            &:last-child {
+                margin-left: auto;
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .fe-filterbar {
+        width: 355px;
+        flex: 0 0 355px;
+        .fe-fb-header {
+            height: 90px;
+            padding: 1rem;
+            .section-title {
+                font-size: 17px;
+                [class^="lh-icon-"] {
+                    font-size: 32px;
+                    margin-right: 10px;
+                }
+            }
+            .tool-fileexplorer {
+                width: 45px;
+                height: 45px;
+                font-size: 25px;
+            }
+        }
+    
+        .fe-fb-body {
+            padding: 1rem 1rem 1rem 2rem;
+            .section-title {
+                font-size: 18px;
+                margin: 15px 0 0 0;
+            }
+            .custom-control {
+                margin-bottom: 12px;
+                cursor: pointer;
+                &:first-child {
+                    margin-top: 1rem;
+                }
+                &.custom-radio {
+                    label {
+                        padding-left: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .specifications {
+            margin-top: 35px;
+            .card {
+                .card-header {
+                    padding-left: 0px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-right: 14px;
+                    background-color: transparent; 
+                    border: none;                
+                }
+                .card-link{
+                    [class^="lh-icon-"] {
+                        font-size: 27px;
+                    }
+                }
+                .card-body {
+                    padding-left: 5px;
+                    .custom-control:first-child {
+                        margin-top: 5px;
+                    }
+                }
+                .card {
+                    .card-body {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+        .fe-fb-footer {
+            display: flex;
+            padding: 1rem;
+            justify-content: flex-start;
+            a {
+                font-size: 36px;
+            }
+        }
+    }
+    
+}
+
+

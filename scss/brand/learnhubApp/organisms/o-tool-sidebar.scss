@@ -1,0 +1,8 @@
+﻿@import "molecules/tool-sidebar";
+@import "molecules/tool-options";
+@import "molecules/slide-list";
+
+.tool-sidebar-container {
+    display: flex;
+    height: 100%;
+}

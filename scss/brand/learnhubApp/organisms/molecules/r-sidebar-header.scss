@@ -1,0 +1,80 @@
+﻿.sidebar-header {
+    flex: 0 0 150px;
+    color: $white;
+    padding: 1.5rem;
+    position: relative;
+    background: $accenta url(../images/bg-sidebar.png);
+
+    .sb-head-title {
+        font-size: 28px;
+        font-family: JosefinSans-SemiBold;
+        margin-top: 1.5rem;
+    }
+
+    .sb-head-subtitle {
+        font-size: 24px;
+        font-family: JosefinSans-Light;
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 20px;
+        font-size: 40px;
+        top: 20px;
+        color: $white !important;
+        text-decoration: none !important;
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .qr-btn {
+        position: absolute;
+        right: 64px;
+        font-size: 30px;
+        top: 24px;
+        color: $white !important;
+        text-decoration: none !important;
+        opacity: 0.8;
+        &.active {
+            span:before {
+                color: $accenta;
+            }
+            opacity: 1;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &.bg-blue {
+        background-color: #428AC4;
+    }
+}
+
+@media (max-width: 1441px) {
+    .sidebar-header {
+        flex: 0 0 90px;
+        padding-left: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 15px;
+        .sb-head-title {
+            font-size: 24px;
+            margin-top: 1.5rem;
+        }
+    
+        .sb-head-subtitle {
+            font-size: 20px;
+        }
+        .close-btn {
+            font-size: 35px;
+        }
+        .qr-btn {
+            top: 24px;
+            right: 60px;
+            font-size: 26px;
+        }
+    }
+}

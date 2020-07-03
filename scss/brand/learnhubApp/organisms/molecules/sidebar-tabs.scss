@@ -1,0 +1,73 @@
+﻿.tab-bar {
+    width: 100%;
+    // max-width: 480px;
+    margin: 0 auto;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        li {
+            width: 100%;
+            [class^="lh-icon-"] {
+                font-size: 28px;
+                margin-right: 5px;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 15px 10px;
+                background: $quinary;
+                color: $tertiary;
+                text-transform: uppercase;
+                position: relative;
+                margin: 0;
+                cursor: pointer;
+                @media (max-width: 1537px) { 
+                    padding: 10px 10px;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        position: absolute;
+        height: calc(100% - 58px);
+        overflow: auto;
+        width: 100%;
+        padding: 2rem;
+        @media (max-width: 1537px) {
+            padding: 1.25rem;
+        }
+    }
+}
+
+.tab-bar > input[name="tab-selector"],
+.tab-bar section > .tab-content {
+    display: none;
+}
+
+#tab1:checked ~ nav .tab-label-1 label:after,
+#tab2:checked ~ nav .tab-label-2 label:after,
+#tab3:checked ~ nav .tab-label-3 label:after,
+#tab4:checked ~ nav .tab-label-4 label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: $tertiary;
+    left: 0;
+    bottom: -1px;
+}
+
+#tab1:checked ~ section .tab-1,
+#tab2:checked ~ section .tab-2,
+#tab3:checked ~ section .tab-3,
+#tab4:checked ~ section .tab-4 {
+    display: block;
+}

@@ -1,0 +1,31 @@
+﻿.link-list {
+    padding: 1rem 2rem 0 2rem;
+    color: $secondary;
+
+    .list-title {
+        font-size: 18px;
+        font-family: karla;
+        border-bottom: 1px solid $quaternary;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+
+        [class^="lh-icon-"] {
+            color: $tertiary;
+            font-size: 22px;
+            position: relative;
+            top: 4px;
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        a {
+            text-decoration: underline;
+            font-size: 14px;
+            font-family: segoeuiregular;
+        }
+    }
+}

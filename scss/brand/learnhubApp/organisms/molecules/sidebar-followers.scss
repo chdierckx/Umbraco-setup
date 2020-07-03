@@ -1,0 +1,37 @@
+﻿@import "../atoms/friend";
+
+.followers {
+    text-align: center;
+    margin-bottom: -12px;
+    z-index: 2;
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        color: $tertiary;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        padding-left: 15px;
+
+        .followers-count {
+            color: $white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $secondary;
+            z-index: 999;
+            line-height: 40px;
+            text-align: center;
+            font-family: segoeuiregular;
+            font-size: 0.75rem;
+            margin-left: -15px;
+        }
+
+        .follower-image {
+            margin-left: -15px;
+        }
+    }
+}

@@ -1,0 +1,360 @@
+﻿@import "atoms/toolbar-button";
+
+.toolbar-bottom {
+    will-change: transform;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    z-index: 500;
+    position: absolute; 
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background-color: $white;
+    width: 100%;
+    box-shadow: 0 0 24px 1px rgba(0,0,0,0.10);
+    min-height: 60px;
+}
+
+.taskbar {
+    display: flex;
+    justify-content: space-between;
+    // max-width: 1110px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 768px) and (max-height: 1024px) {
+        min-height: auto;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .tools-panel {
+        justify-content: center;
+        display: flex;
+        margin: -10px 20px;
+        flex: 1;
+        @media (max-width: 768px) and (max-height: 1024px) {
+            margin: 0px;
+        }
+        > .tools-button-bg {
+            &.active, &:active {
+                > .tools-button {
+                    color: $clr-accenta;
+                }
+            }
+            &:hover, &:focus {
+                > .tools-button {
+                    box-shadow: 0 14px 15px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.05);
+                    transform:  translateY(-4px);
+                }               
+            }
+            > .tools-button {
+                z-index: 99;
+                transition: box-shadow 150ms ease-in-out;
+                transition: transform 150ms ease-in-out;
+                border-style: solid; 
+                border-width: 1px;
+                border-color: rgba($quaternary, 0.35);
+                box-shadow: 0 7px 12px -2px rgba(0,0,0,0.10);
+                transition: transform 75ms ease-in-out;
+                &[aria-expanded="true"] ~ .sub-menu-panel:after {
+                    opacity: 1;
+                }
+            }
+        }
+        .sub-menu-panel {
+            .sub-menu-bg {
+                > .tools-button-bg {
+                    &.active, &:active {
+                        > .tools-button {
+                            color: $clr-accenta;
+                            box-shadow: 0 0 10px 0px rgba($accenta, 0.70);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .sub-menu-panel {
+        width: 71px;
+        position: absolute;
+        bottom: -2px;
+        left: -8px;
+        @media (max-width: 768px) and (max-height: 1024px) {
+            width: 48px;
+            left: -2px;
+            bottom: -2px;
+        }
+
+        .collapsible-panel {
+            margin-bottom: 30px;
+            -webkit-transition: all 0.1s ease-out;
+            -moz-transition: all 0.1s ease-out;
+            -o-transition: all 0.1s ease-out;
+            transition: all 0.1s ease-out;
+
+            .sub-menu-bg {
+                background: #edf8ff;
+                min-height: 200px;
+                display: flex;
+                flex-wrap: wrap;
+                border-radius: 30px 30px 0 0;
+                flex-direction: column;
+                width: 100%;
+                padding: 4px 0 35px 0;
+                @media (max-width: 768px) and (max-height: 1024px) {
+                    min-height: 180px;
+                }
+            }
+
+            .yellow {
+                color: #FFE600;
+            }
+
+            .pink {
+                color: #FE75D0;
+            }
+
+            .turquoise {
+                color: #62DFB9;
+            }
+
+            .green {
+                color: #74D861;
+            }
+        }
+
+        .tools-button:hover {
+            box-shadow: 0 0 10px 0px rgba($accenta, 0.70);
+        }
+
+        &.large {
+            width: 286px;
+
+            .collapsible-panel {
+                margin-bottom: 75px;
+
+                &.collapsing {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .sub-menu-bg {
+                flex-direction: row;
+                border-radius: 30px 30px 30px 0;
+                padding: 4px;
+            }
+
+            &:after {
+                padding-top: 86px;
+            }
+        }
+
+        &:after {
+            content: '';
+            width: 71px;
+            height: 39px;
+            position: absolute;
+            bottom: -8px;
+            border-radius: 0 0 45px 45px;
+            background-color: #EDF8FF;
+            opacity: 0;
+            -webkit-transition: all 0.01s ease-out;
+            -moz-transition: all 0.01s ease-out;
+            -o-transition: all 0.01s ease-out;
+            transition: all 0.01s ease-out;
+            @media (max-width: 768px) and (max-height: 1024px) {
+                width: 47px;
+                height: 30px;
+                bottom: 1px;
+            }
+        }
+    }
+
+    // &:before {
+    //     @media (max-width: 768px) and (max-height: 1024px) {
+    //         content: none;
+    //     }
+    //     content: '';
+    //     position: absolute;
+    //     width: 0;
+    //     height: 0;
+    //     border-style: solid;
+    //     border-width: 0 0 40px 40px;
+    //     left: -40px;
+    //     border-style: solid;
+    //     -ms-filter: drop-shadow(-15px 8px 13px rgba(0,0,0,.08));
+    //     -moz-filter: drop-shadow(-15px 8px 13px rgba(0,0,0,.08));
+    //     -webkit-filter: drop-shadow(-15px 8px 13px rgba(0,0,0,.08));
+    //     filter: drop-shadow(-15px 8px 13px rgba(0,0,0,.08));
+    //     border-color: transparent transparent $white transparent;
+    // }
+
+    // &:after {
+    //     @media (max-width: 768px) and (max-height: 1024px) {
+    //         content: none;
+    //     }
+    //     content: '';
+    //     position: absolute;
+    //     width: 0;
+    //     height: 0;
+    //     right: -40px;
+    //     border-style: solid;
+    //     border-width: 40px 0 0 40px;
+    //     border-style: solid;
+    //     -ms-filter: drop-shadow(13px 0px 12px rgba(0,0,0,.08));
+    //     -moz-filter: drop-shadow(13px 0px 12px rgba(0,0,0,.08));
+    //     -webkit-filter: drop-shadow(13px 0px 12px rgba(0,0,0,.08));
+    //     filter: drop-shadow(13px 0px 12px rgba(0,0,0,.08));
+    //     border-color: transparent transparent transparent $white;
+    // }
+}
+
+
+
+@media (min-width: 770px) and (max-width: 1024px) {
+    body {
+        .toolbar-bottom {
+            .taskbar {
+                transform: scale(0.8);
+
+            }
+        }
+    }  
+}
+
+@media (min-width: 1441px) and (max-width: 1537px) {
+    body {
+        .toolbar-bottom {
+            min-height: 50px;
+            .taskbar {
+                transform: scale(0.85);
+            }
+        }
+        .tools-panel {
+            margin-top: -14px !important;
+        }
+    }   
+}
+
+@media (min-width: 1368px) and (max-width: 1441px) {
+    body {
+        .toolbar-bottom {
+            min-height: 50px;
+            .taskbar {
+                transform: scale(0.80);
+            }
+        }
+        .tools-panel {
+            margin-top: -14px !important;
+        }
+    }   
+}
+
+@media (min-width: 1025px) and (max-width: 1367px) {
+    body {
+        .toolbar-bottom {
+            min-height: 50px;
+            .taskbar {
+                transform: scale(0.80);
+            }
+        }
+        .tools-panel {
+            margin-top: -14px !important;
+        }
+    }   
+}
+   
+@media (min-width: 941px) and (max-width: 1024px) {
+    body {
+        .toolbar-bottom {
+            min-height: 50px;
+            .taskbar {
+                transform: scale(0.72);
+                margin-top: -6px;
+                max-width: 100%;
+                .tools-panel {
+                    margin: 0px;
+                }
+            }
+        }
+        .tools-panel {
+            margin-top: -14px !important;
+        }
+    }   
+}
+
+@media (min-width: 0px) and (max-width: 940px) {
+    body {
+        .toolbar-bottom {
+            min-height: 45px;
+            .taskbar {
+                transform: scale(0.60);
+                max-width: 100%;
+                margin-top: -6px;
+                justify-content: center;
+                .tools-panel {
+                    margin: 0px;
+                }
+            }
+        }
+        .tools-panel {
+            margin-top: -14px !important;
+        }
+    }   
+}
+
+// @media (min-width: 1367px) and (max-width: 1538px) {
+//     body {
+//         .toolbar-bottom {
+//             min-height: 50px;
+//             .taskbar {
+//                 transform: scale(0.85);
+//                 max-width: 100%;
+//             }
+//         }
+//         .tools-panel {
+//             margin-top: -14px !important;
+//         }
+//     }   
+// }
+
+
+
+// @media (min-width: 1920px) {
+//     body {
+//         .toolbar-bottom {
+//             max-width: 1300px;
+//         }
+//     }   
+// }
+
+
+
+
+body.multi-user {
+    .toolbar {
+        @media (max-width: 1024px) {
+            transform: scale(0.55);  
+        }
+        @media (max-width: 1280px) {
+            transform: scale(0.70);  
+        }
+        @media (max-width: 1600px) {
+            transform: scale(0.75);  
+        }
+        .taskbar {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            min-height: auto;
+            &:before {
+                content: none !important;
+            }
+            &:after {
+                content: none !important;
+            }
+        }
+    }
+}

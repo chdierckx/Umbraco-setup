@@ -1,0 +1,54 @@
+﻿.folder-container {
+    list-style: none;
+    padding-left: 36px;
+    margin-bottom: 10px;
+    .folder-group {
+        color: $primary;
+        font-size: 16px;
+        margin: 10px 0;
+        @media (max-width: 1441px) {font-size: 14px;}  
+        .folder-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            [class^="lh-icon-"] {
+                font-size: 30px;
+                @media (max-width: 1441px) {font-size: 26px;}  
+                color: $secondary;
+                margin-right: 8px;
+            }
+            &:hover {
+                color: $tertiary;
+                [class^="lh-icon-"] {
+                    color: $tertiary;
+                }
+            }
+            &.active {
+                font-family: karla-bold;
+                color: $accenta;
+                cursor: inherit;
+                &:hover {
+                    [class^="lh-icon-"] {
+                        color: $accenta;
+                    }                  
+                }
+                [class^="lh-icon-"] {
+                    color: $accenta;
+                }
+            }           
+        }
+
+        &.open > .folder-item {
+            font-family: karla-bold;
+            color: $primary;
+            &:hover {
+                [class^="lh-icon-"] {
+                    color: $primary;
+                }               
+            }
+            [class^="lh-icon-"] {
+                color: $primary;
+            }
+        }
+    }
+}

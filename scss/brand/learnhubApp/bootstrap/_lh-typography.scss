@@ -1,0 +1,72 @@
+﻿.text-xs {
+    font-size: 12px;
+    font-family: segoeuiregular;
+}
+.text-gray {
+    color: $gray-550;
+}
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+// Generate contextual modifier classes for theme font-sizes.
+@each $sizename, $value in $theme-font-sizes {
+    .text-size-#{$sizename} {
+        font-size: #{$value}px !important;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    @each $sizename, $value in $theme-font-sizes {
+        .text-size-#{$sizename} {
+            font-size: #{$value * .84}px !important;
+        }
+    }
+}
+
+.explainer {
+    font-size: 24px;
+    color: $tertiary;
+}
+.explainer-sm {
+    font-size: 22px;
+}
+
+.explainer-xs {
+    font-size: calc(1.275rem + 0.3vw);
+    color: $tertiary;
+}
+
+@media (max-width: 1600px) {
+    legend {
+      font-size: calc(1.275rem + 0.3vw);
+    }
+    h1,
+    .h1 {
+      font-size: calc(1.375rem + 1.5vw);
+    }
+    h2,
+    .h2 {
+      font-size: calc(1.325rem + 0.9vw);
+    }
+    h3,
+    .h3 {
+      font-size: calc(1.2rem + 0.6vw);
+    }
+    h4,
+    .h4 {
+      font-size: calc(1.275rem + 0.3vw);
+    }
+    .display-1 {
+      font-size: calc(1.725rem + 5.7vw);
+    }
+    .display-2 {
+      font-size: calc(1.675rem + 5.1vw);
+    }
+    .display-3 {
+      font-size: calc(1.575rem + 3.9vw);
+    }
+    .display-4 {
+      font-size: calc(1.475rem + 2.7vw);
+    }
+  }

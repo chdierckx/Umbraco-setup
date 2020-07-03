@@ -1,0 +1,282 @@
+﻿@import "molecules/fe-filterbar";
+@import "molecules/fe-contentpane";
+@import "molecules/box-list";
+@import "molecules/folder-list";
+@import "molecules/custom-cards";
+
+.fe-container {
+    display: flex;
+    flex: 1;
+}
+
+
+.custom-cards-container {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.explorer-container {
+    display: flex;
+    flex: 1; 
+    height: 100%;
+    position: absolute; 
+    z-index: 65;
+    .fe-container {
+        flex: 1;
+        .filterbar-panel {
+            display: flex; 
+            flex: 1;
+            flex-direction: column;
+        }
+    }
+}
+
+
+@media (min-width: 2301px) {
+    .card-custom {
+        flex: 0 0 25%;
+    }
+
+    body.has-sidebar-sm {
+        .card-custom {
+            flex: 0 0 20%;
+        }
+    } 
+}
+
+@media (max-width: 2300px) {
+    body.has-sidebar-sm {
+        .card-custom {
+            flex: 0 0 25%;
+        }
+    } 
+}
+
+@media (min-width: 1900px) and (max-width: 2299px) {
+    .card-custom {
+        flex: 0 0 33.3333333%;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1920px) {
+    body.has-sidebar-sm { 
+        .card-custom {
+            flex: 0 0 25%;
+        }
+        .fe-filterbar {
+            width: 304px;
+            flex: 0 0 304px;
+            .fe-fb-header {
+                .section-title {
+                    font-size: 18px;
+                }
+            }
+            .fe-fb-body{
+                padding-left: 20px;
+                .section-title {
+                    font-size: 16px;
+                }
+                padding-bottom: 0px;
+                .custom-control {
+                    .custom-control-label {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }           
+    }  
+}
+
+@media (max-width: 1600px) {
+    .sidebar.sidebar-lg {
+        max-width: 320px;
+    }
+    body.has-sidebar-sm { 
+        .card-custom {
+            flex: 0 0 33%;         
+        }
+    } 
+    .fe-filterbar {
+        width: 280px;
+        flex: 0 0 280px;
+        .fe-fb-header {
+            .section-title {
+                font-size: 17px;
+                [class^=lh-icon-] {
+                    font-size: 24px;
+                }
+            }
+        }
+        .fe-fb-body{
+            padding-left: 20px;
+            .section-title {
+                font-size: 16px;
+            }
+            padding-bottom: 0px;
+            .custom-control {
+                .custom-control-label {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .fe-contentpane {
+        .fe-cp-subheader  {
+            [class^=lh-icon-] {
+                font-size: 24px;
+            }
+        }
+        .fe-cp-header {
+            .section-title {
+                font-size: 17px;
+            }
+        }
+    }
+    .card-custom {
+        .content {
+            .body {
+                min-height: 180px;
+            }
+        }
+    }  
+}
+
+@media (max-width: 1441px) {
+    .sidebar.sidebar-lg {
+        max-width: 320px;
+    }
+    body.has-sidebar-sm { 
+        .card-custom {
+            flex: 0 0 33%;
+        }
+    } 
+}
+
+@media (max-width: 1366px) {
+    body.has-sidebar-sm { 
+        .card-custom {
+            flex: 0 0 33%;
+        }
+    } 
+}
+
+@media (min-width: 1282px) and (max-width: 1365px) {
+    body.has-sidebar-sm {
+        .card-custom {
+            flex: 0 0 50%;
+        }
+    } 
+    body {
+        .card-custom {
+            flex: 0 0 100%;
+        }
+    }    
+}
+
+@media (min-width: 1025px) and (max-width: 1281px) {
+    body.has-sidebar-sm {
+        .card-custom {
+            flex: 0 0 50%;
+        }
+    } 
+    body {
+        .card-custom {
+            flex: 0 0 50%;
+        }
+    }    
+}
+
+@media (max-width: 1200px) {
+    .card-custom {
+        flex: 0 0 100%;
+    }
+    .fe-filterbar {
+        width: 260px;
+        flex: 0 0 260px;
+    }
+    .fe-contentpane {
+        .fe-cp-subheader  {
+            [class^=lh-icon-] {
+                font-size: 24px;
+            }
+        }
+        .fe-cp-header {
+            .section-title {
+                font-size: 17px;
+                [class^=lh-icon-] {
+                    display: none;
+                }
+
+            }
+        }
+    }
+    .fe-filterbar {
+        .fe-fb-header {
+            .section-title {
+                font-size: 16px;
+                [class^=lh-icon-] {
+                    display: none;
+                }
+            }
+        }
+        .fe-fb-body{
+            padding-left: 13px;
+            .section-title {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+            padding-bottom: 0px;
+            .custom-control {
+                .custom-control-label {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    body.has-sidebar-sm {
+        .card-custom {
+            flex: 0 0 50%;
+        }
+    } 
+}
+
+@media (max-width: 900px) {
+    .card-custom {
+        flex: 0 0 100%;
+    }
+    body.has-sidebar-sm {
+        .card-custom {
+            flex: 0 0 100%;
+        }
+    } 
+}
+
+@media (max-width: 1024px)  {
+    .fe-contentpane {
+        .fe-cp-header {
+            justify-content: flex-end;
+            .section-title {display: none;} 
+        }
+        .fe-cp-subheader  {
+            [class^=lh-icon-] {
+                display: none;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 768px) and (max-height: 1024px) {
+    .fe-contentpane {
+        .fe-cp-header {
+            justify-content: flex-end;
+            .section-title {display: none;} 
+        }
+
+    }
+
+}
+

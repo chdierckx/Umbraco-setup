@@ -1,0 +1,109 @@
+﻿.shell-nav {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    z-index: 1000;
+    transition: transform 150ms ease-in-out;
+    &::after {
+        content: '';
+        position: absolute;
+        // border-style: solid;
+        // -ms-filter: drop-shadow(1px 1px 1px rgba(0,0,0,.2));
+        // -moz-filter: drop-shadow(1px 1px 1px rgba(0,0,0,.2));
+        // -webkit-filter: drop-shadow(1px 1px 1px rgba(0,0,0,.2));
+        // filter: drop-shadow(4px 1px 18px rgba(0,0,0,.2));
+        @media (max-width: 768px) and (max-height: 1024px) {
+            content: none;
+        }
+    }
+    &:active, &.active {
+        .btn-circle {
+            background-color: $clr-accenta;
+            color: $white;
+        }
+    }
+
+    .btn-circle {
+        width: 62px;
+        height: 62px;
+        @media (max-width: 768px) and (max-height: 1024px) {
+            width: 40px; 
+            height: 40px; 
+            font-size: 30px;
+        }
+        border-radius: 50%;
+        background-color: $primary;
+        position: absolute;
+        z-index: 9;
+        // top: 38px;
+        // right: 42px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 6px 6px rgba(0,0,0,0.2);
+        color: $white !important;
+        text-decoration: none !important;
+        font-size: 44px;
+        @media (max-width: 768px) and (max-height: 1024px) {
+            position: relative;
+            top: auto; 
+            right: auto;
+        }
+    }
+
+    &.left {
+        left: 24Px;
+        bottom: 20px;
+        transform-origin: 0 100%;
+        @media (max-width: 768px) and (max-height: 1024px) {
+            left: 20px;
+            bottom: 10px;
+        }
+        &::after {
+            // border-width: 150px 0 0px 150px;
+            // border-color: transparent transparent transparent $white;
+            left: 0;
+        }
+    }
+
+    &.right {
+        right: 24px;
+        bottom: 20px;
+        z-index: 1000;
+        transform-origin: 100% 100%;
+        @media (max-width: 768px) and (max-height: 1024px) {
+            right: 20px;
+            bottom: 10px;
+        }
+        &::after {
+            // border-width: 0 0 150px 150px;
+            // border-color: transparent transparent $white transparent;
+            right: 0;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+        width: 44px; 
+        height: 44px; 
+        .btn-circle {
+            width: 44px; 
+            height: 44px;   
+            font-size: 32px;        
+        }
+    }
+    @media (min-width: 1025px) and (max-width: 1536px) {
+        width: 46px; 
+        height: 46px; 
+        .btn-circle {
+            width: 46px; 
+            height: 46px;       
+            font-size: 36px;    
+        }
+    }
+}
+
+
+
+

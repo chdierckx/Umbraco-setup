@@ -1,0 +1,16 @@
+﻿.avatar {
+    .avatar-wrapper {
+        width: 195px;
+        height: 189px;
+        margin: 0 auto;
+        background-image: url(../images/avatar.svg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        svg {
+            width: 100%;
+        }
+    }
+}

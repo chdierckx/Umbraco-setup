@@ -1,0 +1,158 @@
+﻿.main-wrapper {
+    max-width: 485px;
+    margin: 0 auto;
+    @media (max-width: 1537px) {max-width: 400px;}  
+    @media (max-width: 1537px) {
+        .text-white.text-size-24 {
+            font-size: 20px !important;
+        }
+        .text-size-22 {
+            font-size: 20px !important;
+        }
+    }
+}
+
+.main-wrapper-lg {
+    max-width: 896px;
+    margin: 0 auto;
+
+    .white-cover {
+        padding: 48px;
+        @media (max-width: 1537px) {padding: 30px;}  
+    }
+}
+
+.white-cover {
+    background-color: $white;
+    padding: 48px 32px;
+    border-radius: 10px;
+    @media (max-width: 1537px) {
+        padding: 30px 18px;
+        a.text-accentb.text-decoration-underline {
+            font-size: 0.9375rem;
+        }
+        .btn-lg {
+            margin-top: 1rem!important;
+        }
+        .custom-control {
+            margin-top: 0.75rem !important;
+        }
+    } 
+    
+    
+}
+//Login
+.qr-login {
+    position: absolute;
+    right: 85px;
+    bottom: 50px;
+    width: 130px;
+    font-size: 13px;
+    text-align: center;
+    color: $clr-quinary;
+    @media (max-width: 1537px) {
+        right: 30px;
+        bottom: 38px;
+        img {
+            max-width: 110px;
+        }
+    }
+
+    a {
+        color: $accenta;
+        text-decoration: underline;
+    }
+}
+
+//Btn-back
+.btn-back {
+    position: relative;
+    width: 62px;
+    height: 62px;
+    padding: 16px 11px;
+    border-radius: 31px;
+
+    &:hover {
+        background: transparent;
+    }
+
+    svg {
+        opacity: 0.75;
+    }
+
+    .arrow-path, .line {
+        transition-duration: 0.3s;
+    }
+
+    &:hover .arrow-path {
+        -webkit-transform: translateY(9%) scale(1.1, 0.8);
+        transform: translateY(9%) scale(1.1, 0.8);
+    }
+
+    &:hover .line {
+        -webkit-transform: translateX(9%) scale(0.80, 1);
+        transform: translateX(9%) scale(0.80, 1);
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .qr-login {
+        right: auto;
+        bottom: auto;
+        position: relative;
+        margin: 0 auto;
+        padding-top: 25px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .main-wrapper, .main-wrapper-lg {
+        width: 100%;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .white-cover {
+        padding: 35px 20px;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .btn-back {
+        width: 35px;
+        height: 35px;
+        padding: 9px 6px !important;
+        svg {
+            width: 20px;
+            height: auto;
+        }
+    }
+
+    .arrow-icon {
+        width: 14px;
+        position: absolute;
+        left: 6px;
+        top: 50%;
+        transition: all .5s;
+        transform: translateY(-50%);
+    }
+
+    .line-icon {
+        position: absolute;
+        top: 50%;
+        transition: all .5s;
+        width: 18px;
+        left: 10px;
+        transform: translateY(-50%);
+    }
+    //Success or Failed Payment
+    .registration-result {
+        max-width: 320px;
+
+        img {
+            max-width: 75%;
+        }
+    }
+}

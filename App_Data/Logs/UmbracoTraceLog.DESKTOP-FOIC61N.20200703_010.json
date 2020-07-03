@@ -1,0 +1,1 @@
+{"@t":"2020-07-03T13:55:30.6904661Z","@mt":"{LogPrefix} Canceling tasks","LogPrefix":"[RebuildIndexesOnStartup] ","SourceContext":"Umbraco.Web.Scheduling.BackgroundTaskRunner","ProcessId":4880,"ProcessName":"iisexpress","ThreadId":58,"AppDomainId":3,"AppDomainAppId":"LMW3SVC5ROOT","MachineName":"DESKTOP-FOIC61N","Log4NetLevel":"INFO "}

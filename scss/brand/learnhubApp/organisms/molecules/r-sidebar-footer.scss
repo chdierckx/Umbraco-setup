@@ -1,0 +1,30 @@
+﻿.sidebar-footer {
+    flex: 0;
+
+    .footer-action-panel {
+        display: flex;
+        padding: 1rem 1.5rem;
+        align-items: flex-end;
+        justify-content: flex-end;
+        color: $tertiary;
+
+        .btn {
+            padding: .6875rem 1.4375rem;
+
+            .btn-text {
+                padding-left: 30px;
+            }
+
+            [class^="lh-icon-"] {
+                font-size: 36px;
+                position: absolute;
+                top: 4px;
+                left: 18px;
+            }
+        }
+
+        a.btn {
+            text-decoration: none !important;
+        }
+    }
+}

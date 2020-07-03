@@ -1,0 +1,41 @@
+﻿.toolkit {
+    opacity: .75;
+    font-size: 36px;
+
+    .toolkit-content {
+        display: flex;
+
+        &.toolkit-justify-start {
+            justify-content: flex-start;
+        }
+
+        &.toolkit-justify-end {
+            justify-content: flex-end;
+        }
+
+        &.toolkit-justify-space-around {
+            justify-content: space-around;
+        }
+
+        &.toolkit-justify-space-between {
+            justify-content: space-between;
+        }
+    }
+
+    .tool {
+        text-decoration: none;
+    }
+
+    &.toolkit-vertical {
+        .toolkit-content {
+            flex-direction: column;
+        }
+    }
+
+
+    &.toolkit-horizontal {
+        .toolkit-content {
+            flex-direction: row;
+        }
+    }
+}

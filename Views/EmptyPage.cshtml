@@ -1,0 +1,691 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.EmptyPage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+
+
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col-lg-4 p-0">
+                <div class="boxed py-3 px-4">
+                    <h5>Primary gradient</h5>
+                    <div class="gradientbox primarygradient mb-5"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="boxed py-3 px-4">
+                    <h5>Secondary gradiënt (testing)</h5>
+                    <div class="gradientbox secondarygradient mb-5"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="boxed py-3 px-4">
+                    <h5>Tertiary gradiënt (testing)</h5>
+                    <div class="gradientbox tertiarygradient "></div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="boxed p-3">
+                    <div class="colorpalllet">
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-primary shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                PRIMARY
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-secondary shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                SECONDARY
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-tertiary shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                TERTIARY
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-quaternary shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                QUATERNARY
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="boxed p-3">
+                    <div class="colorpalllet">
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-quinary shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                QUINARY
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-accenta shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                ACCENT A
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-accentb shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                ACCENT B
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-accentc shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                ACCENT C
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="boxed p-3">
+                    <div class="colorpalllet">
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-info shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                INFO
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-danger shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                DANGER
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-warning shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                WARNING
+                            </p>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="bg-success shape mx-auto">
+
+                            </div>
+                            <p class="mt-2 text-xs">
+                                SUCCESS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Buttons - Regular - Default - Colours</h5>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+                    <p class="explainer-xs mb-1">Button-Accenta</p>
+                    <button href="#" class="btn btn-accenta  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-accenta  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Primary</p>
+                    <button href="#" class="btn btn-primary  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-primary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accentb</p>
+                    <button href="#" class="btn btn-accentb  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-accentb  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-secondary</p>
+                    <button href="#" class="btn btn-secondary  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-secondary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accentc</p>
+                    <button href="#" class="btn btn-accentc  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-accentc  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-tertiary</p>
+                    <button href="#" class="btn btn-tertiary  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-tertiary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Buttons - LG - Default - Colours</h5>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accenta</p>
+                    <button href="#" class="btn btn-lg btn-accenta  btn-block mb-2">LG</button>
+                    <button href="#" class="btn  btn-lg btn-accenta  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Primary</p>
+                    <button href="#" class="btn btn-lg btn-primary  btn-block mb-2">LG</button>
+                    <button href="#" class="btn  btn-lg btn-primary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accentb</p>
+                    <button href="#" class="btn btn-lg btn-accentb  btn-block mb-2">LG</button>
+                    <button href="#" class="btn  btn-lg btn-accentb  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-secondary</p>
+                    <button href="#" class="btn btn-lg btn-secondary  btn-block mb-2">LG</button>
+                    <button href="#" class="btn btn-lg btn-secondary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accentc</p>
+                    <button href="#" class="btn btn-lg btn-accentc  btn-block mb-2">LG</button>
+                    <button href="#" class="btn btn-lg btn-accentc  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-tertiary</p>
+                    <button href="#" class="btn btn-lg btn-tertiary  btn-block mb-2">LG</button>
+                    <button href="#" class="btn btn-lg btn-tertiary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Buttons - Regular - Outline - Colours</h5>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accenta</p>
+                    <button href="#" class="btn btn-outline-accenta  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-outline-accenta  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Primary</p>
+                    <button href="#" class="btn btn-outline-primary  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-outline-primary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accentb</p>
+                    <button href="#" class="btn btn-outline-accentb  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-outline-accentb  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-secondary</p>
+                    <button href="#" class="btn btn-outline-secondary  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-outline-secondary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accentc</p>
+                    <button href="#" class="btn btn-outline-accentc  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-outline-accentc  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-tertiary</p>
+                    <button href="#" class="btn btn-outline-tertiary  btn-block mb-2">REGULAR</button>
+                    <button href="#" class="btn  btn-outline-tertiary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Buttons - LG - Outline - Colours</h5>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accenta</p>
+                    <button href="#" class="btn btn-lg btn-outline-accenta  btn-block mb-2">LG</button>
+                    <button href="#" class="btn  btn-lg btn-outline-accenta  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Primary</p>
+                    <button href="#" class="btn btn-lg btn-outline-primary  btn-block mb-2">LG</button>
+                    <button href="#" class="btn  btn-lg btn-outline-primary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accentb</p>
+                    <button href="#" class="btn btn-lg btn-outline-accentb  btn-block mb-2">LG</button>
+                    <button href="#" class="btn  btn-lg btn-outline-accentb  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-secondary</p>
+                    <button href="#" class="btn btn-lg btn-outline-secondary  btn-block mb-2">LG</button>
+                    <button href="#" class="btn btn-lg btn-outline-secondary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-Accentc</p>
+                    <button href="#" class="btn btn-lg btn-outline-accentc  btn-block mb-2">LG</button>
+                    <button href="#" class="btn btn-lg btn-outline-accentc  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+                <div class="boxed pt-3 pb-3 pl-4 pr-4">
+
+                    <p class="explainer-xs mb-1">Button-tertiary</p>
+                    <button href="#" class="btn btn-lg btn-outline-tertiary  btn-block mb-2">LG</button>
+                    <button href="#" class="btn btn-lg btn-outline-tertiary  btn-block mb-2" disabled="disabled">DISABLED</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Alerts</h5>
+            </div>
+            <div class="col-lg-3">
+                <div class="alert alert-warning mt-4">
+                    <span class="lh-icon-user-alert-notification text-size-48"></span>
+                    <span>
+                        this is alert warning
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="alert alert-danger mt-4">
+                    <span class="lh-icon-user-alert-notification text-size-48"></span>
+                    <span>
+                        this is alert danger
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="alert alert-info mt-4 mb-4">
+                    <span class="lh-icon-user-alert-notification text-size-48"></span>
+                    <span>
+                        this is alert info
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="alert alert-success mt-4">
+                    <span class="lh-icon-user-alert-notification text-size-48"></span>
+                    <span>
+                        this is alert success
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Textarea</h5>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="This is a textarea placeholder" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="This is a textarea placeholder" rows="4">This is text in a textarea</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Form Elements (LG)</h5>
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control-lg" placeholder="lg input placeholder" />
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control-lg" value="lg input text value" />
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control-lg" value="lg input disabled" disabled="disabled" />
+            </div>
+            <div class="col-lg-4 mt-3">
+                <input type="email" class="form-control form-control-lg is-valid" value="good verify" />
+            </div>
+            <div class="col-lg-4 mt-3">
+                <input type="email" class="form-control form-control-lg is-invalid" value="bad verify" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Form Elements (Regular)</h5>
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control" placeholder="regular input placeholder" />
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control" value="regular input text value" />
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control" value="regular input disabled" disabled="disabled" />
+            </div>
+            <div class="col-lg-4 mt-3">
+                <input type="email" class="form-control form-control is-valid" value="good verify" />
+            </div>
+            <div class="col-lg-4 mt-3">
+                <input type="email" class="form-control form-control is-invalid" value="bad verify" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Form Elements (small)</h5>
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control-sm" placeholder="sm input placeholder" />
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control-sm" value="sm input text value" />
+            </div>
+            <div class="col-lg-4">
+                <input type="email" class="form-control form-control-sm" value="sm input disabled" disabled="disabled" />
+            </div>
+            <div class="col-lg-4 mt-3">
+                <input type="email" class="form-control form-control-sm is-valid" value="good verify" />
+            </div>
+            <div class="col-lg-4 mt-3">
+                <input type="email" class="form-control form-control-sm is-invalid" value="bad verify" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Custom Checkboxes lg</h5>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control-lg custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk1" />
+                    <label class="custom-control-label pl-2" for="chk1">Unchecked select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control-lg custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk2" checked="checked" />
+                    <label class="custom-control-label pl-2" for="chk2">Checked select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control-lg custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk3" disabled="disabled" />
+                    <label class="custom-control-label pl-2" for="chk3">Disabled select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control-lg custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk8" disabled="disabled" checked="checked" />
+                    <label class="custom-control-label pl-2" for="chk8">Disabled checked select</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Custom Checkboxes regular</h5>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk4" />
+                    <label class="custom-control-label pl-2" for="chk4">Unchecked select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk5" checked="checked" />
+                    <label class="custom-control-label pl-2" for="chk5">Checked select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk6" disabled="disabled" />
+                    <label class="custom-control-label pl-2" for="chk6">Disabled select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk7" disabled="disabled" checked="checked" />
+                    <label class="custom-control-label pl-2" for="chk7">Disabled checked select</label>
+                </div>
+            </div>
+        </div>
+        <div class="row bg-primary mt-5 p-2">
+            <div class="col-lg-12">
+                <h5 class="mb-1 text-quinary">Custom Checkboxes regular Dark BG</h5>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk9" />
+                    <label class="custom-control-label label-light pl-2" for="chk9">Unchecked select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk10" checked="checked" />
+                    <label class="custom-control-label label-light pl-2" for="chk10">Checked select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk11" disabled="disabled" />
+                    <label class="custom-control-label label-light pl-2" for="chk11">Disabled select</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chk12" disabled="disabled" checked="checked" />
+                    <label class="custom-control-label label-light pl-2" for="chk12">Disabled checked select</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Custom radiobuttons lg</h5>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control-lg custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb1" name="rdblg" />
+                    <label class="custom-control-label" for="rdb1">Unselected radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control-lg custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb2" name="rdblg" checked="checked" />
+                    <label class="custom-control-label" for="rdb2">selected radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control-lg custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb3" name="rdblg1" disabled="disabled" />
+                    <label class="custom-control-label" for="rdb3">disabled radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control-lg custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb7" name="rdblg1" disabled="disabled" checked="checked" />
+                    <label class="custom-control-label" for="rdb7">disabled checked radio</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Custom radiobuttons regular</h5>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb4" name="rdbreg" />
+                    <label class="custom-control-label" for="rdb4">Unselected radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb5" name="rdbreg" checked="checked" />
+                    <label class="custom-control-label" for="rdb5">selected radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb6" name="rdbreg1" disabled="disabled" />
+                    <label class="custom-control-label" for="rdb6">disabled radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb8" name="rdbreg1" disabled="disabled" checked="checked" />
+                    <label class="custom-control-label" for="rdb8">disabled checked radio</label>
+                </div>
+            </div>
+        </div>
+        <div class="row bg-primary mt-5 p-2">
+            <div class="col-lg-12">
+                <h5 class="mb-1 text-quinary">Custom radiobuttons regular Dark BG</h5>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb9" name="rdbreg3" />
+                    <label class="custom-control-label label-light" for="rdb9">Unselected radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb10" name="rdbreg3" checked="checked" />
+                    <label class="custom-control-label label-light" for="rdb10">selected radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb11" name="rdbreg4" disabled="disabled" />
+                    <label class="custom-control-label label-light" for="rdb11">disabled radio</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="rdb12" name="rdbreg4" disabled="disabled" checked="checked" />
+                    <label class="custom-control-label label-light" for="rdb12">disabled checked radio</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">File handling</h5>
+            </div>
+            <div class="col-lg-4 mt-3">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pt-4">
+                <label class="simple-file-control">
+                    Choose File
+                    <input type="file" size="60" class="simple-file-input" id="file" />
+                </label>
+                <label class="simple-file-label" for="file">No file Chosen</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Extended input</h5>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group mb-3 mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Amount" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group mb-3 mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Amount" />
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group mb-3 mt-3">
+                    <input type="text" class="form-control" placeholder="Amount" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <h5 class="mb-1">Custom Select</h5>
+            </div>
+            <div class="col-lg-4">
+                <select name="cars1" class="selectpicker form-control form-control-lg mb-3">
+                    <option>Large Custom Select Menu</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="fiat" selected="selected">Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <select name="cars2" class="selectpicker form-control mb-3">
+                    <option>Select Menu</option>
+                    <option value="volvo" selected="selected">Volvo</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+        </div>
+        <div class="row spacer my-5 py-5"></div>
+    </div>

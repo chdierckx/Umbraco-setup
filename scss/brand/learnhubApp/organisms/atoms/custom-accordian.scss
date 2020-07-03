@@ -1,0 +1,90 @@
+﻿.accordion-panel {
+    border: none;
+
+    .panel-header {
+        background-color: rgba($clr-quaternary, 0.10);
+        border: none;
+        border-radius: 0;
+        padding: .25rem 1.25rem;
+        border-bottom-style: solid; 
+        border-bottom-width: 1px;
+        border-bottom-color: rgba($clr-quaternary, 0.50);
+        a {
+            opacity: 0.55;
+            display: block;
+            position: relative;
+            font-size: 18px;
+            font-family: karla;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: opacity 100ms ease-in-out;
+            [class^="lh-icon-"] {
+                font-size: 44px;
+                margin-right: 10px;
+                position: relative;
+            }
+            &:hover {
+                opacity: 1;
+            }
+            &:after {
+                content: $lh-icon-os-caret-right;
+                font-family: 'lhicon';
+                position: absolute;
+                right: 0;
+                font-size: 24px;
+            }
+            &[aria-expanded="true"] {
+                opacity: 1;
+            }
+            &[aria-expanded="true"]:after {
+                content: $lh-icon-os-caret-down;
+            }
+        }
+    }
+
+    .panel-body {
+        background-color: rgba($quinary, 0.80);
+        padding: 0;
+    }
+    .footer-tools {
+        background-color: rgba($clr-quaternary, 0.10);
+        border-bottom-style: solid; 
+        border-bottom-width: 1px;
+        border-bottom-color: rgba($clr-quaternary, 0.50);
+        
+    }
+}
+
+@media (max-width: 1536px) {
+    .accordion-panel {
+        .panel-header {
+            padding: .20rem 1rem;
+            
+            a {
+                font-size: 14px;
+    
+                [class^="lh-icon-"] {
+                    font-size: 32px;
+                    margin-right: 8px;
+                }
+    
+                &:after {
+                    content: $lh-icon-os-caret-right;
+                    font-family: 'lhicon';
+                    position: absolute;
+                    right: 0;
+                    font-size: 22px;
+                }
+    
+                &[aria-expanded="true"]:after {
+                    content: $lh-icon-os-caret-down;
+                }
+            }
+        }
+    
+        .panel-body {
+            padding: 0;
+        }
+    }
+}
